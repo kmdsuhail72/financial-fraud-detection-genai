@@ -40,8 +40,14 @@ class SecurityAuditLogger:
 
     def _get_table(self):
         if self._table is None and self._use_dynamodb is not False:
+            if not os.getenv("AWS_ACCESS_KEY_ID") and not os.getenv("AWS_PROFILE") and not os.getenv("AWS_DEFAULT_REGION"):
+                self._use_dynamodb = False
+                self._table = None
+                return None
             try:
-                self._dynamodb = boto3.resource("dynamodb", region_name=self.region)
+                from botocore.config import Config
+                fast_cfg = Config(connect_timeout=1, read_timeout=1, retries={"max_attempts": 0})
+                self._dynamodb = boto3.resource("dynamodb", region_name=self.region, config=fast_cfg)
                 table = self._dynamodb.Table(self.table_name)
                 # Quick load to verify existence
                 table.load()

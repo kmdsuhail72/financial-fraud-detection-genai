@@ -89,3 +89,4 @@ All compliance routes require authenticated identity with `audit:view` permissio
 - `GET /compliance/controls`: Regulatory control catalogue with status and mapped services.
 - `GET /compliance/findings`: Active security findings with severity, affected resources, and remediation guidance.
 - `POST /compliance/evidence/collect`: Triggers an automated compliance evaluation cycle.
+

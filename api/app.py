@@ -37,6 +37,7 @@ from security.audit import SecurityAuditEvent, audit_logger
 from security.dependencies import get_current_user, require_permission, require_roles
 from security.roles import Permission, Role
 from api.compliance_router import compliance_router
+from api.soc_router import soc_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -160,6 +161,7 @@ app.add_middleware(
 )
 
 app.include_router(compliance_router)
+app.include_router(soc_router)
 
 
 # ==========================================

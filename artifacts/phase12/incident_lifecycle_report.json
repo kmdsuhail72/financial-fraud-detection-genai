@@ -1,0 +1,148 @@
+{
+  "incident_id": "INC-20261112-C21E",
+  "title": "[InternalSecurity] GenericSecurityAlert on arn:aws:::generic-resource",
+  "description": "Security alert triggered by InternalSecurity with severity MEDIUM.",
+  "severity": "MEDIUM",
+  "status": "CONTAINED",
+  "source": "InternalSecurity",
+  "primary_resource_id": "arn:aws:::generic-resource",
+  "primary_resource_type": "AWS::Resource",
+  "assigned_to": null,
+  "created_at": "2026-11-12T19:45:46.071582+00:00",
+  "updated_at": "2026-11-12T19:45:46.072319+00:00",
+  "sla_target_minutes": 120,
+  "sla_breached": false,
+  "correlated_event_count": 1,
+  "correlated_event_ids": [
+    "EVT-13916967",
+    "9b4fff26b0db219a"
+  ],
+  "timeline": [
+    {
+      "entry_id": "TIME-e423f74c",
+      "timestamp": "2026-11-12T19:45:46.071555+00:00",
+      "author": "SOCEngine",
+      "entry_type": "CREATION",
+      "description": "Incident case initialized from InternalSecurity event EVT-13916967.",
+      "metadata": {
+        "event_id": "EVT-13916967",
+        "severity": "MEDIUM"
+      }
+    },
+    {
+      "entry_id": "TIME-62b43804",
+      "timestamp": "2026-11-12T19:45:46.072048+00:00",
+      "author": "AIAssistant",
+      "entry_type": "AI_INVESTIGATION",
+      "description": "Grounded AI threat synthesis and hypothesis checks compiled.",
+      "metadata": {}
+    },
+    {
+      "entry_id": "TIME-7be4f177",
+      "timestamp": "2026-11-12T19:45:46.072148+00:00",
+      "author": "analyst@finguard.internal",
+      "entry_type": "APPROVAL_REQUESTED",
+      "description": "Remediation approval requested for action ACT-BLOCK-ADVERSARY-IP.",
+      "metadata": {
+        "approval_id": "APPR-ff740812",
+        "action_id": "ACT-BLOCK-ADVERSARY-IP"
+      }
+    },
+    {
+      "entry_id": "TIME-0a9227f1",
+      "timestamp": "2026-11-12T19:45:46.072219+00:00",
+      "author": "soc-lead@finguard.internal",
+      "entry_type": "APPROVAL_APPROVED",
+      "description": "Remediation action ACT-BLOCK-ADVERSARY-IP was APPROVED by soc-lead@finguard.internal.",
+      "metadata": {
+        "approval_id": "APPR-ff740812",
+        "notes": "Containment authorized following correlation verification."
+      }
+    },
+    {
+      "entry_id": "TIME-ff756e18",
+      "timestamp": "2026-11-12T19:45:46.072335+00:00",
+      "author": "soc-lead@finguard.internal",
+      "entry_type": "REMEDIATION_EXECUTED",
+      "description": "Simulated containment action 'Block Adversary Remote IP Address' executed on arn:aws:::generic-resource.",
+      "metadata": {
+        "receipt_id": "RCPT-45A3738F",
+        "status": "SIMULATED_SUCCESS"
+      }
+    }
+  ],
+  "playbooks": [
+    {
+      "playbook_id": "PB-GENERIC-CONTAINMENT",
+      "title": "Standard SOC Threat Containment Playbook",
+      "description": "Generic containment checklist requiring human authorization prior to remediation.",
+      "incident_type": "GenericSecurityAlert",
+      "actions": [
+        {
+          "action_id": "ACT-BLOCK-ADVERSARY-IP",
+          "name": "Block Adversary Remote IP Address",
+          "action_type": "BLOCK_IP",
+          "target_resource": "arn:aws:::generic-resource",
+          "parameters": {
+            "action": "DENY"
+          },
+          "dry_run_plan": "Add adversary IP associated with arn:aws:::generic-resource to AWS WAF WebACL block rule.",
+          "rollback_guidance": "Remove adversary IP from WAF IP set.",
+          "requires_approval": true
+        }
+      ]
+    }
+  ],
+  "approvals": [
+    {
+      "approval_id": "APPR-ff740812",
+      "action_id": "ACT-BLOCK-ADVERSARY-IP",
+      "requested_by": "analyst@finguard.internal",
+      "requested_at": "2026-11-12T19:45:46.072123+00:00",
+      "status": "APPROVED",
+      "approver": "soc-lead@finguard.internal",
+      "approved_at": "2026-11-12T19:45:46.072194+00:00",
+      "approval_notes": "Containment authorized following correlation verification."
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "RCPT-45A3738F",
+      "action_id": "ACT-BLOCK-ADVERSARY-IP",
+      "target_resource": "arn:aws:::generic-resource",
+      "executed_by": "soc-lead@finguard.internal",
+      "executed_at": "2026-11-12T19:45:46.072243+00:00",
+      "execution_status": "SIMULATED_SUCCESS",
+      "verification_results": {
+        "pre_check": "Target resource reachable and validated",
+        "execution_mode": "ALLOWLISTED_SANDBOX_SIMULATION",
+        "action_executed": "Block Adversary Remote IP Address",
+        "target_resource": "arn:aws:::generic-resource",
+        "parameters_applied": {
+          "action": "DENY"
+        },
+        "post_check_verified": true,
+        "rollback_readiness": "VERIFIED_READY"
+      },
+      "audit_log_ref": "SEC-AUDIT-RCPT-45A3738F"
+    }
+  ],
+  "ai_brief": {
+    "incident_id": "INC-20261112-C21E",
+    "executive_summary": "SOC Alert INC-20261112-C21E (MEDIUM) originated from InternalSecurity targeting arn:aws:::generic-resource. Observed pattern indicates potential unauthorized activity with 1 correlated alert(s).",
+    "threat_context": "Activity exhibits characteristics consistent with cloud security threat patterns. If uncontained, potential impact includes lateral movement, unauthorized data access, or fraudulent transactions.",
+    "hypotheses": [
+      "Legitimate administrative or scheduled automated process operating outside regular change windows on arn:aws:::generic-resource.",
+      "Compromised credential or API token utilized by external adversary.",
+      "Network misconfiguration resulting in false-positive anomaly detection."
+    ],
+    "recommended_checks": [
+      "Query CloudTrail for all API actions initiated by the actor associated with arn:aws:::generic-resource in the last 2 hours.",
+      "Verify whether a corresponding Jira change ticket exists for this resource activity.",
+      "Inspect source IP reputation against external threat intelligence feeds.",
+      "Review proposed containment playbook actions prior to executing remediation."
+    ],
+    "confidence_score": 0.91,
+    "generated_at": "2026-11-12T19:45:46.071946+00:00"
+  }
+}
