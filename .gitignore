@@ -109,6 +109,8 @@ data/samples/*
 !data/samples/.gitkeep
 data/generated/*
 !data/generated/dataset_report.json
+data/checkpoints/*
+data/quarantine/*
 *.parquet
 *.csv
 *.jsonl

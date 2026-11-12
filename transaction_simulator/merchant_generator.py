@@ -53,3 +53,4 @@ class MerchantGenerator:
             merchants.append(merchant)
 
         return merchants
+

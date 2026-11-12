@@ -41,3 +41,4 @@ class DeviceGenerator:
                 devices.append(device)
 
         return devices
+

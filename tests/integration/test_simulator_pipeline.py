@@ -50,3 +50,4 @@ def test_end_to_end_simulation_pipeline():
             assert data["summary"]["total_transactions"] == 250
     finally:
         shutil.rmtree(temp_dir)
+

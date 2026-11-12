@@ -64,3 +64,4 @@ class AccountGenerator:
                 accounts.append(account)
 
         return accounts
+

@@ -324,3 +324,4 @@ class FraudScenarioEngine:
         if matched:
             return self.rng.choice(matched)
         return self.rng.choice(merchants)
+

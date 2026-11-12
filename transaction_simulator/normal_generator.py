@@ -85,3 +85,4 @@ class NormalTransactionGenerator:
             "ip_address": ip_address,
             "is_international": False
         }
+

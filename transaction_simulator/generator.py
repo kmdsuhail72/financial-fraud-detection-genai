@@ -168,3 +168,4 @@ class BankingTransactionSimulator:
         )
 
         return report
+

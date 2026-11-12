@@ -49,3 +49,4 @@ class CustomerGenerator:
             customers.append(customer)
 
         return customers
+

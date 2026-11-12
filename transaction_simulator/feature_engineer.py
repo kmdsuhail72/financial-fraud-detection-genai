@@ -142,3 +142,4 @@ class FeatureEngineer:
             acc_hist.append((txn_time, amount, curr_city, curr_country))
 
         return features_list
+

@@ -135,3 +135,4 @@ def test_feature_engineering_no_target_leakage():
     assert f2["transaction_count_5m"] == 1  # 1 prior transaction in 5m
     assert f2["international_flag"] == 1
     assert f2["location_change"] == 1
+
