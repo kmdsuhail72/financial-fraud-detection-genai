@@ -12,3 +12,4 @@ output "stream_retention_period" {
   description = "Configured retention period in hours"
   value       = aws_kinesis_stream.transactions_stream.retention_period
 }
+

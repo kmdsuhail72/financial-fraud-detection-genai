@@ -16,3 +16,8 @@ variable "project_name" {
   default     = "finguard"
 }
 
+variable "processed_bucket_name" {
+  description = "Globally unique bucket name for processed transaction storage"
+  type        = string
+  default     = "finguard-data-processed-dev"
+}

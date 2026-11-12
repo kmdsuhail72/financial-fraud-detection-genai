@@ -58,3 +58,4 @@ class TransactionSerializer:
             return True, decoded, ""
         except Exception as err:
             return False, {}, f"Deserialization error: {str(err)}"
+

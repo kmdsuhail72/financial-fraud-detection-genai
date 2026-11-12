@@ -114,3 +114,4 @@ def test_stream_producer_dry_run():
         assert summary["total_batches"] == 3  # 5 + 5 + 4
     finally:
         shutil.rmtree(temp_dir)
+

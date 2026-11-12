@@ -109,3 +109,4 @@ class KinesisBatchPublisher:
         self.metrics.record_batch(successful_count, failed_count, batch_bytes, elapsed)
 
         return successful_count, failed_count
+

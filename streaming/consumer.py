@@ -112,3 +112,4 @@ class KinesisShardConsumer:
                 break
 
         return total_consumed
+

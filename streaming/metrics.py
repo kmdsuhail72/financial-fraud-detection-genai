@@ -42,3 +42,4 @@ class StreamingMetricsTracker:
             "throughput_kbps": round(kbps, 2),
             "average_batch_latency_ms": round(avg_latency * 1000.0, 2)
         }
+

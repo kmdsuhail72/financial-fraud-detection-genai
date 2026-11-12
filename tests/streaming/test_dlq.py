@@ -31,3 +31,4 @@ def test_quarantine_logging():
             assert entry["record"]["txn_id"] == "TXN-FAIL-01"
     finally:
         shutil.rmtree(temp_dir)
+

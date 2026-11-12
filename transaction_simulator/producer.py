@@ -7,3 +7,4 @@ __all__ = ["TransactionStreamProducer", "main"]
 
 if __name__ == "__main__":
     main()
+

@@ -40,3 +40,4 @@ def test_serializer_missing_required_field():
     assert is_valid is False
     assert "Missing required transaction fields" in error
     assert "account_id" in error
+

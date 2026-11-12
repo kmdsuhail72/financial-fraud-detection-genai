@@ -8,3 +8,4 @@ output "kinesis_stream_arn" {
   description = "Dev Kinesis Stream ARN"
   value       = module.kinesis.stream_arn
 }
+

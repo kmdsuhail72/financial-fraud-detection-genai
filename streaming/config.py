@@ -18,3 +18,4 @@ class KinesisStreamConfig:
     dlq_path: str = os.getenv("KINESIS_DLQ_PATH", "data/quarantine/failed_transactions.jsonl")
     checkpoint_file: str = os.getenv("KINESIS_CHECKPOINT_FILE", "data/checkpoints/kinesis_consumer.json")
     endpoint_url: str = os.getenv("AWS_ENDPOINT_URL", "")  # Optional LocalStack endpoint
+

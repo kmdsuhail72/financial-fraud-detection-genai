@@ -32,3 +32,4 @@ class ShardCheckpointManager:
         self.checkpoints[shard_id] = sequence_number
         with open(self.checkpoint_path, "w", encoding="utf-8") as f:
             json.dump(self.checkpoints, f, indent=2)
+

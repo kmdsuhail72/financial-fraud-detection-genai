@@ -18,3 +18,4 @@ def test_backoff_increases_with_attempts():
     max_ceiling_attempt_1 = policy.base_delay * (2 ** 1)
     max_ceiling_attempt_3 = policy.base_delay * (2 ** 3)
     assert max_ceiling_attempt_3 > max_ceiling_attempt_1
+

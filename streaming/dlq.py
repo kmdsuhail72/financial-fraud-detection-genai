@@ -30,3 +30,4 @@ class FailedRecordQuarantine:
             return 0
         with open(self.dlq_path, "r", encoding="utf-8") as f:
             return sum(1 for _ in f)
+

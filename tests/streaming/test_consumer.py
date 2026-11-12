@@ -84,3 +84,4 @@ def test_consumer_poll_shard():
         assert cp_manager.get_checkpoint("shardId-000000000000") == "seq-002"
     finally:
         shutil.rmtree(temp_dir)
+
