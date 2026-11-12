@@ -50,8 +50,15 @@ class CaseStore:
         if dynamodb_resource is not None:
             self.table = dynamodb_resource.Table(self.table_name)
         else:
+            if not os.getenv("AWS_ACCESS_KEY_ID") and not os.getenv("AWS_PROFILE"):
+                if self.in_memory_fallback:
+                    self.table = None
+                    logger.info("No AWS credentials detected. Initializing local in-memory case store.")
+                    return
             try:
-                dynamodb = boto3.resource("dynamodb", region_name=self.region_name)
+                from botocore.config import Config
+                fast_cfg = Config(connect_timeout=1, read_timeout=1, retries={"max_attempts": 0})
+                dynamodb = boto3.resource("dynamodb", region_name=self.region_name, config=fast_cfg)
                 self.table = dynamodb.Table(self.table_name)
                 # Quick check if table exists
                 self.table.load()

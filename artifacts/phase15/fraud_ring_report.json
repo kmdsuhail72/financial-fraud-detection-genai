@@ -1,0 +1,162 @@
+{
+  "summary": {
+    "total_nodes": 29,
+    "total_edges": 35,
+    "total_fraud_rings": 1,
+    "total_circular_loops": 1
+  },
+  "fraud_rings": [
+    {
+      "ring_id": "RING-001",
+      "ring_name": "Syndicate Cluster #1 (SYNTHETIC_IDENTITY_DEVICE_SHARING)",
+      "risk_level": "CRITICAL",
+      "risk_score": 1.0,
+      "member_customers": [
+        "CUS-801",
+        "CUS-802",
+        "CUS-803",
+        "CUS-804"
+      ],
+      "member_accounts": [
+        "ACC-801",
+        "ACC-802",
+        "ACC-803",
+        "ACC-804"
+      ],
+      "shared_devices": [
+        "DEV-APEX-99"
+      ],
+      "shared_ips": [
+        "IP-198.51.100.42"
+      ],
+      "shared_phones": [
+        "PH-88001"
+      ],
+      "total_flow_amount": 73500.0,
+      "detected_patterns": [
+        "SYNTHETIC_IDENTITY_DEVICE_SHARING",
+        "MULTI_ACCOUNT_PHONE_COLLUSION",
+        "BOTNET_PROXY_IP_CLUSTERING",
+        "INTRA_RING_CAPITAL_CIRCULATION"
+      ],
+      "recommended_action": "FREEZE_LINKED_ACCOUNTS_AND_REFER_TO_FIU"
+    }
+  ],
+  "cycles": [
+    {
+      "cycle_id": "CYCLE-001",
+      "length": 3,
+      "nodes": [
+        "ACC-703",
+        "ACC-701",
+        "ACC-702"
+      ],
+      "total_amount": 194300.0,
+      "description": "Circular fund transfer loop involving 3 accounts ($194,300.00)"
+    }
+  ],
+  "entity_evaluations": [
+    {
+      "entity_id": "ACC-801",
+      "entity_type": "ACCOUNT",
+      "graph_risk_score": 1.0,
+      "risk_level": "CRITICAL",
+      "ring_membership": "RING-001",
+      "participating_cycles": [],
+      "shared_entities_count": 6,
+      "centrality": {
+        "degree_centrality": 0.1429,
+        "in_degree_centrality": 0.0357,
+        "out_degree_centrality": 0.1071,
+        "pagerank": 0.0212,
+        "betweenness_centrality": 0.0,
+        "in_degree": 1,
+        "out_degree": 3
+      },
+      "risk_factors": [
+        "Member of fraud ring RING-001 (Syndicate Cluster #1 (SYNTHETIC_IDENTITY_DEVICE_SHARING))",
+        "Shares DEVICE 'DEV-APEX-99' with 3 other entities",
+        "Shares IP_ADDRESS 'IP-198.51.100.42' with 3 other entities"
+      ]
+    },
+    {
+      "entity_id": "ACC-701",
+      "entity_type": "ACCOUNT",
+      "graph_risk_score": 0.7625,
+      "risk_level": "CRITICAL",
+      "ring_membership": null,
+      "participating_cycles": [
+        "CYCLE-001"
+      ],
+      "shared_entities_count": 0,
+      "centrality": {
+        "degree_centrality": 0.1071,
+        "in_degree_centrality": 0.0714,
+        "out_degree_centrality": 0.0357,
+        "pagerank": 0.141319,
+        "betweenness_centrality": 0.004762,
+        "in_degree": 2,
+        "out_degree": 1
+      },
+      "risk_factors": [
+        "Participant in circular wash-trading loop CYCLE-001 ($194,300.00)"
+      ]
+    },
+    {
+      "entity_id": "ACC-600",
+      "entity_type": "ACCOUNT",
+      "graph_risk_score": 0.7375,
+      "risk_level": "HIGH",
+      "ring_membership": null,
+      "participating_cycles": [],
+      "shared_entities_count": 0,
+      "centrality": {
+        "degree_centrality": 0.2143,
+        "in_degree_centrality": 0.1786,
+        "out_degree_centrality": 0.0357,
+        "pagerank": 0.111301,
+        "betweenness_centrality": 0.02381,
+        "in_degree": 5,
+        "out_degree": 1
+      },
+      "risk_factors": [
+        "High fan-in ratio (5 deposits vs 1 payouts) indicating money mule consolidation"
+      ]
+    },
+    {
+      "entity_id": "ACC-100045",
+      "entity_type": "ACCOUNT",
+      "graph_risk_score": 0.05,
+      "risk_level": "LOW",
+      "ring_membership": null,
+      "participating_cycles": [],
+      "shared_entities_count": 0,
+      "centrality": {
+        "degree_centrality": 0.1071,
+        "in_degree_centrality": 0.0357,
+        "out_degree_centrality": 0.0714,
+        "pagerank": 0.0212,
+        "betweenness_centrality": 0.0,
+        "in_degree": 1,
+        "out_degree": 2
+      },
+      "risk_factors": [
+        "Standard isolated entity network pattern with no syndication indicators."
+      ]
+    }
+  ],
+  "neptune_gremlin_queries": {
+    "shared_device_syndicates": "g.V().hasLabel('Customer').as('c1').out('OWNS_ACCOUNT').out('USES_DEVICE').as('dev').in('USES_DEVICE').in('OWNS_ACCOUNT').hasLabel('Customer').as('c2').where('c1', neq('c2')).select('c1', 'dev', 'c2').dedup('c1', 'c2')",
+    "shared_ip_clustering": "g.V().hasLabel('Account').as('a1').out('ASSOCIATED_IP').as('ip').in('ASSOCIATED_IP').hasLabel('Account').as('a2').where('a1', neq('a2')).select('a1', 'ip', 'a2').dedup('a1', 'a2')",
+    "three_hop_cycle_detection": "g.V().hasLabel('Account').as('a1').out('TRANSFERRED_TO').as('a2').out('TRANSFERRED_TO').as('a3').out('TRANSFERRED_TO').where(eq('a1')).path().by('id')",
+    "two_hop_neighborhood": "g.V('{entity_id}').bothE().as('e').otherV().as('v1').emit().repeat(bothE().as('e').otherV().as('v2')).times(2).path()",
+    "high_fan_in_mules": "g.V().hasLabel('Account').where(inE('TRANSFERRED_TO').count().is(gte(5))).project('account', 'in_count', 'out_count').by('id').by(inE('TRANSFERRED_TO').count()).by(outE('TRANSFERRED_TO').count())"
+  },
+  "neptune_opencypher_queries": {
+    "shared_device_syndicates": "MATCH (c1:Customer)-[:OWNS_ACCOUNT]->(a1:Account)-[:USES_DEVICE]->(d:Device)<-[:USES_DEVICE]-(a2:Account)<-[:OWNS_ACCOUNT]-(c2:Customer) WHERE c1.id < c2.id RETURN c1.id AS customer_1, c2.id AS customer_2, d.id AS device_id, d.model AS device_model",
+    "shared_phone_syndicates": "MATCH (c1:Customer)-[:HAS_PHONE]->(p:PhoneNumber)<-[:HAS_PHONE]-(c2:Customer) WHERE c1.id < c2.id RETURN c1.id AS customer_1, c2.id AS customer_2, p.id AS phone_number",
+    "circular_fund_flow_3hop": "MATCH (a:Account)-[r1:TRANSFERRED_TO]->(b:Account)-[r2:TRANSFERRED_TO]->(c:Account)-[r3:TRANSFERRED_TO]->(a) RETURN a.id AS acc_a, b.id AS acc_b, c.id AS acc_c, r1.amount AS amt1, r2.amount AS amt2, r3.amount AS amt3",
+    "smurfing_mule_consolidation": "MATCH (sender:Account)-[r:TRANSFERRED_TO]->(mule:Account) WITH mule, count(DISTINCT sender) AS distinct_senders, sum(r.amount) AS total_inbound WHERE distinct_senders >= 5 OPTIONAL MATCH (mule)-[r_out:TRANSFERRED_TO]->(recipient:Account) RETURN mule.id AS mule_id, distinct_senders, total_inbound, count(DISTINCT recipient) AS distinct_recipients, sum(r_out.amount) AS total_outbound",
+    "k_hop_ego_network": "MATCH path = (root {id: $entity_id})-[*1..2]-(neighbor) RETURN relationships(path) AS links, nodes(path) AS nodes LIMIT 100"
+  }
+}

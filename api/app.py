@@ -10,6 +10,8 @@ from __future__ import annotations
 import logging
 import os
 import time
+
+os.environ.setdefault("AWS_EC2_METADATA_DISABLED", "true")
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
@@ -38,6 +40,7 @@ from security.dependencies import get_current_user, require_permission, require_
 from security.roles import Permission, Role
 from api.compliance_router import compliance_router
 from api.soc_router import soc_router
+from api.graph_router import graph_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -162,6 +165,7 @@ app.add_middleware(
 
 app.include_router(compliance_router)
 app.include_router(soc_router)
+app.include_router(graph_router)
 
 
 # ==========================================

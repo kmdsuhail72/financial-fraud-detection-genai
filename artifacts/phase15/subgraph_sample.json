@@ -1,0 +1,221 @@
+{
+  "center_node": "DEV-APEX-99",
+  "depth_hops": 2,
+  "node_count": 10,
+  "edge_count": 15,
+  "nodes": [
+    {
+      "id": "CUS-804",
+      "type": "CUSTOMER",
+      "label": "Ananya Deshmukh (Synthetic)",
+      "risk_score": 0.85,
+      "properties": {
+        "kyc_tier": "TIER_1",
+        "synthetic_suspicion": true
+      }
+    },
+    {
+      "id": "CUS-801",
+      "type": "CUSTOMER",
+      "label": "Vikram Malhotra (Synthetic)",
+      "risk_score": 0.85,
+      "properties": {
+        "kyc_tier": "TIER_1",
+        "synthetic_suspicion": true
+      }
+    },
+    {
+      "id": "ACC-801",
+      "type": "ACCOUNT",
+      "label": "Current Account ACC-801",
+      "risk_score": 0.82,
+      "properties": {
+        "balance": 34000.0,
+        "currency": "INR",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-804",
+      "type": "ACCOUNT",
+      "label": "Current Account ACC-804",
+      "risk_score": 0.82,
+      "properties": {
+        "balance": 34000.0,
+        "currency": "INR",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-803",
+      "type": "ACCOUNT",
+      "label": "Current Account ACC-803",
+      "risk_score": 0.82,
+      "properties": {
+        "balance": 34000.0,
+        "currency": "INR",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "CUS-803",
+      "type": "CUSTOMER",
+      "label": "Sameer Verma (Synthetic)",
+      "risk_score": 0.85,
+      "properties": {
+        "kyc_tier": "TIER_1",
+        "synthetic_suspicion": true
+      }
+    },
+    {
+      "id": "IP-198.51.100.42",
+      "type": "IP_ADDRESS",
+      "label": "198.51.100.42 (Mullvad VPN Exit)",
+      "risk_score": 0.75,
+      "properties": {
+        "asn": "AS40065",
+        "country": "SE",
+        "is_vpn": true
+      }
+    },
+    {
+      "id": "CUS-802",
+      "type": "CUSTOMER",
+      "label": "Rahul Nambiar (Synthetic)",
+      "risk_score": 0.85,
+      "properties": {
+        "kyc_tier": "TIER_1",
+        "synthetic_suspicion": true
+      }
+    },
+    {
+      "id": "ACC-802",
+      "type": "ACCOUNT",
+      "label": "Current Account ACC-802",
+      "risk_score": 0.82,
+      "properties": {
+        "balance": 34000.0,
+        "currency": "INR",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "DEV-APEX-99",
+      "type": "DEVICE",
+      "label": "Rooted Android Emulator (MEmu 9.0)",
+      "risk_score": 0.92,
+      "properties": {
+        "os": "Android 11",
+        "is_emulator": true,
+        "imei": "864209048123456"
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "CUS-804",
+      "target": "ACC-804",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "CUS-801",
+      "target": "ACC-801",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-801",
+      "target": "DEV-APEX-99",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-801",
+      "target": "IP-198.51.100.42",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-801",
+      "target": "ACC-802",
+      "type": "TRANSFERRED_TO",
+      "weight": 25000.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-804",
+      "target": "DEV-APEX-99",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-804",
+      "target": "IP-198.51.100.42",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-803",
+      "target": "DEV-APEX-99",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-803",
+      "target": "IP-198.51.100.42",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-803",
+      "target": "ACC-804",
+      "type": "TRANSFERRED_TO",
+      "weight": 24000.0,
+      "properties": {}
+    },
+    {
+      "source": "CUS-803",
+      "target": "ACC-803",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "CUS-802",
+      "target": "ACC-802",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-802",
+      "target": "DEV-APEX-99",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-802",
+      "target": "IP-198.51.100.42",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-802",
+      "target": "ACC-803",
+      "type": "TRANSFERRED_TO",
+      "weight": 24500.0,
+      "properties": {}
+    }
+  ]
+}
