@@ -62,3 +62,4 @@ def test_transform_bronze_to_silver_parquet():
         assert "location_city" in df_read.columns
     finally:
         shutil.rmtree(temp_dir)
+

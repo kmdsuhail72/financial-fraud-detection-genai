@@ -31,3 +31,4 @@ def test_write_partitioned_sample_data():
             assert "hour=" in fpath
     finally:
         shutil.rmtree(temp_dir)
+

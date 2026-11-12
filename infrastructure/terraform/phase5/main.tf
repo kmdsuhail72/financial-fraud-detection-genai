@@ -60,3 +60,4 @@ module "athena" {
   environment           = var.environment
   data_lake_bucket_name = aws_s3_bucket.data_lake.bucket
 }
+

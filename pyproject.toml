@@ -46,5 +46,5 @@ finguard-sim = "transaction_simulator.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["transaction_simulator*", "backend*", "genai*", "ingestion*", "data_engineering*", "ml*"]
+include = ["transaction_simulator*", "backend*", "genai*", "ingestion*", "data_engineering*", "ml*", "api*"]
 

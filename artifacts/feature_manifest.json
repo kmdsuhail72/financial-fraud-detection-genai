@@ -1,0 +1,139 @@
+{
+  "version": "1.0.0",
+  "num_features": 10,
+  "feature_names": [
+    "transaction_amount",
+    "avg_amount_24h",
+    "transaction_count_5m",
+    "transaction_count_1h",
+    "amount_deviation",
+    "new_device",
+    "location_change",
+    "international_flag",
+    "merchant_risk",
+    "account_age_days"
+  ],
+  "features": [
+    {
+      "name": "transaction_amount",
+      "dtype": "float64",
+      "mean": 28915.2417,
+      "std": 39549.6706,
+      "median": 13607.995,
+      "min_val": 11.14,
+      "max_val": 583114.75,
+      "default_value": 13607.995,
+      "description": "Monetary value of the banking transaction in account currency"
+    },
+    {
+      "name": "avg_amount_24h",
+      "dtype": "float64",
+      "mean": 28828.6879,
+      "std": 36800.6251,
+      "median": 18566.37,
+      "min_val": 12.37,
+      "max_val": 1440278.76,
+      "default_value": 18566.37,
+      "description": "Historical 24-hour rolling average transaction amount for this customer account"
+    },
+    {
+      "name": "transaction_count_5m",
+      "dtype": "float64",
+      "mean": 0.0271,
+      "std": 0.2652,
+      "median": 0.0,
+      "min_val": 0.0,
+      "max_val": 5.0,
+      "default_value": 0.0,
+      "description": "Velocity metric: number of transactions in prior 5 minutes"
+    },
+    {
+      "name": "transaction_count_1h",
+      "dtype": "float64",
+      "mean": 0.0779,
+      "std": 0.3539,
+      "median": 0.0,
+      "min_val": 0.0,
+      "max_val": 6.0,
+      "default_value": 0.0,
+      "description": "Velocity metric: number of transactions in prior 1 hour"
+    },
+    {
+      "name": "amount_deviation",
+      "dtype": "float64",
+      "mean": 6.848,
+      "std": 134.0167,
+      "median": 1.0,
+      "min_val": 0.0006,
+      "max_val": 11685.2635,
+      "default_value": 1.0,
+      "description": "Ratio of transaction amount to 24-hour historical baseline amount"
+    },
+    {
+      "name": "new_device",
+      "dtype": "float64",
+      "mean": 0.0114,
+      "std": 0.106,
+      "median": 0.0,
+      "min_val": 0.0,
+      "max_val": 1.0,
+      "default_value": 0.0,
+      "description": "Binary indicator (1.0 = true) flagging an unrecognized device ID"
+    },
+    {
+      "name": "location_change",
+      "dtype": "float64",
+      "mean": 0.0101,
+      "std": 0.1002,
+      "median": 0.0,
+      "min_val": 0.0,
+      "max_val": 1.0,
+      "default_value": 0.0,
+      "description": "Binary indicator (1.0 = true) flagging transaction outside customer home city"
+    },
+    {
+      "name": "international_flag",
+      "dtype": "float64",
+      "mean": 0.0015,
+      "std": 0.0387,
+      "median": 0.0,
+      "min_val": 0.0,
+      "max_val": 1.0,
+      "default_value": 0.0,
+      "description": "Binary indicator (1.0 = true) flagging cross-border / foreign transaction"
+    },
+    {
+      "name": "merchant_risk",
+      "dtype": "float64",
+      "mean": 0.2468,
+      "std": 0.1853,
+      "median": 0.2404,
+      "min_val": 0.01,
+      "max_val": 0.5797,
+      "default_value": 0.2404,
+      "description": "Historical merchant fraud risk index [0.0 - 1.0]"
+    },
+    {
+      "name": "account_age_days",
+      "dtype": "float64",
+      "mean": 531.3624,
+      "std": 272.6986,
+      "median": 526.0,
+      "min_val": 60.0,
+      "max_val": 1000.0,
+      "default_value": 526.0,
+      "description": "Customer account age in days since origination"
+    }
+  ],
+  "aliases": {
+    "amount": "transaction_amount",
+    "transaction_count_5m_prior": "transaction_count_5m",
+    "transaction_count_1h_prior": "transaction_count_1h",
+    "new_device_flag": "new_device",
+    "home_city_mismatch": "location_change",
+    "is_international": "international_flag",
+    "international": "international_flag",
+    "velocity_5m": "transaction_count_5m",
+    "velocity_1h": "transaction_count_1h"
+  }
+}

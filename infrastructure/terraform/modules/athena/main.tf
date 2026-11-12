@@ -21,3 +21,4 @@ resource "aws_athena_workgroup" "analytics_workgroup" {
     Environment = var.environment
   }
 }
+

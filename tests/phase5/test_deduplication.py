@@ -56,3 +56,4 @@ def test_deduplicate_transactions():
         assert set(df["transaction_id"]) == {"TXN-DUP-01", "TXN-UNIQUE-02"}
     finally:
         shutil.rmtree(temp_dir)
+

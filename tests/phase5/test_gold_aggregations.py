@@ -49,3 +49,4 @@ def test_gold_analytics_marts():
         assert os.path.exists(os.path.join(gold_out, "merchant_category_summary.parquet"))
     finally:
         shutil.rmtree(temp_dir)
+

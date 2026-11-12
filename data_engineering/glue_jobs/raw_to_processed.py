@@ -80,3 +80,4 @@ partitioned_df.write \
     .parquet(silver_path)
 
 job.commit()
+

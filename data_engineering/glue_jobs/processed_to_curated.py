@@ -53,3 +53,4 @@ channel_summary.write \
     .parquet(f"{gold_path}/channel_summary/")
 
 job.commit()
+

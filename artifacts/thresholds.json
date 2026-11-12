@@ -1,0 +1,57 @@
+{
+  "selected_classifier_threshold": 0.44,
+  "best_f1": {
+    "threshold": 0.44,
+    "precision": 0.9464,
+    "recall": 0.8689,
+    "f1_score": 0.906,
+    "cost": 4075.0,
+    "tp": 53,
+    "fp": 3,
+    "tn": 2936,
+    "fn": 8
+  },
+  "cost_optimal": {
+    "threshold": 0.44,
+    "precision": 0.9464,
+    "recall": 0.8689,
+    "f1_score": 0.906,
+    "cost": 4075.0,
+    "tp": 53,
+    "fp": 3,
+    "tn": 2936,
+    "fn": 8
+  },
+  "high_recall": {
+    "threshold": 0.22,
+    "precision": 0.4264,
+    "recall": 0.9016,
+    "f1_score": 0.5789,
+    "cost": 4850.0,
+    "tp": 55,
+    "fp": 74,
+    "tn": 2865,
+    "fn": 6
+  },
+  "high_precision": {
+    "threshold": 0.42,
+    "precision": 0.9138,
+    "recall": 0.8689,
+    "f1_score": 0.8908,
+    "cost": 4125.0,
+    "tp": 53,
+    "fp": 5,
+    "tn": 2934,
+    "fn": 8
+  },
+  "cost_assumptions": {
+    "false_negative_cost_usd": 500.0,
+    "false_positive_cost_usd": 25.0
+  },
+  "risk_tier_thresholds": {
+    "critical_review": 0.8,
+    "high_investigate": 0.6,
+    "medium_monitor": 0.35,
+    "low_allow": 0.0
+  }
+}

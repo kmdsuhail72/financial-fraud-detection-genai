@@ -5,3 +5,4 @@ output "workgroup_name" {
 output "workgroup_arn" {
   value = aws_athena_workgroup.analytics_workgroup.arn
 }
+

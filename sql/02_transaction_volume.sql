@@ -16,3 +16,4 @@ GROUP BY
     year, month, day
 ORDER BY
     year DESC, month DESC, day DESC;
+

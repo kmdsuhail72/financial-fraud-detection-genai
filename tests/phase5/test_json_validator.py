@@ -39,3 +39,4 @@ def test_validator_with_valid_and_invalid_data():
         assert len(errors) == 2  # missing fields and malformed json
     finally:
         shutil.rmtree(temp_dir)
+

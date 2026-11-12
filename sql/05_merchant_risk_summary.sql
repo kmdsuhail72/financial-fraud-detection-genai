@@ -12,3 +12,4 @@ GROUP BY
     merchant_category
 ORDER BY
     surge_transactions DESC, total_spend_inr DESC;
+

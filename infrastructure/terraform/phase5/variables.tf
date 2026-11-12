@@ -17,3 +17,4 @@ variable "data_lake_bucket_name" {
   type        = string
   description = "Globally unique bucket name for FinGuard AI Medallion Data Lake"
 }
+

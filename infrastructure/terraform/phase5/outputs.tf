@@ -17,3 +17,4 @@ output "glue_crawler" {
 output "athena_workgroup" {
   value = module.athena.workgroup_name
 }
+

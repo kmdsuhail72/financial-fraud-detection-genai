@@ -103,3 +103,4 @@ resource "aws_glue_crawler" "lake_crawler" {
     Environment = var.environment
   }
 }
+

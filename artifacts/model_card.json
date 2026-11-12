@@ -1,0 +1,190 @@
+{
+  "model_details": {
+    "model_name": "FinGuard AI Real-Time Fraud & Anomaly Detection Platform",
+    "model_version": "v20261112T174600Z",
+    "model_family": "Supervised Tree Classifier + Unsupervised Isolation Forest",
+    "classifier_architecture": "RandomForestClassifier",
+    "anomaly_detector_architecture": "IsolationForest",
+    "creation_date": "2026-11-12T17:46:04.122276+00:00",
+    "framework": "Scikit-learn / XGBoost",
+    "license": "Apache-2.0"
+  },
+  "intended_use": {
+    "primary_intended_uses": [
+      "Real-time fraud risk scoring of inbound payment events",
+      "Unsupervised anomaly detection for novel zero-day attack patterns",
+      "Prioritization and routing of high-risk transactions to compliance investigators"
+    ],
+    "out_of_scope_uses": [
+      "Autonomous irrevocable account termination without human oversight",
+      "Credit scoring or lending risk assessment"
+    ]
+  },
+  "target_leakage_safeguards": {
+    "leakage_prevention_status": "ENFORCED",
+    "excluded_columns": [
+      "is_fraud",
+      "fraud_scenario",
+      "scenario_name",
+      "injected_scenario",
+      "label",
+      "is_flagged"
+    ],
+    "feature_isolation": "Features computed strictly prior to or at transaction timestamp without ground-truth label visibility."
+  },
+  "input_features": {
+    "feature_count": 10,
+    "features": [
+      "transaction_amount",
+      "avg_amount_24h",
+      "transaction_count_5m",
+      "transaction_count_1h",
+      "amount_deviation",
+      "new_device",
+      "location_change",
+      "international_flag",
+      "merchant_risk",
+      "account_age_days"
+    ]
+  },
+  "training_dataset": {
+    "total_records": 20000,
+    "train_records": 14000,
+    "val_records": 3000,
+    "test_records": 3000,
+    "train_fraud_rate": 0.0201,
+    "val_fraud_rate": 0.0203,
+    "test_fraud_rate": 0.02
+  },
+  "performance_evaluation": {
+    "test_set_metrics": {
+      "threshold": 0.44,
+      "precision": 0.9074,
+      "recall": 0.8167,
+      "f1_score": 0.8596,
+      "roc_auc": 0.9817,
+      "pr_auc": 0.8909,
+      "specificity": 0.9983,
+      "false_positive_rate": 0.0017,
+      "brier_score": 0.0075,
+      "log_loss": 0.0452,
+      "confusion_matrix": {
+        "true_negatives": 2935,
+        "false_positives": 5,
+        "false_negatives": 11,
+        "true_positives": 49
+      },
+      "sample_count": 3000,
+      "positive_count": 60,
+      "negative_count": 2940,
+      "base_fraud_rate": 0.02
+    },
+    "validation_set_metrics": {
+      "threshold": 0.44,
+      "precision": 0.9464,
+      "recall": 0.8689,
+      "f1_score": 0.906,
+      "roc_auc": 0.9939,
+      "pr_auc": 0.909,
+      "specificity": 0.999,
+      "false_positive_rate": 0.001,
+      "brier_score": 0.0069,
+      "log_loss": 0.0433,
+      "confusion_matrix": {
+        "true_negatives": 2936,
+        "false_positives": 3,
+        "false_negatives": 8,
+        "true_positives": 53
+      },
+      "sample_count": 3000,
+      "positive_count": 61,
+      "negative_count": 2939,
+      "base_fraud_rate": 0.0203
+    },
+    "training_set_metrics": {
+      "threshold": 0.44,
+      "precision": 0.951,
+      "recall": 0.968,
+      "f1_score": 0.9594,
+      "roc_auc": 0.9998,
+      "pr_auc": 0.9916,
+      "specificity": 0.999,
+      "false_positive_rate": 0.001,
+      "brier_score": 0.0046,
+      "log_loss": 0.0363,
+      "confusion_matrix": {
+        "true_negatives": 13705,
+        "false_positives": 14,
+        "false_negatives": 9,
+        "true_positives": 272
+      },
+      "sample_count": 14000,
+      "positive_count": 281,
+      "negative_count": 13719,
+      "base_fraud_rate": 0.0201
+    },
+    "evaluation_threshold": 0.44
+  },
+  "threshold_policy": {
+    "selected_classifier_threshold": 0.44,
+    "best_f1": {
+      "threshold": 0.44,
+      "precision": 0.9464,
+      "recall": 0.8689,
+      "f1_score": 0.906,
+      "cost": 4075.0,
+      "tp": 53,
+      "fp": 3,
+      "tn": 2936,
+      "fn": 8
+    },
+    "cost_optimal": {
+      "threshold": 0.44,
+      "precision": 0.9464,
+      "recall": 0.8689,
+      "f1_score": 0.906,
+      "cost": 4075.0,
+      "tp": 53,
+      "fp": 3,
+      "tn": 2936,
+      "fn": 8
+    },
+    "high_recall": {
+      "threshold": 0.22,
+      "precision": 0.4264,
+      "recall": 0.9016,
+      "f1_score": 0.5789,
+      "cost": 4850.0,
+      "tp": 55,
+      "fp": 74,
+      "tn": 2865,
+      "fn": 6
+    },
+    "high_precision": {
+      "threshold": 0.42,
+      "precision": 0.9138,
+      "recall": 0.8689,
+      "f1_score": 0.8908,
+      "cost": 4125.0,
+      "tp": 53,
+      "fp": 5,
+      "tn": 2934,
+      "fn": 8
+    },
+    "cost_assumptions": {
+      "false_negative_cost_usd": 500.0,
+      "false_positive_cost_usd": 25.0
+    },
+    "risk_tier_thresholds": {
+      "critical_review": 0.8,
+      "high_investigate": 0.6,
+      "medium_monitor": 0.35,
+      "low_allow": 0.0
+    }
+  },
+  "governance_and_compliance": {
+    "decision_rule": "Unified Risk Score = 0.65 * P(Supervised Fraud) + 0.35 * A(Anomaly Score)",
+    "advisory_note": "ML model generates risk estimates; human investigators and rule policies make binding financial decisions.",
+    "drift_monitoring_recommendation": "CloudWatch / SageMaker Clarify for population stability index (PSI) and concept drift."
+  }
+}

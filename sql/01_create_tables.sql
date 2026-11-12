@@ -43,3 +43,4 @@ TBLPROPERTIES (
 
 -- 3. Recover Partitions
 MSCK REPAIR TABLE finguard_data_lake_dev.transactions_silver;
+
