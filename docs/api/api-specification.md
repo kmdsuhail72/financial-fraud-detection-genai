@@ -160,3 +160,4 @@ Records a human investigator's adjudication and triggers case closure.
   "timestamp": "2026-11-12T10:45:00Z"
 }
 ```
+

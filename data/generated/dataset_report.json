@@ -1,0 +1,34 @@
+{
+  "summary": {
+    "total_customers": 1000,
+    "total_accounts": 1514,
+    "total_merchants": 200,
+    "total_devices": 1496,
+    "total_transactions": 20000,
+    "normal_transactions": 19598,
+    "fraudulent_transactions": 402,
+    "fraud_rate": 0.0201,
+    "class_imbalance_ratio": "48.8:1"
+  },
+  "financial_metrics": {
+    "average_transaction_amount": 29269.88,
+    "minimum_transaction_amount": 11.14,
+    "maximum_transaction_amount": 4291859.8,
+    "total_transaction_volume": 585397541.49
+  },
+  "fraud_scenario_breakdown": {
+    "CARD_NOT_PRESENT": 26,
+    "ACCOUNT_TAKEOVER": 26,
+    "TRANSACTION_VELOCITY": 130,
+    "UNUSUAL_HIGH_VALUE": 26,
+    "GEOGRAPHIC_ANOMALY": 26,
+    "NEW_DEVICE_SUSPICIOUS": 26,
+    "MERCHANT_SUSPICIOUS": 26,
+    "CARD_TESTING_BURST": 116
+  },
+  "data_quality_checks": {
+    "null_transaction_ids": 0,
+    "schema_validation": "PASSED",
+    "target_leakage_check": "VERIFIED (Labels isolated in fraud_labels.csv)"
+  }
+}

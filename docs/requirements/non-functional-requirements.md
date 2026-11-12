@@ -53,3 +53,4 @@ graph TD
 4. **Model Reproducibility:**
    - Model artifacts, training hyperparameters, and feature definitions must be versioned in SageMaker Model Registry and Git.
    - Re-running training pipelines on historical Gold datasets must yield reproducible evaluation metrics within $\pm 0.5\%$ variance.
+

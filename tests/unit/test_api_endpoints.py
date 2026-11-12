@@ -68,3 +68,4 @@ def test_generate_ai_investigation_endpoint():
     assert data["case_id"] == "CASE-20261112-00001"
     assert "key_evidence" in data
     assert len(data["key_evidence"]) > 0
+

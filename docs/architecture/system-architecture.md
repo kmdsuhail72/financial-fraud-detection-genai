@@ -139,3 +139,4 @@ graph TD
 - **Encryption:** All storage (S3, RDS, EBS) encrypted with customer-managed AWS KMS keys.
 - **Role-Based Access Control (RBAC):** Distinct roles (Admin, Fraud Analyst, Investigator, Auditor, Data Engineer, ML Engineer).
 - **Audit Logs:** Every status change, assignment, and decision is stored in an append-only PostgreSQL table.
+

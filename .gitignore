@@ -107,8 +107,11 @@ data/features/*
 !data/features/.gitkeep
 data/samples/*
 !data/samples/.gitkeep
+data/generated/*
+!data/generated/dataset_report.json
 *.parquet
 *.csv
+*.jsonl
 *.tar.gz
 *.pkl
 *.joblib

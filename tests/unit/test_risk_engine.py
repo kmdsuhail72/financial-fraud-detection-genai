@@ -24,3 +24,4 @@ def test_risk_score_sample():
 def test_risk_tier_classification():
     score = calculate_risk(0.9250, 0.8800)
     assert score >= 80.0  # CRITICAL tier
+

@@ -190,3 +190,4 @@ class ModelRegistry(Base):
     is_active = Column(Boolean, default=False, nullable=False)
     trained_at = Column(DateTime(timezone=True), default=datetime.utcnow, nullable=False)
     deployed_at = Column(DateTime(timezone=True))
+

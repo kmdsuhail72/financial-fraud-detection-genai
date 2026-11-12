@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finguard-ai-fraud-detection"
+version = "1.0.0"
+description = "FinGuard AI — Real-Time Financial Fraud Detection & GenAI Investigation Platform"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "FinGuard AI Contributors" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.1.0",
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "jsonschema>=4.21.1",
+    "boto3>=1.34.0",
+    "sqlalchemy>=2.0.25",
+    "psycopg2-binary>=2.9.9",
+    "pandas>=2.2.0",
+    "scikit-learn>=1.4.0",
+    "xgboost>=2.0.3"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.5",
+    "pytest-cov>=4.1.0",
+    "black>=24.1.1",
+    "flake8>=7.0.0",
+    "isort>=5.13.2"
+]
+
+[project.scripts]
+finguard-sim = "transaction_simulator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["transaction_simulator*", "backend*", "genai*", "ingestion*", "data_engineering*", "ml*"]

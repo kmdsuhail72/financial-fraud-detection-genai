@@ -31,3 +31,4 @@ def test_pydantic_transaction_create():
     assert txn.transaction_id == "TXN-20261112-000001"
     assert txn.amount == 87500.00
     assert txn.location.city == "Kolkata"
+

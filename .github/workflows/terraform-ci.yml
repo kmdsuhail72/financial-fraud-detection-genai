@@ -24,3 +24,4 @@ jobs:
         cd infrastructure/terraform/environments/dev
         terraform init -backend=false
         terraform validate
+

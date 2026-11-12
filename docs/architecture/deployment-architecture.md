@@ -74,3 +74,4 @@ flowchart TD
   4. **Build & Push:** Docker container images tagged and pushed to Amazon ECR.
   5. **Terraform Apply:** Terraform execution targeted to designated environment workspace.
   6. **Zero-Downtime Deployment:** ECS Fargate blue/green deployment via AWS CodeDeploy.
+

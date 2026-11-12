@@ -44,3 +44,4 @@ def validate_bedrock_response(raw_text: str) -> Tuple[bool, Optional[BedrockInve
         error_msg = f"Unexpected error validating Bedrock response: {str(err)}"
         logger.error(error_msg)
         return False, None, error_msg
+

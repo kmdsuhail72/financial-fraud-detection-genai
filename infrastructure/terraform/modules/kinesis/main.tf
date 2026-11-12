@@ -22,3 +22,4 @@ output "stream_name" {
 output "stream_arn" {
   value = aws_kinesis_stream.transactions_stream.arn
 }
+

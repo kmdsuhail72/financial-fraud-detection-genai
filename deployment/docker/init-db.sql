@@ -11,3 +11,4 @@ INSERT INTO roles (id, name, description) VALUES
 ('DATA_ENGINEER', 'Data Engineer', 'Manage Glue pipelines, Athena queries, and schemas'),
 ('ML_ENGINEER', 'ML Engineer', 'Manage model training, evaluations, and SageMaker registries')
 ON CONFLICT (id) DO NOTHING;
+

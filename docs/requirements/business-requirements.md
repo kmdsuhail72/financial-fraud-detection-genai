@@ -30,3 +30,4 @@ Traditional fraud detection infrastructure relies on static heuristic rules (e.g
 | **Fraud Detection Precision** | ~ 8% | > 40% | True Positives / (True Positives + False Positives) |
 | **Fraud Recall** | ~ 60% | > 85% | Captured fraudulent value / Total fraudulent value |
 | **Audit Trail Completeness** | Manual notes | 100% automated | System-logged timestamps, user IDs, decisions |
+

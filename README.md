@@ -286,3 +286,4 @@ pytest tests/unit -v
 - [Database Schema Specification](docs/database/schema.md)
 - [Entity-Relationship Diagram](docs/database/er-diagram.md)
 - [REST API Specification](docs/api/api-specification.md)
+

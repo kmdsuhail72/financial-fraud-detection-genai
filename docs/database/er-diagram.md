@@ -146,3 +146,4 @@ erDiagram
 - **`investigation_cases` -> `transactions`:** 1-to-1 relationship enforced via unique constraint.
 - **`investigator_decisions` -> `investigation_cases`:** Append-only history preserving multi-tier reviews.
 - **`audit_logs`:** No cascade deletion; append-only compliance structure.
+

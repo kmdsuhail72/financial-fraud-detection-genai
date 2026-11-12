@@ -158,3 +158,4 @@ async def get_dashboard_summary():
 async def get_audit_logs(limit: int = 100):
     """Retrieves immutable audit trail entries."""
     return []
+

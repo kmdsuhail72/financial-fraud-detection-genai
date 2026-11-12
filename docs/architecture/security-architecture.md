@@ -71,3 +71,4 @@ To eliminate hallucination risks and prevent leakage of proprietary data:
 2. **Schema-Constrained Decoding:** Bedrock responses must conform to a strict JSON structure containing `summary`, `risk_level`, `key_evidence` (list of strings), and `recommended_actions` (list of strings).
 3. **No Autonomous Decisions:** AI outputs are marked as *advisory only*. The human investigator remains the sole authority for freezing funds or declining transactions.
 4. **Permanent Versioning:** The exact prompt template, model ID, temperature parameter, and raw LLM response are archived in `ai_investigation_reports` for auditability.
+

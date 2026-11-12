@@ -97,3 +97,4 @@ flowchart LR
 | **9** | Bedrock GenAI Summary (Asynchronous) | < 3000 ms |
 | **Total Synchronous Scoring Latency** | **Fast-Path Decision** | **< 600 ms** |
 | **Total Case Creation & AI Dossier** | **Full Investigation Record** | **< 3800 ms** |
+

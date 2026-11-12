@@ -238,3 +238,4 @@ CREATE TABLE model_registry (
     deployed_at TIMESTAMP WITH TIME ZONE
 );
 ```
+

@@ -54,3 +54,4 @@ def test_invalid_bedrock_response():
     assert is_valid is False
     assert report is None
     assert "Failed to decode JSON" in error
+
