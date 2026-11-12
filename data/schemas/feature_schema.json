@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://finguard.internal/schemas/feature_schema.json",
+  "title": "FraudFeatureVector",
+  "description": "Engineered real-time features for SageMaker fraud and anomaly inference",
+  "type": "object",
+  "required": [
+    "transaction_amount",
+    "avg_amount_24h",
+    "transaction_count_5m",
+    "transaction_count_1h",
+    "amount_deviation",
+    "new_device",
+    "location_change",
+    "international_flag",
+    "merchant_risk",
+    "account_age_days"
+  ],
+  "properties": {
+    "transaction_amount": {
+      "type": "number",
+      "description": "Nominal transaction amount in local currency"
+    },
+    "avg_amount_24h": {
+      "type": "number",
+      "description": "Rolling average transaction amount over the preceding 24 hours"
+    },
+    "transaction_count_5m": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of transactions observed in the last 5 minutes"
+    },
+    "transaction_count_1h": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of transactions observed in the last 1 hour"
+    },
+    "amount_deviation": {
+      "type": "number",
+      "description": "Ratio of current transaction amount to customer historical mean"
+    },
+    "new_device": {
+      "type": "boolean",
+      "description": "True if device_id has not been seen for this account in the last 90 days"
+    },
+    "location_change": {
+      "type": "boolean",
+      "description": "True if geographic distance indicates impossible travel velocity"
+    },
+    "international_flag": {
+      "type": "boolean",
+      "description": "True if transaction country is different from customer account base country"
+    },
+    "merchant_risk": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Historical fraud incidence rate for the merchant category"
+    },
+    "account_age_days": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Tenure of the customer bank account in days"
+    }
+  }
+}

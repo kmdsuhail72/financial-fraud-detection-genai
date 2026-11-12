@@ -1,0 +1,45 @@
+Analyze the following flagged financial transaction case and synthesize an objective, evidence-based investigation report.
+
+CASE INFORMATION:
+- Case ID: {case_id}
+- Transaction ID: {transaction_id}
+- Unified Risk Score: {unified_risk_score} / 100
+- Supervised Fraud Probability (XGBoost): {xgboost_probability}
+- Anomaly Score (Isolation Forest): {isoforest_anomaly_score}
+
+TRANSACTION ATTRIBUTES:
+- Amount: {currency} {amount}
+- Channel: {channel}
+- Merchant: {merchant_id} ({merchant_category})
+- Device ID: {device_id}
+- Location: {city}, {country}
+- Timestamp: {timestamp}
+
+BEHAVIORAL & VELOCITY EVIDENCE:
+- Customer 24h Average Amount: {avg_amount_24h}
+- Amount Deviation Ratio: {amount_deviation}x
+- Transactions in last 5 minutes: {transaction_count_5m}
+- Transactions in last 1 hour: {transaction_count_1h}
+- New Device Observed: {new_device}
+- Geographic Location Mismatch: {location_change}
+- International Transaction: {is_international}
+- Merchant Category Historical Risk: {merchant_risk}
+
+INSTRUCTIONS:
+Return a JSON object conforming exactly to this structure:
+{{
+  "case_id": "{case_id}",
+  "risk_level": "LOW | MEDIUM | HIGH | CRITICAL",
+  "executive_summary": "<One concise paragraph explaining why this was flagged>",
+  "key_evidence": [
+    "<Evidence bullet 1 with concrete metrics>",
+    "<Evidence bullet 2>",
+    "<Evidence bullet 3>"
+  ],
+  "recommended_actions": [
+    "<SOP Action 1 for human investigator>",
+    "<SOP Action 2>",
+    "<SOP Action 3>"
+  ],
+  "confidence_rationale": "<Evaluation of evidence strength>"
+}}

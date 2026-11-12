@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://finguard.internal/schemas/transaction.schema.json",
+  "title": "BankingTransactionEvent",
+  "description": "Standard schema for real-time banking and payment transactions in FinGuard AI",
+  "type": "object",
+  "required": [
+    "transaction_id",
+    "account_id",
+    "customer_id",
+    "transaction_type",
+    "amount",
+    "currency",
+    "merchant_id",
+    "merchant_category",
+    "transaction_timestamp",
+    "channel",
+    "location",
+    "device_id",
+    "ip_address",
+    "is_international"
+  ],
+  "properties": {
+    "transaction_id": {
+      "type": "string",
+      "pattern": "^TXN-[0-9]{8}-[0-9]{6}$",
+      "description": "Unique transaction identifier with date and sequence format"
+    },
+    "account_id": {
+      "type": "string",
+      "pattern": "^ACC-[0-9]{6}$",
+      "description": "Bank account reference identifier"
+    },
+    "customer_id": {
+      "type": "string",
+      "pattern": "^CUS-[0-9]{6}$",
+      "description": "Customer identity identifier"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "CARD_PAYMENT",
+        "UPI_TRANSFER",
+        "ATM_WITHDRAWAL",
+        "WIRE_TRANSFER",
+        "ONLINE_BANKING"
+      ]
+    },
+    "amount": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Monetary value of the transaction"
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "default": "INR"
+    },
+    "merchant_id": {
+      "type": "string",
+      "description": "Merchant or beneficiary identifier"
+    },
+    "merchant_category": {
+      "type": "string",
+      "enum": [
+        "GROCERY",
+        "ELECTRONICS",
+        "TRAVEL",
+        "JEWELRY",
+        "DINING",
+        "UTILITIES",
+        "ENTERTAINMENT",
+        "TRANSFER"
+      ]
+    },
+    "transaction_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp in UTC"
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["MOBILE", "WEB", "POS", "ATM"]
+    },
+    "location": {
+      "type": "object",
+      "required": ["country", "city"],
+      "properties": {
+        "country": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "city": {
+          "type": "string"
+        }
+      }
+    },
+    "device_id": {
+      "type": "string",
+      "description": "Hardware or fingerprint identifier of client device"
+    },
+    "ip_address": {
+      "type": "string",
+      "format": "ipv4"
+    },
+    "is_international": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}
