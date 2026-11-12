@@ -1,0 +1,12 @@
+aws_region       = "ap-south-1"
+environment      = "dev"
+project_name     = "finguard"
+audit_table_name = "finguard-dev-security-audit"
+callback_urls    = [
+  "http://localhost:5173",
+  "http://localhost:5173/callback"
+]
+logout_urls      = [
+  "http://localhost:5173/login"
+]
+

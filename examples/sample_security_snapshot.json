@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-11-12T19:30:00Z",
+  "aws_region": "ap-south-1",
+  "account_id": "123456789012",
+  "environment": "production",
+  "cloudtrail": {
+    "trail_name": "finguard-multi-region-trail",
+    "multi_region_enabled": true,
+    "log_file_validation_enabled": true,
+    "is_logging": true,
+    "s3_bucket_name": "finguard-security-logs-prod",
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-finguard-cloudtrail",
+    "cloudwatch_logs_arn": "arn:aws:logs:ap-south-1:123456789012:log-group:finguard-security-events"
+  },
+  "kms": {
+    "key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-finguard-cmk",
+    "alias": "alias/finguard-data-lake-cmk",
+    "key_state": "Enabled",
+    "key_rotation_enabled": true,
+    "key_spec": "SYMMETRIC_DEFAULT",
+    "origin": "AWS_KMS"
+  },
+  "s3": {
+    "all_buckets_encrypted": true,
+    "block_public_access_enabled": true,
+    "buckets_audited": [
+      {
+        "name": "finguard-data-lake-bronze",
+        "encryption": "aws:kms",
+        "versioning": true,
+        "public_access_blocked": true
+      },
+      {
+        "name": "finguard-data-lake-silver",
+        "encryption": "aws:kms",
+        "versioning": true,
+        "public_access_blocked": true
+      },
+      {
+        "name": "finguard-data-lake-gold",
+        "encryption": "aws:kms",
+        "versioning": true,
+        "public_access_blocked": true
+      },
+      {
+        "name": "finguard-security-logs-prod",
+        "encryption": "aws:kms",
+        "object_lock_enabled": true,
+        "public_access_blocked": true
+      }
+    ]
+  },
+  "cognito": {
+    "user_pool_id": "ap-south-1_FinGuardOps",
+    "mfa_configured": true,
+    "mfa_type": "SOFTWARE_TOKEN_MFA",
+    "password_min_length": 12,
+    "user_groups": ["Admin", "Investigator", "Analyst", "Auditor"]
+  },
+  "guardduty": {
+    "detector_enabled": true,
+    "detector_id": "gd-detector-prod-ap-south-1",
+    "s3_protection_enabled": true,
+    "runtime_monitoring_enabled": true
+  },
+  "security_hub": {
+    "status": "ACTIVE",
+    "standards_enabled": [
+      "CIS AWS Foundations Benchmark v1.4.0",
+      "AWS Foundational Security Best Practices v1.0.0"
+    ],
+    "overall_score": 96.2
+  },
+  "findings": [
+    {
+      "finding_id": "FIND-SH-001",
+      "title": "S3 Bucket Versioning LifeCycle Rule Missing Expiration",
+      "description": "Bucket 'finguard-data-lake-bronze' retains noncurrent object versions indefinitely.",
+      "severity": "LOW",
+      "status": "IN_REVIEW",
+      "source": "SecurityHub",
+      "resource_id": "arn:aws:s3:::finguard-data-lake-bronze",
+      "resource_type": "AWS::S3::Bucket",
+      "remediation_steps": [
+        "Attach S3 Lifecycle transition to archive old versions to S3 Glacier after 90 days."
+      ]
+    },
+    {
+      "finding_id": "FIND-GD-002",
+      "title": "Anomalous API Invocation Outside Normal Business Hours",
+      "description": "IAM role assumed from unaccustomed IP address outside corporate CIDR.",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "source": "GuardDuty",
+      "resource_id": "arn:aws:iam::123456789012:role/FinGuardAnalystExecutionRole",
+      "resource_type": "AWS::IAM::Role",
+      "remediation_steps": [
+        "Inspect CloudTrail logs for actions performed by this role session.",
+        "Revoke active STS credentials if activity is unverified."
+      ]
+    }
+  ]
+}
+

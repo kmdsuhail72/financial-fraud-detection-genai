@@ -1,0 +1,7 @@
+aws_region            = "ap-south-1"
+environment           = "dev"
+project_name          = "finguard"
+enable_guardduty      = false
+enable_security_hub   = false
+security_alerts_email = "security-ops@finguard.internal"
+
