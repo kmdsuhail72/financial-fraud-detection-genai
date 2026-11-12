@@ -49,3 +49,4 @@ class SQSQuarantineService:
         except Exception as e:
             logger.error(f"Failed to send quarantine event to SQS: {str(e)}")
             return False
+

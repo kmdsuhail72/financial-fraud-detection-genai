@@ -137,3 +137,4 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
 
     logger.info(f"Batch processing completed. Failures to retry: {len(failures)}/{len(records)}")
     return {"batchItemFailures": failures}
+

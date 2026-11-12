@@ -52,3 +52,4 @@ class TransactionValidator:
             return False, "INVALID_CURRENCY", f"Currency code must be 3 characters, received: '{currency}'"
 
         return True, "", ""
+

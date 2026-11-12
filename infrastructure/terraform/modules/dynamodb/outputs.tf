@@ -13,3 +13,4 @@ output "customer_state_table_name" {
 output "customer_state_table_arn" {
   value = aws_dynamodb_table.customer_state_table.arn
 }
+

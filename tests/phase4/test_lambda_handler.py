@@ -100,3 +100,4 @@ def test_lambda_batch_processing_with_partial_failure_and_quarantine():
     assert mock_sqs.send_message.call_count == 1
     quarantine_call = mock_sqs.send_message.call_args[1]
     assert "INVALID_AMOUNT" in quarantine_call["MessageBody"]
+

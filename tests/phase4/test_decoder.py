@@ -51,3 +51,4 @@ def test_decode_missing_data_field():
     is_valid, decoded, seq_num, error = KinesisRecordDecoder.decode_record(record)
     assert is_valid is False
     assert "Missing 'kinesis.data'" in error
+

@@ -111,6 +111,8 @@ data/generated/*
 !data/generated/dataset_report.json
 data/checkpoints/*
 data/quarantine/*
+data/phase5-sample/*
+data/phase5-parquet/*
 *.parquet
 *.csv
 *.jsonl

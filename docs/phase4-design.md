@@ -74,3 +74,4 @@ Kinesis triggers Lambda with batches of up to 100 records. Rather than allowing 
 - Enriched transaction records with calculated features are stored in Amazon S3:
   `s3://{processed_bucket}/processed/transactions/year=YYYY/month=MM/day=DD/{transaction_id}.json`
 - Optimizes date-partitioned Hive / Athena queries for Phase 5.
+

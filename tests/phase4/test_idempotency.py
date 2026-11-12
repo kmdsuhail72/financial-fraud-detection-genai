@@ -31,3 +31,4 @@ def test_idempotency_duplicate_transaction():
 
     assert is_new is False
     assert err == "DUPLICATE_TRANSACTION"
+

@@ -29,3 +29,4 @@ def test_s3_sink_path_partitioning():
     assert call_kwargs["Bucket"] == "finguard-data-processed-dev"
     assert call_kwargs["Key"] == key
     assert call_kwargs["ContentType"] == "application/json"
+

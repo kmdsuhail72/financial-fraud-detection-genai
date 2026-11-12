@@ -37,3 +37,4 @@ class KinesisRecordDecoder:
             return False, {}, sequence_number, f"Malformed JSON payload: {str(err)}"
         except Exception as err:
             return False, {}, sequence_number, f"Unexpected decoding error: {str(err)}"
+

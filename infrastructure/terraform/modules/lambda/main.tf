@@ -150,3 +150,4 @@ resource "aws_cloudwatch_metric_alarm" "lambda_errors" {
     FunctionName = aws_lambda_function.transaction_processor.function_name
   }
 }
+

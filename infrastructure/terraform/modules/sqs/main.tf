@@ -8,3 +8,4 @@ resource "aws_sqs_queue" "invalid_transactions_queue" {
     Environment = var.environment
   }
 }
+

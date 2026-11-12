@@ -49,3 +49,4 @@ def test_feature_computation_with_prior_history():
     # Check updated state has new transaction and device added
     assert len(updated_state["recent_transactions"]) == 3
     assert "DEV-NEW-99" in updated_state["registered_devices"]
+

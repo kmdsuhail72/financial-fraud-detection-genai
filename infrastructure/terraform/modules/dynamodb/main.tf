@@ -44,3 +44,4 @@ resource "aws_dynamodb_table" "customer_state_table" {
     Environment = var.environment
   }
 }
+

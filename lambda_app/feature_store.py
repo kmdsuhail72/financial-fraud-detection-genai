@@ -174,3 +174,4 @@ class CustomerFeatureStore:
             )
         except Exception as e:
             logger.warning(f"Failed to persist state for customer {updated_state.get('customer_id')}: {str(e)}")
+
