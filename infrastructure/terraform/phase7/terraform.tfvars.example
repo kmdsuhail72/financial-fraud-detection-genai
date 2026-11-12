@@ -8,3 +8,4 @@ kinesis_stream_arn         = "arn:aws:kinesis:ap-south-1:123456789012:stream/fin
 model_feature_columns_json = "[\"transaction_amount\",\"avg_amount_24h\",\"transaction_count_5m\",\"transaction_count_1h\",\"amount_deviation\",\"new_device\",\"location_change\",\"international_flag\",\"merchant_risk\",\"account_age_days\"]"
 enable_sagemaker_endpoint  = false
 sagemaker_instance_type    = "ml.m5.large"
+

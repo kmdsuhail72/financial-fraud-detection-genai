@@ -69,3 +69,4 @@ def output_fn(prediction: Any, accept: str = "application/json") -> str:
     if "application/json" in accept or "*/*" in accept or accept == "":
         return json.dumps(prediction)
     raise ValueError(f"Unsupported accept type: {accept}. FinGuard endpoint returns application/json.")
+

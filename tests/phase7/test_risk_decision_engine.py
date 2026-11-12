@@ -62,3 +62,4 @@ def test_risk_decision_low_tier():
     assert decision.risk_level == "LOW"
     assert decision.action == "ALLOW"
     assert decision.requires_investigation is False
+

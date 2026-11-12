@@ -124,3 +124,4 @@ class DecisionStore:
         except ClientError as exc:
             logger.error("Failed to get decision for %s: %s", transaction_id, exc)
             raise
+

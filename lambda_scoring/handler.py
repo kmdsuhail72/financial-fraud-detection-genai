@@ -139,3 +139,4 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, List[Dict[s
     if _CONSUMER is None:
         _CONSUMER = FraudScoringConsumer()
     return _CONSUMER.process_kinesis_event(event)
+

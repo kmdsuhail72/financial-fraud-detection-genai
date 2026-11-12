@@ -88,3 +88,4 @@ class SageMakerScorer:
             "anomaly_score": a_score,
             "model_version": "v20261112-mock",
         }
+

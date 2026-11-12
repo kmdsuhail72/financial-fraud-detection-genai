@@ -1,0 +1,5 @@
+aws_region                    = "ap-south-1"
+environment                   = "dev"
+project_name                  = "finguard"
+bedrock_model_id              = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+investigation_alerts_queue_arn = "arn:aws:sqs:ap-south-1:123456789012:finguard-investigation-alerts-dev"

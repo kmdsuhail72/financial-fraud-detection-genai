@@ -43,3 +43,4 @@ def test_sagemaker_inference_pipeline():
     out_json = output_fn(result, "application/json")
     decoded = json.loads(out_json)
     assert decoded["transaction_id"] == "txn-test-01"
+

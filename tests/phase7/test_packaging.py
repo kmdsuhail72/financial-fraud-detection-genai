@@ -38,3 +38,4 @@ def test_package_model_creates_valid_tarball():
             # Check extracted contents
             extracted_joblib = tar.extractfile("model.joblib").read()
             assert extracted_joblib == b"dummy joblib bytes"
+

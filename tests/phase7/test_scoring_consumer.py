@@ -100,3 +100,4 @@ def test_kinesis_batch_with_partial_failure():
     failures = response["batchItemFailures"]
     assert len(failures) == 1
     assert failures[0]["itemIdentifier"] == "seq-102"
+

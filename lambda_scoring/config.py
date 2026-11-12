@@ -16,3 +16,4 @@ class ScoringConfig:
     weight_fraud_probability: float = float(os.getenv("WEIGHT_FRAUD_PROBABILITY", "0.65"))
     weight_anomaly_score: float = float(os.getenv("WEIGHT_ANOMALY_SCORE", "0.35"))
     decision_ttl_days: int = int(os.getenv("DECISION_TTL_DAYS", "90"))
+

@@ -92,3 +92,4 @@ class InvestigationAlertPublisher:
         except ClientError as exc:
             logger.error("Failed to publish alert to SQS for %s: %s", decision.transaction_id, exc)
             raise
+

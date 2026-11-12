@@ -350,3 +350,4 @@ resource "aws_cloudwatch_metric_alarm" "lambda_scoring_throttles" {
     FunctionName = aws_lambda_function.scoring_consumer.function_name
   }
 }
+

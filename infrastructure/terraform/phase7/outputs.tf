@@ -37,3 +37,4 @@ output "lambda_scoring_consumer_arn" {
   description = "ARN of the fraud scoring Lambda consumer function"
   value       = aws_lambda_function.scoring_consumer.arn
 }
+

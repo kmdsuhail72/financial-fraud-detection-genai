@@ -106,3 +106,4 @@ cd infrastructure/terraform/phase7
 terraform init
 terraform validate
 ```
+

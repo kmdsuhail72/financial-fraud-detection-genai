@@ -8,3 +8,4 @@ numpy>=1.26.0
 pytest>=8.0.0
 pytest-asyncio>=0.23.5
 moto[dynamodb,sqs,kinesis]>=5.0.0
+
