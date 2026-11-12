@@ -84,3 +84,4 @@ def test_create_case_endpoint(client):
     case = response.json()
     assert case["case_id"] == "CASE-TEST-CREATE"
     assert case["ai_summary"] is not None
+

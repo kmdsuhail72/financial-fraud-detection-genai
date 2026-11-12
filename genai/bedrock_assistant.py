@@ -197,3 +197,4 @@ Respond in strict JSON with fields: case_id, risk_level, executive_summary, key_
             evidence_limitations="Behavioral profile relies on rolling 24h baseline; long-term seasonal variance not yet incorporated.",
             model_id=self.model_id,
         )
+

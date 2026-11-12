@@ -48,3 +48,4 @@ def test_case_update_request_validation():
     assert req.assigned_to == "lead.analyst@bank.com"
     assert req.note == "Verifying recent mobile device bind logs."
     assert req.resolution_action == ResolutionAction.CONFIRMED_FRAUD
+

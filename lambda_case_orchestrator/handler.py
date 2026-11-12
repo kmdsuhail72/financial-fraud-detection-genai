@@ -118,3 +118,4 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, List[Dict[s
     if _ORCHESTRATOR is None:
         _ORCHESTRATOR = CaseOrchestrator()
     return _ORCHESTRATOR.process_sqs_event(event)
+

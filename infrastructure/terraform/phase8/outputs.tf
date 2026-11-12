@@ -17,3 +17,4 @@ output "lambda_case_orchestrator_arn" {
   description = "ARN of the case orchestrator Lambda function"
   value       = aws_lambda_function.case_orchestrator.arn
 }
+

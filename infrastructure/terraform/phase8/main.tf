@@ -186,3 +186,4 @@ resource "aws_lambda_event_source_mapping" "sqs_case_trigger" {
   batch_size              = 10
   function_response_types = ["ReportBatchItemFailures"]
 }
+

@@ -280,3 +280,4 @@ class CaseStore:
         dynamo_item = float_to_decimal(case.model_dump())
         self.table.put_item(Item=dynamo_item)
         return case
+

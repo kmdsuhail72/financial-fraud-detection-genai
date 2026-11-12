@@ -122,3 +122,4 @@ Provisioned in `ap-south-1` (Mumbai):
 - **DynamoDB:** `finguard-investigation-cases-dev` with GSIs `StatusIndex` (`status`, `created_at`) and `TransactionIndex` (`transaction_id`).
 - **Lambda:** `finguard-case-orchestrator-dev` connected to `finguard-investigation-alerts` SQS queue.
 - **IAM Policies:** Least-privilege access for Bedrock Converse (`bedrock:InvokeModel`, `bedrock:Converse`), DynamoDB, and SQS.
+

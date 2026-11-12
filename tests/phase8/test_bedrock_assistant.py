@@ -41,3 +41,4 @@ def test_bedrock_assistant_mock_synthesis():
     summary_lower = report.executive_summary.lower()
     assert "guilty" not in summary_lower
     assert "convicted" not in summary_lower
+

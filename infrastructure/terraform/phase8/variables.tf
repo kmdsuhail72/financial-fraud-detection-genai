@@ -27,3 +27,4 @@ variable "investigation_alerts_queue_arn" {
   type        = string
   default     = "arn:aws:sqs:ap-south-1:123456789012:finguard-investigation-alerts-dev"
 }
+

@@ -85,3 +85,4 @@ def test_update_case_notes_and_status(memory_case_store):
     assert "STATUS_CHANGED" in actions
     assert "ANALYST_ASSIGNED" in actions
     assert "NOTE_ADDED" in actions
+

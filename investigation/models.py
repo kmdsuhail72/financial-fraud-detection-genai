@@ -96,3 +96,4 @@ class CaseUpdateRequest(BaseModel):
 class CaseListResponse(BaseModel):
     total: int
     cases: List[InvestigationCase]
+
