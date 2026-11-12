@@ -69,3 +69,4 @@ def test_data_loader_stratified_split():
     assert splits.y_train.sum() > 0
     assert splits.y_val.sum() > 0
     assert splits.y_test.sum() > 0
+

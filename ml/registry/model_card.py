@@ -74,3 +74,4 @@ def generate_model_card(
             "drift_monitoring_recommendation": "CloudWatch / SageMaker Clarify for population stability index (PSI) and concept drift.",
         },
     }
+

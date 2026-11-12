@@ -1,0 +1,10 @@
+# FinGuard AI — Phase 7 Real-Time Scoring & SageMaker Dependencies
+boto3>=1.34.0
+pydantic>=2.6.0
+joblib>=1.3.2
+scikit-learn>=1.4.0
+pandas>=2.2.0
+numpy>=1.26.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.5
+moto[dynamodb,sqs,kinesis]>=5.0.0

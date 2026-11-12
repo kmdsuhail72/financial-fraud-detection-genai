@@ -1,0 +1,10 @@
+aws_region                 = "ap-south-1"
+environment                = "dev"
+project_name               = "finguard"
+artifact_bucket_name       = "finguard-ml-models-dev"
+model_data_url             = "s3://finguard-ml-models-dev/models/finguard/v1/model.tar.gz"
+sagemaker_image_uri        = "720646828776.dkr.ecr.ap-south-1.amazonaws.com/sagemaker-scikit-learn:1.2-1-cpu-py3"
+kinesis_stream_arn         = "arn:aws:kinesis:ap-south-1:123456789012:stream/finguard-transactions-dev"
+model_feature_columns_json = "[\"transaction_amount\",\"avg_amount_24h\",\"transaction_count_5m\",\"transaction_count_1h\",\"amount_deviation\",\"new_device\",\"location_change\",\"international_flag\",\"merchant_risk\",\"account_age_days\"]"
+enable_sagemaker_endpoint  = false
+sagemaker_instance_type    = "ml.m5.large"

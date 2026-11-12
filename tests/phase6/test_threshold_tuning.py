@@ -45,3 +45,4 @@ def test_tune_classification_thresholds():
     best_thresh = results["selected_classifier_threshold"]
     assert 0.01 <= best_thresh <= 0.99
     assert results["best_f1"]["f1_score"] > 0.0
+

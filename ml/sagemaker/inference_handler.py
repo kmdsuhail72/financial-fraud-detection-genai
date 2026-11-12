@@ -57,3 +57,4 @@ def output_fn(prediction: Any, accept: str = "application/json") -> str:
     if accept == "application/json" or accept == "*/*":
         return json.dumps(prediction)
     raise ValueError(f"Unsupported accept type: {accept}")
+

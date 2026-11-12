@@ -86,3 +86,4 @@ def test_model_metadata_endpoint(client):
     assert "model_version" in data
     assert "classifier_threshold" in data
     assert "feature_manifest" in data
+

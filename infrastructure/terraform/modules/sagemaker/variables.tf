@@ -33,3 +33,4 @@ variable "instance_type" {
   type        = string
   default     = "ml.m5.large"
 }
+

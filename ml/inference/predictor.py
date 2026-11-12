@@ -137,3 +137,4 @@ class EnsembleFraudModel:
         if not isinstance(model, cls):
             raise TypeError(f"Loaded object is of type {type(model)}, expected {cls.__name__}")
         return model
+

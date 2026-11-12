@@ -108,3 +108,4 @@ The platform provides cloud training and hosting pathways:
 - `ml/sagemaker/train_entrypoint.py`: Docker container entrypoint reading from `/opt/ml/input/data/train` and exporting to `/opt/ml/model/`.
 - `ml/sagemaker/inference_handler.py`: Standard SageMaker endpoint handler implementing `model_fn`, `input_fn`, `predict_fn`, and `output_fn`.
 - `infrastructure/terraform/modules/sagemaker/`: Terraform infrastructure defining the S3 model artifacts bucket, IAM execution role, and optional real-time endpoint configuration.
+

@@ -132,3 +132,4 @@ def test_ensemble_model_save_and_load(sample_splits):
         assert pred_orig["anomaly_score"] == pred_loaded["anomaly_score"]
         assert pred_orig["risk_score"] == pred_loaded["risk_score"]
         assert pred_orig["risk_level"] in ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+

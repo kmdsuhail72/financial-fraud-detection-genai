@@ -204,3 +204,4 @@ class FeaturePreprocessor(BaseEstimator, TransformerMixin):
 
     def export_manifest(self) -> Dict[str, Any]:
         return self.manifest
+

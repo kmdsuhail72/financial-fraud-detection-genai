@@ -93,3 +93,4 @@ def compute_classification_metrics(
         "negative_count": int(len(y_true) - np.sum(y_true)),
         "base_fraud_rate": round(float(np.mean(y_true)), 4),
     }
+
