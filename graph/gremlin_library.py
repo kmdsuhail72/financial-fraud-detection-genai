@@ -126,3 +126,4 @@ class GremlinQueryLibrary:
             f".by(inE('TRANSFERRED_TO').count())"
             f".by(outE('TRANSFERRED_TO').count())"
         )
+

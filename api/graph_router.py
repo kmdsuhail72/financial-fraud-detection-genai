@@ -5,7 +5,9 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from pydantic import BaseModel, Field
 
 from graph.graph_store import graph_store
+from graph.advanced_analytics import get_advanced_analytics
 from graph.models import (
+    CommunityCluster,
     CreateEntityRequest,
     CreateRelationshipRequest,
     CyclePath,
@@ -16,6 +18,9 @@ from graph.models import (
     GraphEdge,
     GraphNode,
     NeptuneHealthResponse,
+    PathAnalysisRequest,
+    PathAnalysisResponse,
+    PredictiveNetworkRisk,
     RingRiskLevel,
     RiskEnrichmentRequest,
     RiskEnrichmentResponse,
@@ -331,4 +336,112 @@ def ingest_graph_entities(
         "edges_ingested": len(payload.edges),
         "total_nodes": graph_store.engine.g_full.number_of_nodes(),
         "total_edges": graph_store.engine.g_full.number_of_edges(),
+    }
+
+
+# =============================================================================
+# Phase 17 — Advanced Fraud Intelligence & Predictive Network Analytics
+# =============================================================================
+analytics_suite = get_advanced_analytics()
+
+
+@graph_router.get("/communities", response_model=List[CommunityCluster])
+def list_network_communities(
+    min_risk: Optional[float] = Query(None, ge=0.0, le=1.0, description="Minimum community risk score threshold"),
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Detects suspicious communities and syndicates using Louvain topological modularity."""
+    communities = analytics_suite.detect_communities()
+    if min_risk is not None:
+        communities = [c for c in communities if c.risk_score >= min_risk]
+    return communities
+
+
+@graph_router.get("/communities/{community_id}", response_model=CommunityCluster)
+def get_community_cluster(
+    community_id: str,
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Retrieves deep topological analysis for a specific community cluster."""
+    communities = analytics_suite.detect_communities()
+    for c in communities:
+        if c.community_id == community_id:
+            return c
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Community '{community_id}' not found.")
+
+
+@graph_router.get("/centrality/{entity_id}")
+def get_entity_centrality(
+    entity_id: str,
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Calculates Degree, Betweenness, and Closeness centrality for flow importance."""
+    return analytics_suite.calculate_centrality(entity_id)
+
+
+@graph_router.get("/pagerank")
+def get_pagerank_rankings(
+    limit: int = Query(25, ge=1, le=100),
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Ranks all network entities by PageRank authority flow score."""
+    pr_scores = analytics_suite.calculate_pagerank()
+    ranked = sorted(pr_scores.items(), key=lambda x: x[1], reverse=True)[:limit]
+    return [{"entity_id": k, "pagerank": v} for k, v in ranked]
+
+
+@graph_router.post("/paths/shortest", response_model=PathAnalysisResponse)
+def analyze_shortest_path(
+    request: PathAnalysisRequest,
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Analyzes shortest transaction and relationship routing paths between any two entities."""
+    return analytics_suite.find_shortest_path(request)
+
+
+@graph_router.post("/predict-risk", response_model=PredictiveNetworkRisk)
+def predict_entity_network_risk(
+    payload: Dict[str, str],
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Generates advisory predictive network risk index fusing centrality, PageRank, and community threat."""
+    entity_id = payload.get("entity_id")
+    if not entity_id:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Field 'entity_id' is required.")
+    return analytics_suite.predict_entity_risk(entity_id)
+
+
+@graph_router.post("/algorithms/run")
+def execute_graph_algorithms_suite(
+    current_user: AuthenticatedUser = Depends(require_roles([Role.ADMIN, Role.INVESTIGATOR])),
+):
+    """Executes full Louvain, PageRank, and Betweenness suite across the entire graph."""
+    communities = analytics_suite.detect_communities()
+    pr_map = analytics_suite.calculate_pagerank()
+    v_count, e_count = neptune_client.get_counts()
+
+    top_pagerank = sorted(pr_map.items(), key=lambda x: x[1], reverse=True)[:5]
+    high_risk_communities = [c for c in communities if c.risk_level in (RingRiskLevel.CRITICAL, RingRiskLevel.HIGH)]
+
+    audit_logger.log(
+        actor_sub=current_user.sub,
+        actor_email=current_user.email,
+        actor_roles=current_user.roles,
+        action="graph:run_algorithms",
+        resource_type="GRAPH",
+        resource_id="full_network",
+        status="SUCCESS",
+        details={
+            "communities_detected": len(communities),
+            "high_risk_communities": len(high_risk_communities),
+        },
+    )
+
+    return {
+        "status": "COMPLETED",
+        "total_vertices": v_count,
+        "total_edges": e_count,
+        "communities_count": len(communities),
+        "high_risk_communities_count": len(high_risk_communities),
+        "top_pagerank_entities": [{"id": k, "score": v} for k, v in top_pagerank],
     }

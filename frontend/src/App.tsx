@@ -8,6 +8,7 @@ import { SettingsPage } from './pages/SettingsPage';
 import { ThreatIntelPage } from './pages/ThreatIntelPage';
 import { UebaDashboardPage } from './pages/UebaDashboardPage';
 import { GraphInvestigationPage } from './pages/GraphInvestigationPage';
+import { NetworkAnalyticsPage } from './pages/NetworkAnalyticsPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -169,6 +170,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'graph' && (
             <GraphInvestigationPage />
+          )}
+
+          {currentTab === 'network-analytics' && (
+            <NetworkAnalyticsPage />
           )}
 
           {currentTab === 'settings' && (

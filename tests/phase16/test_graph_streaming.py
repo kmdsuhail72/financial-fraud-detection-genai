@@ -280,3 +280,4 @@ def test_api_graph_endpoints_authorized(client, auth_headers):
     assert resp_analyze.status_code == 200
     assert "total_nodes" in resp_analyze.json()
     assert "summary" in resp_analyze.json()
+

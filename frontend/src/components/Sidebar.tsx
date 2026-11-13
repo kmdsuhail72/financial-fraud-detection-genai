@@ -12,7 +12,8 @@ import {
   Cpu,
   Crosshair,
   Fingerprint,
-  Share2
+  Share2,
+  Network
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -67,6 +68,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Graph Intelligence',
       icon: Share2,
       badge: 'Neptune'
+    },
+    {
+      id: 'network-analytics',
+      label: 'Network Analytics',
+      icon: Network,
+      badge: 'Louvain'
     },
     {
       id: 'settings',

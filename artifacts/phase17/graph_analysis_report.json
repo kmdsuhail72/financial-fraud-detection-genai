@@ -1,0 +1,630 @@
+{
+  "timestamp": "2026-11-13T05:47:57.655084+00:00",
+  "input_scenario": "data\\phase17_graph_scenario.json",
+  "total_entities": 38,
+  "total_relationships": 33,
+  "communities": [
+    {
+      "community_id": "COMM-01",
+      "members": [
+        "ACC-P17-01",
+        "ACC-P17-02",
+        "ACC-P17-03",
+        "CUS-P17-01",
+        "CUS-P17-02",
+        "CUS-P17-03",
+        "DEV-P17-01",
+        "IP-P17-01",
+        "MER-P17-01"
+      ],
+      "size": 9,
+      "density": 0.333,
+      "risk_score": 1.0,
+      "risk_level": "CRITICAL",
+      "has_shared_device": true,
+      "has_shared_ip": true,
+      "has_circular_loop": true,
+      "suspicious_indicators": [
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community"
+      ]
+    },
+    {
+      "community_id": "COMM-03",
+      "members": [
+        "ACC-P17-07",
+        "ACC-P17-11",
+        "CUS-P17-07",
+        "DEV-P17-05"
+      ],
+      "size": 4,
+      "density": 0.5,
+      "risk_score": 0.25,
+      "risk_level": "MEDIUM",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": [
+        "Abnormally high internal interconnectivity (density: 0.5)"
+      ]
+    },
+    {
+      "community_id": "COMM-04",
+      "members": [
+        "ACC-P17-08",
+        "ACC-P17-12",
+        "CUS-P17-08",
+        "IP-P17-02"
+      ],
+      "size": 4,
+      "density": 0.5,
+      "risk_score": 0.25,
+      "risk_level": "MEDIUM",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": [
+        "Abnormally high internal interconnectivity (density: 0.5)"
+      ]
+    },
+    {
+      "community_id": "COMM-05",
+      "members": [
+        "ACC-P17-09",
+        "ACC-P17-13",
+        "CUS-P17-09",
+        "IP-P17-03"
+      ],
+      "size": 4,
+      "density": 0.5,
+      "risk_score": 0.25,
+      "risk_level": "MEDIUM",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": [
+        "Abnormally high internal interconnectivity (density: 0.5)"
+      ]
+    },
+    {
+      "community_id": "COMM-02",
+      "members": [
+        "ACC-P17-04",
+        "ACC-P17-05",
+        "ACC-P17-06",
+        "CUS-P17-04",
+        "CUS-P17-05",
+        "CUS-P17-06",
+        "DEV-P17-02",
+        "DEV-P17-03",
+        "DEV-P17-04",
+        "MER-P17-02",
+        "MER-P17-03"
+      ],
+      "size": 11,
+      "density": 0.182,
+      "risk_score": 0.05,
+      "risk_level": "LOW",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": []
+    },
+    {
+      "community_id": "COMM-06",
+      "members": [
+        "ACC-P17-10",
+        "CUS-P17-10",
+        "IP-P17-04"
+      ],
+      "size": 3,
+      "density": 0.667,
+      "risk_score": 0.05,
+      "risk_level": "LOW",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": []
+    },
+    {
+      "community_id": "COMM-07",
+      "members": [
+        "ACC-P17-14"
+      ],
+      "size": 1,
+      "density": 0.0,
+      "risk_score": 0.05,
+      "risk_level": "LOW",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": []
+    },
+    {
+      "community_id": "COMM-08",
+      "members": [
+        "ACC-P17-15"
+      ],
+      "size": 1,
+      "density": 0.0,
+      "risk_score": 0.05,
+      "risk_level": "LOW",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": []
+    },
+    {
+      "community_id": "COMM-09",
+      "members": [
+        "DEV-P17-06"
+      ],
+      "size": 1,
+      "density": 0.0,
+      "risk_score": 0.05,
+      "risk_level": "LOW",
+      "has_shared_device": false,
+      "has_shared_ip": false,
+      "has_circular_loop": false,
+      "suspicious_indicators": []
+    }
+  ],
+  "top_pagerank": [
+    {
+      "entity_id": "ACC-P17-03",
+      "pagerank": 0.09642
+    },
+    {
+      "entity_id": "ACC-P17-02",
+      "pagerank": 0.08546
+    },
+    {
+      "entity_id": "ACC-P17-01",
+      "pagerank": 0.07257
+    },
+    {
+      "entity_id": "DEV-P17-04",
+      "pagerank": 0.06144
+    },
+    {
+      "entity_id": "ACC-P17-06",
+      "pagerank": 0.05715
+    },
+    {
+      "entity_id": "MER-P17-01",
+      "pagerank": 0.04604
+    },
+    {
+      "entity_id": "ACC-P17-05",
+      "pagerank": 0.04217
+    },
+    {
+      "entity_id": "ACC-P17-12",
+      "pagerank": 0.03309
+    },
+    {
+      "entity_id": "IP-P17-04",
+      "pagerank": 0.03309
+    },
+    {
+      "entity_id": "ACC-P17-11",
+      "pagerank": 0.03308
+    }
+  ],
+  "sample_path_analysis": {
+    "source_id": "ACC-P17-01",
+    "target_id": "MER-P17-01",
+    "path_exists": true,
+    "shortest_path_hops": 3,
+    "path_nodes": [
+      "ACC-P17-01",
+      "ACC-P17-02",
+      "ACC-P17-03",
+      "MER-P17-01"
+    ],
+    "path_relationships": [
+      "CONNECTED_TO",
+      "CONNECTED_TO",
+      "CONNECTED_TO"
+    ],
+    "risk_summary": "Path found spanning 3 hops: ACC-P17-01 (CONNECTED_TO) -> ACC-P17-02 (CONNECTED_TO) -> ACC-P17-03 (CONNECTED_TO) -> MER-P17-01."
+  },
+  "predictive_risks": [
+    {
+      "entity_id": "CUS-P17-01",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-01",
+      "community_risk_score": 1.0,
+      "predictive_fraud_risk": 0.473,
+      "advisory_risk_level": "HIGH",
+      "risk_factors": [
+        "Member of high-risk community COMM-01 (Score: 1.00)",
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community"
+      ],
+      "recommendation": "Step-Up Verification: Enforce secondary device authentication on subsequent transfers."
+    },
+    {
+      "entity_id": "CUS-P17-02",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-01",
+      "community_risk_score": 1.0,
+      "predictive_fraud_risk": 0.473,
+      "advisory_risk_level": "HIGH",
+      "risk_factors": [
+        "Member of high-risk community COMM-01 (Score: 1.00)",
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community"
+      ],
+      "recommendation": "Step-Up Verification: Enforce secondary device authentication on subsequent transfers."
+    },
+    {
+      "entity_id": "CUS-P17-03",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-01",
+      "community_risk_score": 1.0,
+      "predictive_fraud_risk": 0.473,
+      "advisory_risk_level": "HIGH",
+      "risk_factors": [
+        "Member of high-risk community COMM-01 (Score: 1.00)",
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community"
+      ],
+      "recommendation": "Step-Up Verification: Enforce secondary device authentication on subsequent transfers."
+    },
+    {
+      "entity_id": "CUS-P17-04",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-02",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.05,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "CUS-P17-05",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-02",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.05,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "CUS-P17-06",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-02",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.05,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "CUS-P17-07",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-03",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.136,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "CUS-P17-08",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-04",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.136,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "CUS-P17-09",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-05",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.136,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "CUS-P17-10",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-06",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.05,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-01",
+      "pagerank": 0.0726,
+      "betweenness_centrality": 0.0068,
+      "degree_centrality": 0.1351,
+      "clustering_coefficient": 0.4,
+      "community_id": "COMM-01",
+      "community_risk_score": 1.0,
+      "predictive_fraud_risk": 0.594,
+      "advisory_risk_level": "HIGH",
+      "risk_factors": [
+        "Member of high-risk community COMM-01 (Score: 1.00)",
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community"
+      ],
+      "recommendation": "Step-Up Verification: Enforce secondary device authentication on subsequent transfers."
+    },
+    {
+      "entity_id": "ACC-P17-02",
+      "pagerank": 0.0855,
+      "betweenness_centrality": 0.0068,
+      "degree_centrality": 0.1351,
+      "clustering_coefficient": 0.4,
+      "community_id": "COMM-01",
+      "community_risk_score": 1.0,
+      "predictive_fraud_risk": 0.614,
+      "advisory_risk_level": "HIGH",
+      "risk_factors": [
+        "Member of high-risk community COMM-01 (Score: 1.00)",
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community",
+        "High PageRank prominence (0.085): Key authority vertex in payment network"
+      ],
+      "recommendation": "Step-Up Verification: Enforce secondary device authentication on subsequent transfers."
+    },
+    {
+      "entity_id": "ACC-P17-03",
+      "pagerank": 0.0964,
+      "betweenness_centrality": 0.0083,
+      "degree_centrality": 0.1351,
+      "clustering_coefficient": 0.3,
+      "community_id": "COMM-01",
+      "community_risk_score": 1.0,
+      "predictive_fraud_risk": 0.617,
+      "advisory_risk_level": "HIGH",
+      "risk_factors": [
+        "Member of high-risk community COMM-01 (Score: 1.00)",
+        "Shared physical device infrastructure in community",
+        "Shared network IP ingress hub in community",
+        "Circular fund transfer loop identified in community",
+        "High PageRank prominence (0.096): Key authority vertex in payment network"
+      ],
+      "recommendation": "Step-Up Verification: Enforce secondary device authentication on subsequent transfers."
+    },
+    {
+      "entity_id": "ACC-P17-04",
+      "pagerank": 0.0238,
+      "betweenness_centrality": 0.0053,
+      "degree_centrality": 0.1081,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-02",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.076,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-05",
+      "pagerank": 0.0422,
+      "betweenness_centrality": 0.009,
+      "degree_centrality": 0.1351,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-02",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.116,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-06",
+      "pagerank": 0.0571,
+      "betweenness_centrality": 0.0038,
+      "degree_centrality": 0.0811,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-02",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.133,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-07",
+      "pagerank": 0.0238,
+      "betweenness_centrality": 0.0015,
+      "degree_centrality": 0.0811,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-03",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.158,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-08",
+      "pagerank": 0.0238,
+      "betweenness_centrality": 0.0015,
+      "degree_centrality": 0.0811,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-04",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.158,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-09",
+      "pagerank": 0.0238,
+      "betweenness_centrality": 0.0015,
+      "degree_centrality": 0.0811,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-05",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.158,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-10",
+      "pagerank": 0.0238,
+      "betweenness_centrality": 0.0008,
+      "degree_centrality": 0.0541,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-06",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.067,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-11",
+      "pagerank": 0.0331,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-03",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.172,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-12",
+      "pagerank": 0.0331,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-04",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.172,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-13",
+      "pagerank": 0.0331,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.027,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-05",
+      "community_risk_score": 0.25,
+      "predictive_fraud_risk": 0.172,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-14",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.0,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-07",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.05,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    },
+    {
+      "entity_id": "ACC-P17-15",
+      "pagerank": 0.0129,
+      "betweenness_centrality": 0.0,
+      "degree_centrality": 0.0,
+      "clustering_coefficient": 0.0,
+      "community_id": "COMM-08",
+      "community_risk_score": 0.05,
+      "predictive_fraud_risk": 0.05,
+      "advisory_risk_level": "LOW",
+      "risk_factors": [
+        "Nominal graph connectivity."
+      ],
+      "recommendation": "Standard Automated Clearance: Activity topology conforms to normal patterns."
+    }
+  ]
+}

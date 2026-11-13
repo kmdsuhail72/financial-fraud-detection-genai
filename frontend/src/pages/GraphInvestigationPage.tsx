@@ -516,3 +516,4 @@ export const GraphInvestigationPage: React.FC = () => {
 };
 
 export default GraphInvestigationPage;
+

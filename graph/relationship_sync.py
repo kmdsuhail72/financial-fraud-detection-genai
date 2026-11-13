@@ -189,3 +189,4 @@ class RelationshipSyncEngine:
             "vertices_upserted": vertices_created,
             "edges_upserted": edges_created,
         }
+

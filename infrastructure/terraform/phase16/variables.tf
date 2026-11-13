@@ -51,3 +51,4 @@ variable "neptune_instance_count" {
   default     = 1
   description = "Number of Neptune cluster reader/writer instances"
 }
+

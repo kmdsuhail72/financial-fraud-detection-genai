@@ -1,0 +1,607 @@
+{
+  "metadata": {
+    "scenario": "Phase-17-Planted-Fraud-Ring",
+    "entity_count": 38,
+    "relationship_count": 33,
+    "planted_rings": [
+      "DEV-P17-01 Device Farm",
+      "ACC-P17-01/02/03 Circular Wash Loop"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "CUS-P17-01",
+      "type": "CUSTOMER",
+      "label": "Customer 1",
+      "properties": {
+        "kyc_tier": "Tier-2"
+      }
+    },
+    {
+      "id": "CUS-P17-02",
+      "type": "CUSTOMER",
+      "label": "Customer 2",
+      "properties": {
+        "kyc_tier": "Tier-2"
+      }
+    },
+    {
+      "id": "CUS-P17-03",
+      "type": "CUSTOMER",
+      "label": "Customer 3",
+      "properties": {
+        "kyc_tier": "Tier-2"
+      }
+    },
+    {
+      "id": "CUS-P17-04",
+      "type": "CUSTOMER",
+      "label": "Customer 4",
+      "properties": {
+        "kyc_tier": "Tier-2"
+      }
+    },
+    {
+      "id": "CUS-P17-05",
+      "type": "CUSTOMER",
+      "label": "Customer 5",
+      "properties": {
+        "kyc_tier": "Tier-2"
+      }
+    },
+    {
+      "id": "CUS-P17-06",
+      "type": "CUSTOMER",
+      "label": "Customer 6",
+      "properties": {
+        "kyc_tier": "Tier-1"
+      }
+    },
+    {
+      "id": "CUS-P17-07",
+      "type": "CUSTOMER",
+      "label": "Customer 7",
+      "properties": {
+        "kyc_tier": "Tier-1"
+      }
+    },
+    {
+      "id": "CUS-P17-08",
+      "type": "CUSTOMER",
+      "label": "Customer 8",
+      "properties": {
+        "kyc_tier": "Tier-1"
+      }
+    },
+    {
+      "id": "CUS-P17-09",
+      "type": "CUSTOMER",
+      "label": "Customer 9",
+      "properties": {
+        "kyc_tier": "Tier-1"
+      }
+    },
+    {
+      "id": "CUS-P17-10",
+      "type": "CUSTOMER",
+      "label": "Customer 10",
+      "properties": {
+        "kyc_tier": "Tier-1"
+      }
+    },
+    {
+      "id": "ACC-P17-01",
+      "type": "ACCOUNT",
+      "label": "Account 1",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-02",
+      "type": "ACCOUNT",
+      "label": "Account 2",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-03",
+      "type": "ACCOUNT",
+      "label": "Account 3",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-04",
+      "type": "ACCOUNT",
+      "label": "Account 4",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-05",
+      "type": "ACCOUNT",
+      "label": "Account 5",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-06",
+      "type": "ACCOUNT",
+      "label": "Account 6",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-07",
+      "type": "ACCOUNT",
+      "label": "Account 7",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-08",
+      "type": "ACCOUNT",
+      "label": "Account 8",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-09",
+      "type": "ACCOUNT",
+      "label": "Account 9",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-10",
+      "type": "ACCOUNT",
+      "label": "Account 10",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-11",
+      "type": "ACCOUNT",
+      "label": "Account 11",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-12",
+      "type": "ACCOUNT",
+      "label": "Account 12",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-13",
+      "type": "ACCOUNT",
+      "label": "Account 13",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-14",
+      "type": "ACCOUNT",
+      "label": "Account 14",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "ACC-P17-15",
+      "type": "ACCOUNT",
+      "label": "Account 15",
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE"
+      }
+    },
+    {
+      "id": "DEV-P17-01",
+      "type": "DEVICE",
+      "label": "Rogue Device Emulator",
+      "properties": {
+        "is_emulator": true
+      }
+    },
+    {
+      "id": "DEV-P17-02",
+      "type": "DEVICE",
+      "label": "Mobile Device 2",
+      "properties": {
+        "is_emulator": false
+      }
+    },
+    {
+      "id": "DEV-P17-03",
+      "type": "DEVICE",
+      "label": "Mobile Device 3",
+      "properties": {
+        "is_emulator": false
+      }
+    },
+    {
+      "id": "DEV-P17-04",
+      "type": "DEVICE",
+      "label": "Mobile Device 4",
+      "properties": {
+        "is_emulator": false
+      }
+    },
+    {
+      "id": "DEV-P17-05",
+      "type": "DEVICE",
+      "label": "Mobile Device 5",
+      "properties": {
+        "is_emulator": false
+      }
+    },
+    {
+      "id": "DEV-P17-06",
+      "type": "DEVICE",
+      "label": "Mobile Device 6",
+      "properties": {
+        "is_emulator": false
+      }
+    },
+    {
+      "id": "IP-P17-01",
+      "type": "IP_ADDRESS",
+      "label": "198.51.100.10",
+      "properties": {
+        "asn": "AS-50001"
+      }
+    },
+    {
+      "id": "IP-P17-02",
+      "type": "IP_ADDRESS",
+      "label": "198.51.100.20",
+      "properties": {
+        "asn": "AS-50002"
+      }
+    },
+    {
+      "id": "IP-P17-03",
+      "type": "IP_ADDRESS",
+      "label": "198.51.100.30",
+      "properties": {
+        "asn": "AS-50003"
+      }
+    },
+    {
+      "id": "IP-P17-04",
+      "type": "IP_ADDRESS",
+      "label": "198.51.100.40",
+      "properties": {
+        "asn": "AS-50004"
+      }
+    },
+    {
+      "id": "MER-P17-01",
+      "type": "MERCHANT",
+      "label": "Merchant Store 1",
+      "properties": {
+        "category": "Crypto"
+      }
+    },
+    {
+      "id": "MER-P17-02",
+      "type": "MERCHANT",
+      "label": "Merchant Store 2",
+      "properties": {
+        "category": "Retail"
+      }
+    },
+    {
+      "id": "MER-P17-03",
+      "type": "MERCHANT",
+      "label": "Merchant Store 3",
+      "properties": {
+        "category": "Retail"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "CUS-P17-01",
+      "target": "ACC-P17-01",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-02",
+      "target": "ACC-P17-02",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-03",
+      "target": "ACC-P17-03",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-04",
+      "target": "ACC-P17-04",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-05",
+      "target": "ACC-P17-05",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-06",
+      "target": "ACC-P17-06",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-07",
+      "target": "ACC-P17-07",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-08",
+      "target": "ACC-P17-08",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-09",
+      "target": "ACC-P17-09",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-P17-10",
+      "target": "ACC-P17-10",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "ACC-P17-01",
+      "target": "DEV-P17-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-02",
+      "target": "DEV-P17-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-03",
+      "target": "DEV-P17-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-04",
+      "target": "DEV-P17-02",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-05",
+      "target": "DEV-P17-03",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-06",
+      "target": "DEV-P17-04",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-07",
+      "target": "DEV-P17-05",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-01",
+      "target": "IP-P17-01",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-02",
+      "target": "IP-P17-01",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-08",
+      "target": "IP-P17-02",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-09",
+      "target": "IP-P17-03",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-10",
+      "target": "IP-P17-04",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-P17-01",
+      "target": "ACC-P17-02",
+      "type": "TRANSFERRED_TO",
+      "weight": 7500.0,
+      "properties": {
+        "amount": 7500
+      }
+    },
+    {
+      "source": "ACC-P17-02",
+      "target": "ACC-P17-03",
+      "type": "TRANSFERRED_TO",
+      "weight": 7400.0,
+      "properties": {
+        "amount": 7400
+      }
+    },
+    {
+      "source": "ACC-P17-03",
+      "target": "ACC-P17-01",
+      "type": "TRANSFERRED_TO",
+      "weight": 7350.0,
+      "properties": {
+        "amount": 7350
+      }
+    },
+    {
+      "source": "ACC-P17-04",
+      "target": "ACC-P17-05",
+      "type": "TRANSFERRED_TO",
+      "weight": 1200.0,
+      "properties": {
+        "amount": 1200
+      }
+    },
+    {
+      "source": "ACC-P17-05",
+      "target": "ACC-P17-06",
+      "type": "TRANSFERRED_TO",
+      "weight": 1150.0,
+      "properties": {
+        "amount": 1150
+      }
+    },
+    {
+      "source": "ACC-P17-07",
+      "target": "ACC-P17-11",
+      "type": "TRANSFERRED_TO",
+      "weight": 2100.0,
+      "properties": {
+        "amount": 2100
+      }
+    },
+    {
+      "source": "ACC-P17-08",
+      "target": "ACC-P17-12",
+      "type": "TRANSFERRED_TO",
+      "weight": 3400.0,
+      "properties": {
+        "amount": 3400
+      }
+    },
+    {
+      "source": "ACC-P17-09",
+      "target": "ACC-P17-13",
+      "type": "TRANSFERRED_TO",
+      "weight": 890.0,
+      "properties": {
+        "amount": 890
+      }
+    },
+    {
+      "source": "ACC-P17-03",
+      "target": "MER-P17-01",
+      "type": "PAID_MERCHANT",
+      "weight": 5000.0,
+      "properties": {
+        "amount": 5000
+      }
+    },
+    {
+      "source": "ACC-P17-04",
+      "target": "MER-P17-02",
+      "type": "PAID_MERCHANT",
+      "weight": 120.0,
+      "properties": {
+        "amount": 120
+      }
+    },
+    {
+      "source": "ACC-P17-05",
+      "target": "MER-P17-03",
+      "type": "PAID_MERCHANT",
+      "weight": 85.0,
+      "properties": {
+        "amount": 85
+      }
+    }
+  ]
+}

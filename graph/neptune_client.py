@@ -325,3 +325,4 @@ def get_neptune_client() -> NeptuneGremlinClient:
     if _neptune_client_instance is None:
         _neptune_client_instance = NeptuneGremlinClient()
     return _neptune_client_instance
+

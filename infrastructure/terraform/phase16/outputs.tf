@@ -27,3 +27,4 @@ output "cleanup_instructions" {
   value       = "To tear down Neptune resources and avoid ongoing AWS billing: run 'terraform destroy -auto-approve' in infrastructure/terraform/phase16"
   description = "Cost management and resource decommissioning guide"
 }
+

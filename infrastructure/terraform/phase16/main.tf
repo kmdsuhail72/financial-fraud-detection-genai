@@ -265,3 +265,4 @@ resource "aws_cloudwatch_metric_alarm" "kinesis_iterator_age" {
     StreamName = aws_kinesis_stream.graph_stream.name
   }
 }
+

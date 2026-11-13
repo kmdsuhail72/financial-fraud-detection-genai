@@ -187,3 +187,58 @@ class NeptuneHealthResponse(BaseModel):
     engine_version: str
 
 
+# =============================================================================
+# Phase 17 — Advanced Fraud Intelligence & Predictive Network Analytics
+# =============================================================================
+class CommunityCluster(BaseModel):
+    """Detected topological community candidate with density & syndicate risk analysis."""
+    community_id: str = Field(..., description="Unique identifier for detected community, e.g. COMM-01")
+    members: List[str] = Field(default_factory=list, description="Entity node IDs belonging to this community")
+    size: int = Field(..., ge=1, description="Total vertices in cluster")
+    density: float = Field(0.0, ge=0.0, le=1.0, description="Internal subgraph edge density")
+    risk_score: float = Field(0.0, ge=0.0, le=1.0, description="Heuristic community risk score [0, 1]")
+    risk_level: RingRiskLevel = Field(RingRiskLevel.LOW)
+    has_shared_device: bool = False
+    has_shared_ip: bool = False
+    has_circular_loop: bool = False
+    suspicious_indicators: List[str] = Field(default_factory=list)
+
+    model_config = ConfigDict(extra="allow")
+
+
+class PathAnalysisRequest(BaseModel):
+    source_id: str = Field(..., description="Origin vertex ID")
+    target_id: str = Field(..., description="Destination vertex ID")
+    max_depth: int = Field(5, ge=1, le=8, description="Maximum traversal search depth")
+
+
+class PathAnalysisResponse(BaseModel):
+    source_id: str
+    target_id: str
+    path_exists: bool
+    shortest_path_hops: int
+    path_nodes: List[str] = Field(default_factory=list)
+    path_relationships: List[str] = Field(default_factory=list)
+    risk_summary: str
+
+    model_config = ConfigDict(extra="allow")
+
+
+class PredictiveNetworkRisk(BaseModel):
+    """Advisory network-based predictive fraud risk evaluation for an entity."""
+    entity_id: str
+    pagerank: float = 0.0
+    betweenness_centrality: float = 0.0
+    degree_centrality: float = 0.0
+    clustering_coefficient: float = 0.0
+    community_id: Optional[str] = None
+    community_risk_score: float = 0.0
+    predictive_fraud_risk: float = Field(..., ge=0.0, le=1.0)
+    advisory_risk_level: RingRiskLevel
+    risk_factors: List[str] = Field(default_factory=list)
+    recommendation: str
+
+    model_config = ConfigDict(extra="allow")
+
+
+
