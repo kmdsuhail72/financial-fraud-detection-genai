@@ -186,20 +186,41 @@ def train_and_evaluate(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train GraphSAGE fraud detection model.")
-    parser.add_argument("--epochs", type=int, default=100, help="Number of training epochs")
+    parser = argparse.ArgumentParser(description="Train GraphSAGE or Temporal GRU fraud detection models.")
+    parser.add_argument("--epochs", type=int, default=None, help="Number of training epochs")
     parser.add_argument("--lr", type=float, default=0.01, help="Learning rate")
     parser.add_argument("--hidden-dim", type=int, default=64, help="Latent hidden dimension")
-    parser.add_argument("--input", type=str, default=None, help="Input scenario JSON")
-    parser.add_argument("--output-dir", type=str, default="artifacts/phase18", help="Output directory")
+    parser.add_argument("--input", type=str, default=None, help="Input scenario or training JSON/JSONL")
+    parser.add_argument("--output", type=str, default=None, help="Output directory")
+    parser.add_argument("--output-dir", type=str, default=None, help="Output directory (alias)")
     args = parser.parse_args()
 
+    out_dir = args.output or args.output_dir or "artifacts/phase18"
+    epochs = args.epochs if args.epochs is not None else (20 if "phase19" in out_dir else 100)
+
+    # Route to Temporal GRU training if Phase 19 is requested
+    if "phase19" in out_dir or (args.input and "training_record" in args.input):
+        from scripts.train_temporal_model import train_temporal_gru
+        in_path = args.input or "examples/training_record.jsonl"
+        report = train_temporal_gru(input_path=in_path, epochs=epochs, lr=args.lr, output_dir=out_dir)
+        metrics = report["evaluation_metrics"]
+        print("\n" + "=" * 60)
+        print(" FinGuard AI — Phase 19 Temporal GRU Benchmark Results")
+        print("=" * 60)
+        print(f" Precision: {metrics['precision']:.2f}")
+        print(f" Recall:    {metrics['recall']:.2f}")
+        print(f" F1-score:  {metrics['f1_score']:.2f}")
+        print(f" ROC-AUC:   {metrics['roc_auc']:.2f}")
+        print("=" * 60)
+        print("Chronological split: Evaluated strictly forward in time (no lookahead leakage).\n")
+        return
+
     results = train_and_evaluate(
-        epochs=args.epochs,
+        epochs=epochs,
         lr=args.lr,
         hidden_dim=args.hidden_dim,
         input_path=args.input,
-        output_dir=args.output_dir,
+        output_dir=out_dir,
     )
 
     metrics = results["synthetic_benchmark_results"]
@@ -216,3 +237,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

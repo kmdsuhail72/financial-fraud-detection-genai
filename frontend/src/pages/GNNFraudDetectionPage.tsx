@@ -543,3 +543,4 @@ export const GNNFraudDetectionPage: React.FC = () => {
     </div>
   );
 };
+

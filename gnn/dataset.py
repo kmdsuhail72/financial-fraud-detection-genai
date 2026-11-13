@@ -321,3 +321,4 @@ class GraphDataset:
         self.train_mask[train_indices] = True
         self.val_mask[val_indices] = True
         self.test_mask[test_indices] = True
+

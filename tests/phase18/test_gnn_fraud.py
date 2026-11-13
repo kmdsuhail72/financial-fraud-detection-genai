@@ -268,3 +268,4 @@ def test_api_node_and_link_inference(client, auth_headers):
     assert emb_data["dimension"] == 64
     assert emb_data["total_entities"] == 92
     assert "ACC-GNN-01" in emb_data["embeddings"]
+

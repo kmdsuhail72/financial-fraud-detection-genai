@@ -95,3 +95,4 @@ class ModelLoadResponse(BaseModel):
     model_path: str
     parameters_loaded: int
     architecture: str
+

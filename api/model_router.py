@@ -150,3 +150,4 @@ def extract_entity_embeddings(
     """
     entity_ids = payload.entity_ids if payload else None
     return service.extract_embeddings(entity_ids)
+

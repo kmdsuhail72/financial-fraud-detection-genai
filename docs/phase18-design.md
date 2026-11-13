@@ -216,3 +216,4 @@ tests/phase18/test_gnn_fraud.py::test_api_node_and_link_inference PASSED
 ```
 - Total test suite (Phase 15, 16, 17, 18): **36 passed, 0 failures**.
 - Frontend production build: **Passed (`✓ built in 4.96s`, 0 errors)**.
+

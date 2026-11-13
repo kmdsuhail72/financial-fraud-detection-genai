@@ -287,3 +287,4 @@ class GNNModelService:
 
 def get_gnn_service() -> GNNModelService:
     return GNNModelService.get_instance()
+

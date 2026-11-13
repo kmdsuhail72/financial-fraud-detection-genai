@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-13T06:29:15.141098+00:00",
+  "architecture": "2-Layer PyTorch GRU (Hidden Dim: 64)",
+  "epochs": 20,
+  "input_records": "examples\\training_record.jsonl",
+  "split_method": "Chronological (80% Train / 20% Test, zero lookahead leakage)",
+  "dataset_statistics": {
+    "train_samples": 400,
+    "test_samples": 100,
+    "feature_dim": 12,
+    "sequence_length": 5
+  },
+  "evaluation_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0
+  },
+  "advisory_notice": "Model predictions are advisory decision-support signals. Human investigators retain decision authority."
+}

@@ -14,7 +14,8 @@ import {
   Fingerprint,
   Share2,
   Network,
-  Brain
+  Brain,
+  Clock
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -81,6 +82,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'GNN Deep Learning',
       icon: Brain,
       badge: 'GraphSAGE'
+    },
+    {
+      id: 'temporal-monitor',
+      label: 'Temporal Monitor',
+      icon: Clock,
+      badge: 'GRU'
     },
     {
       id: 'settings',
