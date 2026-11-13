@@ -14,6 +14,8 @@ import { TemporalFraudMonitorPage } from './pages/TemporalFraudMonitorPage';
 import { FraudDecisionEnginePage } from './pages/FraudDecisionEnginePage';
 import { OperationsQueuePage } from './pages/OperationsQueuePage';
 import { EvidenceWorkspacePage } from './pages/EvidenceWorkspacePage';
+import { ComplianceGovernancePage } from './pages/ComplianceGovernancePage';
+import { AMLInvestigationPage } from './pages/AMLInvestigationPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -199,6 +201,14 @@ export const App: React.FC = () => {
 
           {currentTab === 'evidence-forensics' && (
             <EvidenceWorkspacePage />
+          )}
+
+          {currentTab === 'compliance-governance' && (
+            <ComplianceGovernancePage />
+          )}
+
+          {currentTab === 'aml-monitoring' && (
+            <AMLInvestigationPage />
           )}
 
           {currentTab === 'settings' && (

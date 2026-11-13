@@ -17,7 +17,9 @@ import {
   Brain,
   Clock,
   Scale,
-  ListOrdered
+  ListOrdered,
+  Award,
+  Banknote
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -108,6 +110,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Evidence Forensics',
       icon: ShieldCheck,
       badge: 'SHA-256'
+    },
+    {
+      id: 'compliance-governance',
+      label: 'Compliance Governance',
+      icon: Award,
+      badge: 'SOC2'
+    },
+    {
+      id: 'aml-monitoring',
+      label: 'AML Monitoring',
+      icon: Banknote,
+      badge: 'SAR'
     },
     {
       id: 'settings',
