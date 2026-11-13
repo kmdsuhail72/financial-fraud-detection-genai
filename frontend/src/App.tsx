@@ -7,6 +7,7 @@ import { CaseDetailPage } from './pages/CaseDetailPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { ThreatIntelPage } from './pages/ThreatIntelPage';
 import { UebaDashboardPage } from './pages/UebaDashboardPage';
+import { GraphInvestigationPage } from './pages/GraphInvestigationPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -164,6 +165,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'ueba' && (
             <UebaDashboardPage />
+          )}
+
+          {currentTab === 'graph' && (
+            <GraphInvestigationPage />
           )}
 
           {currentTab === 'settings' && (

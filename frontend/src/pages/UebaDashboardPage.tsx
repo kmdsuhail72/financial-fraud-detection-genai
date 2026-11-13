@@ -623,3 +623,4 @@ export const UebaDashboardPage: React.FC = () => {
 };
 
 export default UebaDashboardPage;
+

@@ -112,3 +112,78 @@ class EntityGraphScore(BaseModel):
     centrality: CentralityMetrics
     risk_factors: List[str] = Field(default_factory=list)
 
+
+# =============================================================================
+# Phase 16 — Real-Time Streaming & Neptune Enterprise Models
+# =============================================================================
+class CreateEntityRequest(BaseModel):
+    id: str = Field(..., description="Unique entity identifier (e.g. CUS-1001, ACC-2001, DEV-801)")
+    type: NodeType = Field(..., description="Entity vertex classification")
+    label: Optional[str] = Field(None, description="Human-readable label")
+    properties: Dict[str, Any] = Field(default_factory=dict, description="Metadata properties")
+
+    model_config = ConfigDict(extra="allow")
+
+
+class CreateRelationshipRequest(BaseModel):
+    source: str = Field(..., description="Source vertex ID")
+    target: str = Field(..., description="Target vertex ID")
+    type: EdgeType = Field(..., description="Semantic edge type (e.g. OWNS_ACCOUNT, USES_DEVICE, TRANSFERRED_TO)")
+    weight: float = Field(1.0, ge=0.0, description="Edge weight (e.g. amount or count)")
+    properties: Dict[str, Any] = Field(default_factory=dict, description="Edge properties (timestamp, transaction_id)")
+
+    model_config = ConfigDict(extra="allow")
+
+
+class RiskEnrichmentRequest(BaseModel):
+    transaction_id: str
+    customer_id: Optional[str] = None
+    account_id: Optional[str] = None
+    device_id: Optional[str] = None
+    ip_address: Optional[str] = None
+    merchant_id: Optional[str] = None
+    amount: float = Field(0.0, ge=0.0)
+
+    model_config = ConfigDict(extra="allow")
+
+
+class RiskEnrichmentResponse(BaseModel):
+    transaction_id: str
+    graph_risk_score: float = Field(..., ge=0.0, le=1.0)
+    risk_level: RingRiskLevel
+    shared_device_customers_count: int = 0
+    shared_ip_accounts_count: int = 0
+    is_in_known_fraud_ring: bool = False
+    circular_transfer_flag: bool = False
+    inbound_velocity_ratio: float = 0.0
+    network_risk_factors: List[str] = Field(default_factory=list)
+    enriched_features: Dict[str, float] = Field(default_factory=dict)
+    explanation: str
+
+    model_config = ConfigDict(extra="allow")
+
+
+class GraphAnalyzeRequest(BaseModel):
+    entity_ids: Optional[List[str]] = Field(None, description="Optional root entity IDs to analyze")
+    max_depth: int = Field(2, ge=1, le=4, description="Analysis traversal depth")
+
+
+class GraphAnalyzeResponse(BaseModel):
+    total_nodes: int
+    total_edges: int
+    connected_components: int
+    fraud_rings_detected: int
+    candidate_rings: List[FraudRing] = Field(default_factory=list)
+    high_risk_entities: List[str] = Field(default_factory=list)
+    summary: str
+
+
+class NeptuneHealthResponse(BaseModel):
+    status: str
+    cluster_endpoint: str
+    mode: str  # "AWS_NEPTUNE_LIVE" or "EMULATED_STANDALONE"
+    vertex_count: int
+    edge_count: int
+    engine_version: str
+
+

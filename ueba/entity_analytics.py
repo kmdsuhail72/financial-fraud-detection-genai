@@ -147,3 +147,4 @@ class UEBAEntityAnalytics:
             self.profile_store.save_profile(profile)
 
         return correlation
+

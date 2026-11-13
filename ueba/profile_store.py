@@ -204,3 +204,4 @@ def get_profile_store(persistence_path: Optional[str] = None) -> ProfileStore:
     if _global_store is None:
         _global_store = ProfileStore(persistence_path)
     return _global_store
+

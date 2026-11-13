@@ -125,3 +125,4 @@ class CorrelateRiskRequest(BaseModel):
     fraud_probability: float = 0.0
     ioc_reputation_score: float = 0.0
     security_finding_severity: float = 0.0
+

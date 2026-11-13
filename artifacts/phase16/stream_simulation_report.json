@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-11-13T05:34:57.431420+00:00",
+  "total_events_streamed": 250,
+  "duplicate_events_tested": 15,
+  "duplicates_properly_skipped": 15,
+  "final_graph_state": {
+    "vertex_count": 851,
+    "edge_count": 1237,
+    "shared_devices_detected": 1,
+    "circular_transfer_loops_detected": 1
+  },
+  "sync_engine_metrics": {
+    "events_processed": 250,
+    "duplicates_skipped": 15,
+    "vertices_upserted": 1487,
+    "edges_upserted": 1237
+  },
+  "sample_risk_enrichments": [
+    {
+      "transaction_id": "TXN-TEST-SYNDICATE",
+      "graph_risk_score": 0.7,
+      "risk_level": "CRITICAL",
+      "shared_device_customers_count": 5,
+      "shared_ip_accounts_count": 8,
+      "is_in_known_fraud_ring": true,
+      "circular_transfer_flag": false,
+      "inbound_velocity_ratio": 0.33,
+      "network_risk_factors": [
+        "Device DEV-ROGUE-EMULATOR-88 shared across 5 entities (Device Farming)",
+        "IP 198.51.100.77 utilized by 8 distinct accounts"
+      ],
+      "enriched_features": {
+        "graph_degree_centrality": 4.0,
+        "graph_shared_device_count": 5.0,
+        "graph_shared_ip_count": 8.0,
+        "graph_circular_flow_flag": 0.0,
+        "graph_inbound_velocity_ratio": 0.33,
+        "graph_network_risk_score": 0.7
+      },
+      "explanation": "Graph risk 0.70 (CRITICAL): Device DEV-ROGUE-EMULATOR-88 shared across 5 entities (Device Farming); IP 198.51.100.77 utilized by 8 distinct accounts"
+    },
+    {
+      "transaction_id": "TXN-TEST-LOOP",
+      "graph_risk_score": 0.4,
+      "risk_level": "MEDIUM",
+      "shared_device_customers_count": 0,
+      "shared_ip_accounts_count": 0,
+      "is_in_known_fraud_ring": true,
+      "circular_transfer_flag": true,
+      "inbound_velocity_ratio": 0.67,
+      "network_risk_factors": [
+        "Account ACC-LOOP-A participates in circular fund flow loop"
+      ],
+      "enriched_features": {
+        "graph_degree_centrality": 5.0,
+        "graph_shared_device_count": 0.0,
+        "graph_shared_ip_count": 0.0,
+        "graph_circular_flow_flag": 1.0,
+        "graph_inbound_velocity_ratio": 0.67,
+        "graph_network_risk_score": 0.4
+      },
+      "explanation": "Graph risk 0.40 (MEDIUM): Account ACC-LOOP-A participates in circular fund flow loop"
+    },
+    {
+      "transaction_id": "TXN-TEST-MULE",
+      "graph_risk_score": 0.25,
+      "risk_level": "MEDIUM",
+      "shared_device_customers_count": 0,
+      "shared_ip_accounts_count": 0,
+      "is_in_known_fraud_ring": false,
+      "circular_transfer_flag": false,
+      "inbound_velocity_ratio": 5.0,
+      "network_risk_factors": [
+        "High fan-in mule consolidation pattern (In: 5, Out: 0)"
+      ],
+      "enriched_features": {
+        "graph_degree_centrality": 5.0,
+        "graph_shared_device_count": 0.0,
+        "graph_shared_ip_count": 0.0,
+        "graph_circular_flow_flag": 0.0,
+        "graph_inbound_velocity_ratio": 5.0,
+        "graph_network_risk_score": 0.25
+      },
+      "explanation": "Graph risk 0.25 (MEDIUM): High fan-in mule consolidation pattern (In: 5, Out: 0)"
+    },
+    {
+      "transaction_id": "TXN-TEST-NORMAL",
+      "graph_risk_score": 0.15,
+      "risk_level": "LOW",
+      "shared_device_customers_count": 1,
+      "shared_ip_accounts_count": 3,
+      "is_in_known_fraud_ring": false,
+      "circular_transfer_flag": false,
+      "inbound_velocity_ratio": 0.25,
+      "network_risk_factors": [],
+      "enriched_features": {
+        "graph_degree_centrality": 5.0,
+        "graph_shared_device_count": 1.0,
+        "graph_shared_ip_count": 3.0,
+        "graph_circular_flow_flag": 0.0,
+        "graph_inbound_velocity_ratio": 0.25,
+        "graph_network_risk_score": 0.15
+      },
+      "explanation": "Graph risk 0.15 (LOW): Nominal network topology."
+    }
+  ]
+}

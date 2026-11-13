@@ -353,3 +353,4 @@ def test_api_score_and_correlate_endpoints(client, auth_headers):
     assert corr_data["blended_risk_score"] > 60.0
     assert corr_data["risk_level"] in ["HIGH", "CRITICAL"]
     assert len(corr_data["investigation_recommendations"]) > 0
+

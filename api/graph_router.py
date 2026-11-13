@@ -1,4 +1,4 @@
-"""FastAPI Router for Enterprise Graph Analytics and Fraud Ring Detection (Phase 15)."""
+"""FastAPI Router for Enterprise Graph Analytics, Real-Time Streaming & Fraud Intelligence (Phases 15 & 16)."""
 
 from typing import Any, Dict, List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query, status
@@ -6,21 +6,33 @@ from pydantic import BaseModel, Field
 
 from graph.graph_store import graph_store
 from graph.models import (
+    CreateEntityRequest,
+    CreateRelationshipRequest,
     CyclePath,
     EntityGraphScore,
     FraudRing,
+    GraphAnalyzeRequest,
+    GraphAnalyzeResponse,
     GraphEdge,
     GraphNode,
+    NeptuneHealthResponse,
     RingRiskLevel,
+    RiskEnrichmentRequest,
+    RiskEnrichmentResponse,
     SubgraphExport,
 )
+from graph.neptune_client import get_neptune_client
 from graph.neptune_queries import NeptuneQueryCatalog
+from graph.scoring_adapter import GraphRiskEnricher
 from security.auth import AuthenticatedUser
 from security.audit import audit_logger
 from security.dependencies import require_permission, require_roles
 from security.roles import Permission, Role
 
-graph_router = APIRouter(prefix="/graph", tags=["Graph Analytics & Fraud Ring Intelligence"])
+graph_router = APIRouter(prefix="/graph", tags=["Enterprise Graph & Fraud Network Intelligence"])
+
+neptune_client = get_neptune_client()
+risk_enricher = GraphRiskEnricher(client=neptune_client)
 
 
 class IngestGraphDataRequest(BaseModel):
@@ -28,12 +40,152 @@ class IngestGraphDataRequest(BaseModel):
     edges: List[GraphEdge] = Field(default_factory=list)
 
 
-@graph_router.get("/rings", response_model=List[FraudRing])
-def list_fraud_rings(
+# =============================================================================
+# Phase 16 — Proposed Core Endpoints
+# =============================================================================
+@graph_router.get("/health", response_model=NeptuneHealthResponse)
+def get_graph_health(
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Probes Amazon Neptune / emulated Gremlin graph connectivity and element counts."""
+    return neptune_client.health()
+
+
+@graph_router.post("/entities", response_model=GraphNode, status_code=status.HTTP_201_CREATED)
+def create_or_update_entity(
+    payload: CreateEntityRequest,
+    current_user: AuthenticatedUser = Depends(require_roles([Role.ADMIN, Role.INVESTIGATOR])),
+):
+    """Creates or idempotently updates a vertex entity in the graph database."""
+    node = neptune_client.upsert_vertex(
+        vertex_id=payload.id,
+        label=payload.type.value,
+        properties=payload.properties,
+        node_type=payload.type,
+    )
+    # Also keep graph_store synchronized
+    graph_store.engine.g_full.add_node(
+        payload.id,
+        type=payload.type.value,
+        label=payload.label or payload.id,
+        **payload.properties,
+    )
+
+    audit_logger.log(
+        actor_sub=current_user.sub,
+        actor_email=current_user.email,
+        actor_roles=current_user.roles,
+        action="graph:create_entity",
+        resource_type="VERTEX",
+        resource_id=payload.id,
+        status="SUCCESS",
+        details={"type": payload.type.value},
+    )
+    return node
+
+
+@graph_router.post("/relationships", response_model=GraphEdge, status_code=status.HTTP_201_CREATED)
+def create_or_update_relationship(
+    payload: CreateRelationshipRequest,
+    current_user: AuthenticatedUser = Depends(require_roles([Role.ADMIN, Role.INVESTIGATOR])),
+):
+    """Creates or idempotently updates a directed relationship edge between two entities."""
+    edge = neptune_client.upsert_edge(
+        source_id=payload.source,
+        target_id=payload.target,
+        edge_type=payload.type,
+        weight=payload.weight,
+        properties=payload.properties,
+    )
+    # Also sync into graph_store
+    graph_store.engine.g_full.add_edge(
+        payload.source,
+        payload.target,
+        type=payload.type.value,
+        weight=payload.weight,
+        **payload.properties,
+    )
+
+    audit_logger.log(
+        actor_sub=current_user.sub,
+        actor_email=current_user.email,
+        actor_roles=current_user.roles,
+        action="graph:create_relationship",
+        resource_type="EDGE",
+        resource_id=f"{payload.source}->{payload.target}",
+        status="SUCCESS",
+        details={"type": payload.type.value, "weight": payload.weight},
+    )
+    return edge
+
+
+@graph_router.get("/entities/{entity_id}", response_model=GraphNode)
+def get_entity_details(
+    entity_id: str,
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Retrieves metadata and property details for a single entity vertex."""
+    node = neptune_client.get_vertex(entity_id)
+    if not node:
+        # Check fallback graph_store
+        if entity_id in graph_store.engine.g_full:
+            d = graph_store.engine.g_full.nodes[entity_id]
+            node = neptune_client.upsert_vertex(
+                vertex_id=entity_id,
+                label=d.get("type", "UNKNOWN"),
+                properties=d,
+            )
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Entity '{entity_id}' not found in graph database.",
+            )
+    return node
+
+
+@graph_router.get("/entities/{entity_id}/neighbors", response_model=List[GraphNode])
+def get_entity_neighbors(
+    entity_id: str,
+    direction: str = Query("both", pattern="^(in|out|both)$"),
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Finds all directly connected neighboring entities for a given vertex."""
+    # Ensure entity exists
+    get_entity_details(entity_id, current_user=current_user)
+    neighbors = neptune_client.get_neighbors(entity_id, direction=direction)
+    return neighbors
+
+
+@graph_router.get("/entities/{entity_id}/network", response_model=SubgraphExport)
+def traverse_entity_network(
+    entity_id: str,
+    depth: int = Query(2, ge=1, le=4, description="Graph traversal hops depth"),
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Traverses relationship paths up to depth hops to extract an ego-network."""
+    # Seed from graph_store if not present in neptune_client
+    if not neptune_client.get_vertex(entity_id) and entity_id in graph_store.engine.g_full:
+        sub = graph_store.engine.extract_subgraph(center_id=entity_id, radius=depth)
+        for n in sub.nodes:
+            neptune_client.upsert_vertex(n.id, n.type.value, n.properties, n.type)
+        for e in sub.links:
+            neptune_client.upsert_edge(e.source, e.target, e.type, e.weight, e.properties)
+
+    subgraph = neptune_client.get_network(root_id=entity_id, depth=depth)
+    if subgraph.node_count == 0:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Entity '{entity_id}' not found in graph database.",
+        )
+    return subgraph
+
+
+@graph_router.get("/fraud-rings", response_model=List[FraudRing])
+def get_fraud_rings(
     risk_level: Optional[str] = Query(None, description="Filter: CRITICAL, HIGH, MEDIUM, LOW"),
     current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
 ):
-    """Lists detected fraud rings and synthetic identity syndicates. Requires 'cases:view'."""
+    """Retrieves suspicious fraud network clusters and shared infrastructure rings."""
     rings = graph_store.engine.detect_fraud_rings()
     if risk_level:
         target = risk_level.upper()
@@ -41,12 +193,66 @@ def list_fraud_rings(
     return rings
 
 
+@graph_router.post("/risk-enrichment", response_model=RiskEnrichmentResponse)
+def enrich_transaction_risk(
+    request: RiskEnrichmentRequest,
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Generates graph-derived relationship features to enrich Phase 7 real-time fraud scoring."""
+    response = risk_enricher.enrich(request)
+    return response
+
+
+@graph_router.post("/analyze", response_model=GraphAnalyzeResponse)
+def analyze_graph_network(
+    request: GraphAnalyzeRequest,
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    """Analyzes network connectivity, detects candidate fraud rings, and highlights high-risk clusters."""
+    rings = graph_store.engine.detect_fraud_rings()
+    cycles = graph_store.engine.detect_cycles(max_length=request.max_depth + 1)
+    v_count, e_count = neptune_client.get_counts()
+
+    high_risk: List[str] = []
+    for r in rings:
+        if r.risk_level in (RingRiskLevel.CRITICAL, RingRiskLevel.HIGH):
+            high_risk.extend(r.member_customers)
+            high_risk.extend(r.member_accounts)
+
+    high_risk = sorted(list(set(high_risk)))
+
+    summary = (
+        f"Graph analysis evaluated {v_count} vertices and {e_count} edges across depth {request.max_depth}. "
+        f"Identified {len(rings)} candidate fraud rings and {len(cycles)} circular flow paths."
+    )
+
+    return GraphAnalyzeResponse(
+        total_nodes=v_count,
+        total_edges=e_count,
+        connected_components=max(1, len(rings)),
+        fraud_rings_detected=len(rings),
+        candidate_rings=rings,
+        high_risk_entities=high_risk,
+        summary=summary,
+    )
+
+
+# =============================================================================
+# Phase 15 Compatibility Endpoints
+# =============================================================================
+@graph_router.get("/rings", response_model=List[FraudRing])
+def list_fraud_rings(
+    risk_level: Optional[str] = Query(None, description="Filter: CRITICAL, HIGH, MEDIUM, LOW"),
+    current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
+):
+    return get_fraud_rings(risk_level=risk_level, current_user=current_user)
+
+
 @graph_router.get("/rings/{ring_id}", response_model=FraudRing)
 def get_fraud_ring(
     ring_id: str,
     current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
 ):
-    """Retrieves detailed intelligence on a specific fraud ring cluster."""
     rings = graph_store.engine.detect_fraud_rings()
     for r in rings:
         if r.ring_id == ring_id:
@@ -60,15 +266,7 @@ def get_entity_subgraph(
     radius: int = Query(2, ge=1, le=3, description="Neighborhood traversal radius hops"),
     current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
 ):
-    """Retrieves k-hop ego-network for interactive visualization and investigation dossiers."""
-    try:
-        subgraph = graph_store.engine.extract_subgraph(center_id=entity_id, radius=radius)
-        return subgraph
-    except KeyError:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Entity '{entity_id}' not found in fraud intelligence graph.",
-        )
+    return traverse_entity_network(entity_id=entity_id, depth=radius, current_user=current_user)
 
 
 @graph_router.get("/risk/{entity_id}", response_model=EntityGraphScore)
@@ -76,7 +274,6 @@ def get_entity_graph_risk(
     entity_id: str,
     current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
 ):
-    """Calculates network centrality, ring participation, circular flows, and composite Graph Risk Score."""
     try:
         score = graph_store.engine.calculate_entity_risk(entity_id=entity_id)
         return score
@@ -92,7 +289,6 @@ def list_circular_transfer_loops(
     max_length: int = Query(6, ge=2, le=10, description="Maximum cycle length"),
     current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
 ):
-    """Detects closed circular fund loops (wash trading and money mule cycles)."""
     cycles = graph_store.engine.detect_cycles(max_length=max_length)
     return cycles
 
@@ -101,7 +297,6 @@ def list_circular_transfer_loops(
 def get_neptune_queries(
     current_user: AuthenticatedUser = Depends(require_permission(Permission.VIEW_CASES)),
 ):
-    """Returns pre-compiled Gremlin and openCypher queries for Amazon Neptune production clusters."""
     return {
         "gremlin": NeptuneQueryCatalog.get_gremlin_queries(),
         "opencypher": NeptuneQueryCatalog.get_opencypher_queries(),
@@ -113,9 +308,12 @@ def ingest_graph_entities(
     payload: IngestGraphDataRequest,
     current_user: AuthenticatedUser = Depends(require_roles([Role.ADMIN, Role.INVESTIGATOR])),
 ):
-    """Ingests new nodes and edges into the live graph. Requires Investigator or Admin role."""
     graph_store.engine.ingest_batch(nodes=payload.nodes, edges=payload.edges)
-    
+    for n in payload.nodes:
+        neptune_client.upsert_vertex(n.id, n.type.value, n.properties, n.type)
+    for e in payload.edges:
+        neptune_client.upsert_edge(e.source, e.target, e.type, e.weight, e.properties)
+
     audit_logger.log(
         actor_sub=current_user.sub,
         actor_email=current_user.email,
