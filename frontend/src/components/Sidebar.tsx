@@ -138,6 +138,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badge: 'OCR'
     },
     {
+      id: 'identity-graph',
+      label: 'Identity Graph',
+      icon: Network,
+      badge: 'Ring'
+    },
+    {
       id: 'settings',
       label: 'Platform Settings',
       icon: Settings,

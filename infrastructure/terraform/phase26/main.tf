@@ -118,3 +118,4 @@ resource "aws_dynamodb_table" "doc_audit_trail" {
     Environment = var.environment
   }
 }
+

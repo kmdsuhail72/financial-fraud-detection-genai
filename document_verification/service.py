@@ -177,3 +177,4 @@ _verification_service = DocumentVerificationService()
 
 def get_verification_service() -> DocumentVerificationService:
     return _verification_service
+

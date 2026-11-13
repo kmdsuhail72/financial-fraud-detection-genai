@@ -18,6 +18,7 @@ import { ComplianceGovernancePage } from './pages/ComplianceGovernancePage';
 import { AMLInvestigationPage } from './pages/AMLInvestigationPage';
 import { KYCOnboardingPage } from './pages/KYCOnboardingPage';
 import { DocumentVerificationPage } from './pages/DocumentVerificationPage';
+import { IdentityGraphPage } from './pages/IdentityGraphPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -219,6 +220,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'document-verification' && (
             <DocumentVerificationPage />
+          )}
+
+          {currentTab === 'identity-graph' && (
+            <IdentityGraphPage />
           )}
 
           {currentTab === 'settings' && (

@@ -32,3 +32,4 @@ def verify_content_integrity(recorded_sha256: str, current_content: Union[str, b
     """
     current_hash = compute_sha256(current_content)
     return current_hash.lower() == recorded_sha256.lower()
+

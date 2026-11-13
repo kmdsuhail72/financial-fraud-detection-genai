@@ -257,3 +257,4 @@ def test_analyst_assessment_and_audit_trail(client):
     event_types = [e["event_type"] for e in audit_events]
     assert "DOCUMENT_INGESTED" in event_types
     assert "ANALYST_ASSESSMENT_COMPLETED" in event_types
+

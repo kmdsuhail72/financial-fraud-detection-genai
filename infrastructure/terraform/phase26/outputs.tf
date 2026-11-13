@@ -12,3 +12,4 @@ output "doc_audit_trail_table" {
   description = "DynamoDB table for document audit events"
   value       = aws_dynamodb_table.doc_audit_trail.id
 }
+

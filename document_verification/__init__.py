@@ -27,3 +27,4 @@ __all__ = [
     "DocumentVerificationService",
     "get_verification_service",
 ]
+

@@ -96,3 +96,4 @@ def get_document_audit_trail(customer_id: str):
     """Retrieves chronological audit events for customer identity document actions."""
     service = get_verification_service()
     return service.get_audit_trail(customer_id)
+

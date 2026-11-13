@@ -134,3 +134,4 @@ Defined in `infrastructure/terraform/phase26/`:
 - **`aws_s3_bucket.identity_doc_store`**: Dedicated document asset storage with S3 versioning and KMS server-side encryption.
 - **`aws_dynamodb_table.doc_verification_records`**: Partition key `verification_id`, with Global Secondary Index on `customer_id`.
 - **`aws_dynamodb_table.doc_audit_trail`**: Partition key `customer_id`, sort key `event_id` tracking all verification lifecycle operations.
+

@@ -236,3 +236,4 @@ _verification_store = DocumentVerificationStore()
 
 def get_verification_store() -> DocumentVerificationStore:
     return _verification_store
+
