@@ -1,0 +1,22 @@
+{
+  "transaction_id": "TXN-20261113-DEC001",
+  "account_id": "ACC-BURST-01",
+  "customer_id": "CUS-BURST-01",
+  "amount": 14500.0,
+  "currency": "USD",
+  "signals": {
+    "ml_score": 0.94,
+    "ueba_anomaly_score": 0.88,
+    "graph_risk_score": 0.96,
+    "temporal_risk_score": 0.98,
+    "threat_intel_score": 0.92,
+    "metadata": {
+      "is_emulator": true,
+      "is_tor": true,
+      "velocity_burst": true,
+      "device_id": "DEV-ROGUE-01",
+      "ip_address": "192.0.2.99"
+    }
+  }
+}
+

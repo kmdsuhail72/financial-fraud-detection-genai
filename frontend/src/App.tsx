@@ -11,6 +11,7 @@ import { GraphInvestigationPage } from './pages/GraphInvestigationPage';
 import { NetworkAnalyticsPage } from './pages/NetworkAnalyticsPage';
 import { GNNFraudDetectionPage } from './pages/GNNFraudDetectionPage';
 import { TemporalFraudMonitorPage } from './pages/TemporalFraudMonitorPage';
+import { FraudDecisionEnginePage } from './pages/FraudDecisionEnginePage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -184,6 +185,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'temporal-monitor' && (
             <TemporalFraudMonitorPage />
+          )}
+
+          {currentTab === 'decision-engine' && (
+            <FraudDecisionEnginePage />
           )}
 
           {currentTab === 'settings' && (

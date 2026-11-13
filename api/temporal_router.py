@@ -131,3 +131,4 @@ def get_temporal_metrics(
         "high_risk_bursts_detected": service.high_risk_burst_count,
         "sliding_window_seconds": stats["window_seconds"],
     }
+

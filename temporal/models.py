@@ -125,3 +125,4 @@ class TemporalMetricsResponse(BaseModel):
     unique_entities_tracked: int
     high_risk_bursts_detected: int
     sliding_window_seconds: int
+

@@ -326,3 +326,4 @@ def test_api_temporal_scoring_and_metrics(client, auth_headers):
     assert "total_events_in_history" in metrics_data
     assert "unique_entities_tracked" in metrics_data
     assert "sliding_window_seconds" in metrics_data
+

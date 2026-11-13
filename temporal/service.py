@@ -248,3 +248,4 @@ class TemporalFraudService:
 
 def get_temporal_service() -> TemporalFraudService:
     return TemporalFraudService.get_instance()
+

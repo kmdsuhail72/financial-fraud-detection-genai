@@ -101,3 +101,4 @@ class TemporalFeatureEngineer:
             is_new_ip=is_new_ip,
             time_since_prior_tx_sec=round(time_since_prior, 2),
         )
+

@@ -45,6 +45,7 @@ from api.threat_intel_router import threat_intel_router
 from api.ueba_router import ueba_router
 from api.model_router import model_router
 from api.temporal_router import temporal_router
+from api.decision_router import decision_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -174,6 +175,7 @@ app.include_router(threat_intel_router)
 app.include_router(ueba_router)
 app.include_router(model_router)
 app.include_router(temporal_router)
+app.include_router(decision_router)
 
 
 # ==========================================

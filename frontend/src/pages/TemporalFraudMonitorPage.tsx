@@ -501,3 +501,4 @@ export const TemporalFraudMonitorPage: React.FC = () => {
     </div>
   );
 };
+

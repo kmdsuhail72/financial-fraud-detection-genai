@@ -92,3 +92,4 @@ class KinesisLambdaDecoder:
     def clear_cache(self) -> None:
         """Clears deduplication cache for testing."""
         self._seen_transactions.clear()
+

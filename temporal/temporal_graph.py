@@ -139,3 +139,4 @@ class TemporalGraph:
         self._entity_known_devices.clear()
         self._entity_known_ips.clear()
         self._global_edges.clear()
+

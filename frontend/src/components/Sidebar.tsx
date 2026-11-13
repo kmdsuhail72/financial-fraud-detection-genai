@@ -15,7 +15,8 @@ import {
   Share2,
   Network,
   Brain,
-  Clock
+  Clock,
+  Scale
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -88,6 +89,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Temporal Monitor',
       icon: Clock,
       badge: 'GRU'
+    },
+    {
+      id: 'decision-engine',
+      label: 'Decision Engine',
+      icon: Scale,
+      badge: 'P0-P3'
     },
     {
       id: 'settings',

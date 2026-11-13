@@ -78,3 +78,4 @@ class TemporalGRUClassifier(nn.Module):
             probs = F.softmax(logits, dim=-1)
             fraud_prob = float(probs[0, 1].item())
         return round(fraud_prob, 4)
+
