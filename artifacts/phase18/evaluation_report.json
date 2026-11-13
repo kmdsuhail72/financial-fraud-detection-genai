@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-13T06:13:51.820285+00:00",
+  "architecture": "2-Layer GraphSAGE (Mean Aggregator)",
+  "epochs": 100,
+  "learning_rate": 0.01,
+  "hidden_dim": 64,
+  "dataset_statistics": {
+    "total_entities": 92,
+    "total_relationships": 81,
+    "train_nodes": 54,
+    "val_nodes": 19,
+    "test_nodes": 19
+  },
+  "synthetic_benchmark_results": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0
+  },
+  "benchmark_disclaimer": "These perfect results reflect the deliberately separable synthetic dataset, not expected real-world fraud detection performance.",
+  "production_limitation": "Model predictions remain advisory and will not automatically block transactions or accounts. Human investigators must retain decision authority."
+}

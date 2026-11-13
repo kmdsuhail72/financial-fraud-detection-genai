@@ -9,6 +9,7 @@ import { ThreatIntelPage } from './pages/ThreatIntelPage';
 import { UebaDashboardPage } from './pages/UebaDashboardPage';
 import { GraphInvestigationPage } from './pages/GraphInvestigationPage';
 import { NetworkAnalyticsPage } from './pages/NetworkAnalyticsPage';
+import { GNNFraudDetectionPage } from './pages/GNNFraudDetectionPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -174,6 +175,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'network-analytics' && (
             <NetworkAnalyticsPage />
+          )}
+
+          {currentTab === 'gnn-fraud' && (
+            <GNNFraudDetectionPage />
           )}
 
           {currentTab === 'settings' && (

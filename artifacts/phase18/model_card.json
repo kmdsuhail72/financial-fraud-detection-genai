@@ -1,0 +1,23 @@
+{
+  "model_name": "FinGuard-GraphSAGE-FraudClassifier",
+  "version": "1.0.0",
+  "model_type": "Inductive Graph Neural Network (GraphSAGE)",
+  "developer": "FinGuard AI Security & Machine Learning Engineering",
+  "intended_use": "Advisory graph-based fraud syndicate and account takeover risk detection.",
+  "input_features": 16,
+  "hidden_dimensions": 64,
+  "output_classes": 2,
+  "aggregation_scheme": "Mean Aggregator with LayerNorm and Dropout",
+  "ethical_considerations": {
+    "advisory_only": true,
+    "human_in_the_loop": true,
+    "automated_actions": false
+  },
+  "production_readiness_checklist": {
+    "py_torch_cpu_compatible": true,
+    "fastapi_integrated": true,
+    "sub_50ms_inference": true,
+    "explainability_enabled": true,
+    "distributed_neptune_sync": "Planned for Phase 19"
+  }
+}

@@ -1,0 +1,1654 @@
+{
+  "metadata": {
+    "scenario": "Phase-18-GNN-Deep-Learning-Benchmark",
+    "entity_count": 92,
+    "relationship_count": 81,
+    "description": "92 synthetic entities and 81 graph relationships for GraphSAGE deep fraud detection."
+  },
+  "nodes": [
+    {
+      "id": "CUS-GNN-01",
+      "type": "CUSTOMER",
+      "label": "Customer 1",
+      "is_fraud": true,
+      "properties": {
+        "kyc_tier": "Tier-3",
+        "risk_score": 0.9
+      }
+    },
+    {
+      "id": "CUS-GNN-02",
+      "type": "CUSTOMER",
+      "label": "Customer 2",
+      "is_fraud": true,
+      "properties": {
+        "kyc_tier": "Tier-3",
+        "risk_score": 0.9
+      }
+    },
+    {
+      "id": "CUS-GNN-03",
+      "type": "CUSTOMER",
+      "label": "Customer 3",
+      "is_fraud": true,
+      "properties": {
+        "kyc_tier": "Tier-3",
+        "risk_score": 0.9
+      }
+    },
+    {
+      "id": "CUS-GNN-04",
+      "type": "CUSTOMER",
+      "label": "Customer 4",
+      "is_fraud": true,
+      "properties": {
+        "kyc_tier": "Tier-3",
+        "risk_score": 0.9
+      }
+    },
+    {
+      "id": "CUS-GNN-05",
+      "type": "CUSTOMER",
+      "label": "Customer 5",
+      "is_fraud": true,
+      "properties": {
+        "kyc_tier": "Tier-3",
+        "risk_score": 0.9
+      }
+    },
+    {
+      "id": "CUS-GNN-06",
+      "type": "CUSTOMER",
+      "label": "Customer 6",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-07",
+      "type": "CUSTOMER",
+      "label": "Customer 7",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-08",
+      "type": "CUSTOMER",
+      "label": "Customer 8",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-09",
+      "type": "CUSTOMER",
+      "label": "Customer 9",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-10",
+      "type": "CUSTOMER",
+      "label": "Customer 10",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-11",
+      "type": "CUSTOMER",
+      "label": "Customer 11",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-12",
+      "type": "CUSTOMER",
+      "label": "Customer 12",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-13",
+      "type": "CUSTOMER",
+      "label": "Customer 13",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-14",
+      "type": "CUSTOMER",
+      "label": "Customer 14",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-15",
+      "type": "CUSTOMER",
+      "label": "Customer 15",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-16",
+      "type": "CUSTOMER",
+      "label": "Customer 16",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-17",
+      "type": "CUSTOMER",
+      "label": "Customer 17",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-18",
+      "type": "CUSTOMER",
+      "label": "Customer 18",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-19",
+      "type": "CUSTOMER",
+      "label": "Customer 19",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-20",
+      "type": "CUSTOMER",
+      "label": "Customer 20",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-21",
+      "type": "CUSTOMER",
+      "label": "Customer 21",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-22",
+      "type": "CUSTOMER",
+      "label": "Customer 22",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-23",
+      "type": "CUSTOMER",
+      "label": "Customer 23",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-24",
+      "type": "CUSTOMER",
+      "label": "Customer 24",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "CUS-GNN-25",
+      "type": "CUSTOMER",
+      "label": "Customer 25",
+      "is_fraud": false,
+      "properties": {
+        "kyc_tier": "Tier-1",
+        "risk_score": 0.1
+      }
+    },
+    {
+      "id": "ACC-GNN-01",
+      "type": "ACCOUNT",
+      "label": "Account 1",
+      "is_fraud": true,
+      "properties": {
+        "currency": "USD",
+        "status": "SUSPENDED",
+        "risk_score": 0.95
+      }
+    },
+    {
+      "id": "ACC-GNN-02",
+      "type": "ACCOUNT",
+      "label": "Account 2",
+      "is_fraud": true,
+      "properties": {
+        "currency": "USD",
+        "status": "SUSPENDED",
+        "risk_score": 0.95
+      }
+    },
+    {
+      "id": "ACC-GNN-03",
+      "type": "ACCOUNT",
+      "label": "Account 3",
+      "is_fraud": true,
+      "properties": {
+        "currency": "USD",
+        "status": "SUSPENDED",
+        "risk_score": 0.95
+      }
+    },
+    {
+      "id": "ACC-GNN-04",
+      "type": "ACCOUNT",
+      "label": "Account 4",
+      "is_fraud": true,
+      "properties": {
+        "currency": "USD",
+        "status": "SUSPENDED",
+        "risk_score": 0.95
+      }
+    },
+    {
+      "id": "ACC-GNN-05",
+      "type": "ACCOUNT",
+      "label": "Account 5",
+      "is_fraud": true,
+      "properties": {
+        "currency": "USD",
+        "status": "SUSPENDED",
+        "risk_score": 0.95
+      }
+    },
+    {
+      "id": "ACC-GNN-06",
+      "type": "ACCOUNT",
+      "label": "Account 6",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-07",
+      "type": "ACCOUNT",
+      "label": "Account 7",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-08",
+      "type": "ACCOUNT",
+      "label": "Account 8",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-09",
+      "type": "ACCOUNT",
+      "label": "Account 9",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-10",
+      "type": "ACCOUNT",
+      "label": "Account 10",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-11",
+      "type": "ACCOUNT",
+      "label": "Account 11",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-12",
+      "type": "ACCOUNT",
+      "label": "Account 12",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-13",
+      "type": "ACCOUNT",
+      "label": "Account 13",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-14",
+      "type": "ACCOUNT",
+      "label": "Account 14",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-15",
+      "type": "ACCOUNT",
+      "label": "Account 15",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-16",
+      "type": "ACCOUNT",
+      "label": "Account 16",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-17",
+      "type": "ACCOUNT",
+      "label": "Account 17",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-18",
+      "type": "ACCOUNT",
+      "label": "Account 18",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-19",
+      "type": "ACCOUNT",
+      "label": "Account 19",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-20",
+      "type": "ACCOUNT",
+      "label": "Account 20",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-21",
+      "type": "ACCOUNT",
+      "label": "Account 21",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-22",
+      "type": "ACCOUNT",
+      "label": "Account 22",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-23",
+      "type": "ACCOUNT",
+      "label": "Account 23",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-24",
+      "type": "ACCOUNT",
+      "label": "Account 24",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-25",
+      "type": "ACCOUNT",
+      "label": "Account 25",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-26",
+      "type": "ACCOUNT",
+      "label": "Account 26",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-27",
+      "type": "ACCOUNT",
+      "label": "Account 27",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-28",
+      "type": "ACCOUNT",
+      "label": "Account 28",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-29",
+      "type": "ACCOUNT",
+      "label": "Account 29",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-30",
+      "type": "ACCOUNT",
+      "label": "Account 30",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-31",
+      "type": "ACCOUNT",
+      "label": "Account 31",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-32",
+      "type": "ACCOUNT",
+      "label": "Account 32",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-33",
+      "type": "ACCOUNT",
+      "label": "Account 33",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-34",
+      "type": "ACCOUNT",
+      "label": "Account 34",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "ACC-GNN-35",
+      "type": "ACCOUNT",
+      "label": "Account 35",
+      "is_fraud": false,
+      "properties": {
+        "currency": "USD",
+        "status": "ACTIVE",
+        "risk_score": 0.08
+      }
+    },
+    {
+      "id": "DEV-GNN-01",
+      "type": "DEVICE",
+      "label": "Rogue Android Emulator",
+      "is_fraud": true,
+      "properties": {
+        "is_emulator": true,
+        "risk_score": 0.98
+      }
+    },
+    {
+      "id": "DEV-GNN-02",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 2",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-03",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 3",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-04",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 4",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-05",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 5",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-06",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 6",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-07",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 7",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-08",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 8",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-09",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 9",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-10",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 10",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-11",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 11",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-12",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 12",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-13",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 13",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-14",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 14",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "DEV-GNN-15",
+      "type": "DEVICE",
+      "label": "Mobile Hardware 15",
+      "is_fraud": false,
+      "properties": {
+        "is_emulator": false,
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "IP-GNN-01",
+      "type": "IP_ADDRESS",
+      "label": "198.51.100.1 (Tor/VPN Exit)",
+      "is_fraud": true,
+      "properties": {
+        "is_vpn_tor": true,
+        "risk_score": 0.92
+      }
+    },
+    {
+      "id": "IP-GNN-02",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.20",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-03",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.30",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-04",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.40",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-05",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.50",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-06",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.60",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-07",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.70",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-08",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.80",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-09",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.90",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "IP-GNN-10",
+      "type": "IP_ADDRESS",
+      "label": "203.0.113.100",
+      "is_fraud": false,
+      "properties": {
+        "is_vpn_tor": false,
+        "risk_score": 0.04
+      }
+    },
+    {
+      "id": "MER-GNN-01",
+      "type": "MERCHANT",
+      "label": "Shadow Crypto Cashout",
+      "is_fraud": true,
+      "properties": {
+        "category": "Crypto",
+        "risk_score": 0.88
+      }
+    },
+    {
+      "id": "MER-GNN-02",
+      "type": "MERCHANT",
+      "label": "Retail Store 2",
+      "is_fraud": false,
+      "properties": {
+        "category": "Retail",
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "MER-GNN-03",
+      "type": "MERCHANT",
+      "label": "Retail Store 3",
+      "is_fraud": false,
+      "properties": {
+        "category": "Retail",
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "MER-GNN-04",
+      "type": "MERCHANT",
+      "label": "Retail Store 4",
+      "is_fraud": false,
+      "properties": {
+        "category": "Retail",
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "MER-GNN-05",
+      "type": "MERCHANT",
+      "label": "Retail Store 5",
+      "is_fraud": false,
+      "properties": {
+        "category": "Retail",
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "MER-GNN-06",
+      "type": "MERCHANT",
+      "label": "Retail Store 6",
+      "is_fraud": false,
+      "properties": {
+        "category": "Retail",
+        "risk_score": 0.05
+      }
+    },
+    {
+      "id": "MER-GNN-07",
+      "type": "MERCHANT",
+      "label": "Retail Store 7",
+      "is_fraud": false,
+      "properties": {
+        "category": "Retail",
+        "risk_score": 0.05
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "CUS-GNN-01",
+      "target": "ACC-GNN-01",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-02",
+      "target": "ACC-GNN-02",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-03",
+      "target": "ACC-GNN-03",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-04",
+      "target": "ACC-GNN-04",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-05",
+      "target": "ACC-GNN-05",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-06",
+      "target": "ACC-GNN-06",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-07",
+      "target": "ACC-GNN-07",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-08",
+      "target": "ACC-GNN-08",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-09",
+      "target": "ACC-GNN-09",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-10",
+      "target": "ACC-GNN-10",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-11",
+      "target": "ACC-GNN-11",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-12",
+      "target": "ACC-GNN-12",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-13",
+      "target": "ACC-GNN-13",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-14",
+      "target": "ACC-GNN-14",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-15",
+      "target": "ACC-GNN-15",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-16",
+      "target": "ACC-GNN-16",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-17",
+      "target": "ACC-GNN-17",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-18",
+      "target": "ACC-GNN-18",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-19",
+      "target": "ACC-GNN-19",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-20",
+      "target": "ACC-GNN-20",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-21",
+      "target": "ACC-GNN-21",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-22",
+      "target": "ACC-GNN-22",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-23",
+      "target": "ACC-GNN-23",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-24",
+      "target": "ACC-GNN-24",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "CUS-GNN-25",
+      "target": "ACC-GNN-25",
+      "type": "OWNS_ACCOUNT",
+      "weight": 1.0,
+      "properties": {
+        "since": "2026-01-01"
+      }
+    },
+    {
+      "source": "ACC-GNN-01",
+      "target": "DEV-GNN-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {
+        "shared_device": true
+      }
+    },
+    {
+      "source": "ACC-GNN-02",
+      "target": "DEV-GNN-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {
+        "shared_device": true
+      }
+    },
+    {
+      "source": "ACC-GNN-03",
+      "target": "DEV-GNN-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {
+        "shared_device": true
+      }
+    },
+    {
+      "source": "ACC-GNN-04",
+      "target": "DEV-GNN-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {
+        "shared_device": true
+      }
+    },
+    {
+      "source": "ACC-GNN-05",
+      "target": "DEV-GNN-01",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {
+        "shared_device": true
+      }
+    },
+    {
+      "source": "ACC-GNN-06",
+      "target": "DEV-GNN-02",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-07",
+      "target": "DEV-GNN-03",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-08",
+      "target": "DEV-GNN-04",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-09",
+      "target": "DEV-GNN-05",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-10",
+      "target": "DEV-GNN-06",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-11",
+      "target": "DEV-GNN-07",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-12",
+      "target": "DEV-GNN-08",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-13",
+      "target": "DEV-GNN-09",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-14",
+      "target": "DEV-GNN-10",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-15",
+      "target": "DEV-GNN-11",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-16",
+      "target": "DEV-GNN-12",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-17",
+      "target": "DEV-GNN-13",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-18",
+      "target": "DEV-GNN-14",
+      "type": "USES_DEVICE",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-01",
+      "target": "IP-GNN-01",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {
+        "vpn_detected": true
+      }
+    },
+    {
+      "source": "ACC-GNN-02",
+      "target": "IP-GNN-01",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {
+        "vpn_detected": true
+      }
+    },
+    {
+      "source": "ACC-GNN-03",
+      "target": "IP-GNN-01",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {
+        "vpn_detected": true
+      }
+    },
+    {
+      "source": "ACC-GNN-04",
+      "target": "IP-GNN-01",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {
+        "vpn_detected": true
+      }
+    },
+    {
+      "source": "ACC-GNN-05",
+      "target": "IP-GNN-02",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-06",
+      "target": "IP-GNN-03",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-07",
+      "target": "IP-GNN-04",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-08",
+      "target": "IP-GNN-05",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-09",
+      "target": "IP-GNN-06",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-10",
+      "target": "IP-GNN-07",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-11",
+      "target": "IP-GNN-08",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-12",
+      "target": "IP-GNN-09",
+      "type": "ASSOCIATED_IP",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ACC-GNN-01",
+      "target": "ACC-GNN-02",
+      "type": "TRANSFERRED_TO",
+      "weight": 9800.0,
+      "properties": {
+        "amount": 9800
+      }
+    },
+    {
+      "source": "ACC-GNN-02",
+      "target": "ACC-GNN-03",
+      "type": "TRANSFERRED_TO",
+      "weight": 9750.0,
+      "properties": {
+        "amount": 9750
+      }
+    },
+    {
+      "source": "ACC-GNN-03",
+      "target": "ACC-GNN-01",
+      "type": "TRANSFERRED_TO",
+      "weight": 9700.0,
+      "properties": {
+        "amount": 9700
+      }
+    },
+    {
+      "source": "ACC-GNN-04",
+      "target": "ACC-GNN-05",
+      "type": "TRANSFERRED_TO",
+      "weight": 8500.0,
+      "properties": {
+        "amount": 8500
+      }
+    },
+    {
+      "source": "ACC-GNN-05",
+      "target": "ACC-GNN-01",
+      "type": "TRANSFERRED_TO",
+      "weight": 8400.0,
+      "properties": {
+        "amount": 8400
+      }
+    },
+    {
+      "source": "ACC-GNN-06",
+      "target": "ACC-GNN-07",
+      "type": "TRANSFERRED_TO",
+      "weight": 77.0,
+      "properties": {
+        "amount": 77
+      }
+    },
+    {
+      "source": "ACC-GNN-07",
+      "target": "ACC-GNN-08",
+      "type": "TRANSFERRED_TO",
+      "weight": 84.0,
+      "properties": {
+        "amount": 84
+      }
+    },
+    {
+      "source": "ACC-GNN-08",
+      "target": "ACC-GNN-09",
+      "type": "TRANSFERRED_TO",
+      "weight": 91.0,
+      "properties": {
+        "amount": 91
+      }
+    },
+    {
+      "source": "ACC-GNN-09",
+      "target": "ACC-GNN-10",
+      "type": "TRANSFERRED_TO",
+      "weight": 98.0,
+      "properties": {
+        "amount": 98
+      }
+    },
+    {
+      "source": "ACC-GNN-10",
+      "target": "ACC-GNN-11",
+      "type": "TRANSFERRED_TO",
+      "weight": 105.0,
+      "properties": {
+        "amount": 105
+      }
+    },
+    {
+      "source": "ACC-GNN-11",
+      "target": "ACC-GNN-12",
+      "type": "TRANSFERRED_TO",
+      "weight": 112.0,
+      "properties": {
+        "amount": 112
+      }
+    },
+    {
+      "source": "ACC-GNN-12",
+      "target": "ACC-GNN-13",
+      "type": "TRANSFERRED_TO",
+      "weight": 119.0,
+      "properties": {
+        "amount": 119
+      }
+    },
+    {
+      "source": "ACC-GNN-13",
+      "target": "ACC-GNN-14",
+      "type": "TRANSFERRED_TO",
+      "weight": 126.0,
+      "properties": {
+        "amount": 126
+      }
+    },
+    {
+      "source": "ACC-GNN-14",
+      "target": "ACC-GNN-15",
+      "type": "TRANSFERRED_TO",
+      "weight": 133.0,
+      "properties": {
+        "amount": 133
+      }
+    },
+    {
+      "source": "ACC-GNN-15",
+      "target": "ACC-GNN-16",
+      "type": "TRANSFERRED_TO",
+      "weight": 140.0,
+      "properties": {
+        "amount": 140
+      }
+    },
+    {
+      "source": "ACC-GNN-16",
+      "target": "ACC-GNN-17",
+      "type": "TRANSFERRED_TO",
+      "weight": 147.0,
+      "properties": {
+        "amount": 147
+      }
+    },
+    {
+      "source": "ACC-GNN-17",
+      "target": "ACC-GNN-18",
+      "type": "TRANSFERRED_TO",
+      "weight": 154.0,
+      "properties": {
+        "amount": 154
+      }
+    },
+    {
+      "source": "ACC-GNN-18",
+      "target": "ACC-GNN-19",
+      "type": "TRANSFERRED_TO",
+      "weight": 161.0,
+      "properties": {
+        "amount": 161
+      }
+    },
+    {
+      "source": "ACC-GNN-19",
+      "target": "ACC-GNN-20",
+      "type": "TRANSFERRED_TO",
+      "weight": 168.0,
+      "properties": {
+        "amount": 168
+      }
+    },
+    {
+      "source": "ACC-GNN-20",
+      "target": "ACC-GNN-21",
+      "type": "TRANSFERRED_TO",
+      "weight": 175.0,
+      "properties": {
+        "amount": 175
+      }
+    },
+    {
+      "source": "ACC-GNN-01",
+      "target": "MER-GNN-01",
+      "type": "PAID_MERCHANT",
+      "weight": 15000.0,
+      "properties": {
+        "amount": 15000
+      }
+    },
+    {
+      "source": "ACC-GNN-02",
+      "target": "MER-GNN-01",
+      "type": "PAID_MERCHANT",
+      "weight": 12000.0,
+      "properties": {
+        "amount": 12000
+      }
+    },
+    {
+      "source": "ACC-GNN-06",
+      "target": "MER-GNN-02",
+      "type": "PAID_MERCHANT",
+      "weight": 55.0,
+      "properties": {
+        "amount": 55
+      }
+    },
+    {
+      "source": "ACC-GNN-07",
+      "target": "MER-GNN-03",
+      "type": "PAID_MERCHANT",
+      "weight": 35.0,
+      "properties": {
+        "amount": 35
+      }
+    },
+    {
+      "source": "ACC-GNN-08",
+      "target": "MER-GNN-04",
+      "type": "PAID_MERCHANT",
+      "weight": 120.0,
+      "properties": {
+        "amount": 120
+      }
+    },
+    {
+      "source": "ACC-GNN-09",
+      "target": "MER-GNN-05",
+      "type": "PAID_MERCHANT",
+      "weight": 42.0,
+      "properties": {
+        "amount": 42
+      }
+    }
+  ]
+}

@@ -13,7 +13,8 @@ import {
   Crosshair,
   Fingerprint,
   Share2,
-  Network
+  Network,
+  Brain
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -74,6 +75,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Network Analytics',
       icon: Network,
       badge: 'Louvain'
+    },
+    {
+      id: 'gnn-fraud',
+      label: 'GNN Deep Learning',
+      icon: Brain,
+      badge: 'GraphSAGE'
     },
     {
       id: 'settings',

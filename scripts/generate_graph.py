@@ -1,29 +1,38 @@
-"""Phase 17 — Planted Fraud-Ring Synthetic Graph Scenario Generator.
+"""Phase 17 & Phase 18 — Planted Synthetic Graph Scenario Generator.
 
-Generates a targeted benchmark scenario with exactly 38 entities and 33 relationships
-featuring a planted device-farming syndicate and circular wash trading loop.
+Generates:
+- Phase 17 benchmark scenario: 38 entities and 33 relationships (data/phase17_graph_scenario.json).
+- Phase 18 GNN benchmark scenario: 92 entities and 81 relationships (data/phase18_graph_scenario.json).
 
 Usage:
-    python scripts/generate_graph.py --output data/phase17_graph_scenario.json
+    python scripts/generate_graph.py
+    python scripts/generate_graph.py --phase 18 --output data/phase18_graph_scenario.json
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
+
+# Ensure project root is in sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from gnn.dataset import generate_phase18_graph
 
 
 def generate_benchmark_graph() -> Dict[str, Any]:
     """
+    Phase 17 Planted Scenario:
     Constructs 38 entities and 33 relationships:
     - 10 Customers (CUS-01..10)
     - 15 Accounts (ACC-01..15)
     - 6 Devices (DEV-01..06)
     - 4 IPs (IP-01..04)
     - 3 Merchants (MER-01..03)
-    Total = 38 entities.
+    Total = 38 entities, 33 relationships.
     """
     nodes: List[Dict[str, Any]] = []
     edges: List[Dict[str, Any]] = []
@@ -133,19 +142,35 @@ def generate_benchmark_graph() -> Dict[str, Any]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate synthetic benchmark graph for Phase 17.")
-    parser.add_argument("--output", type=str, default="data/phase17_graph_scenario.json", help="Output path")
+    parser = argparse.ArgumentParser(description="Generate synthetic benchmark graphs for FinGuard AI.")
+    parser.add_argument("--phase", type=int, default=18, choices=[17, 18], help="Target phase benchmark (17 or 18)")
+    parser.add_argument("--output", type=str, default=None, help="Explicit output path")
     args = parser.parse_args()
 
-    out_path = Path(args.output)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
+    # Always generate Phase 17 data
+    p17_path = Path("data/phase17_graph_scenario.json")
+    p17_path.parent.mkdir(parents=True, exist_ok=True)
+    p17_data = generate_benchmark_graph()
+    with open(p17_path, "w", encoding="utf-8") as f:
+        json.dump(p17_data, f, indent=2)
 
-    data = generate_benchmark_graph()
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+    # Always generate Phase 18 data
+    p18_path = Path("data/phase18_graph_scenario.json")
+    p18_path.parent.mkdir(parents=True, exist_ok=True)
+    p18_data = generate_phase18_graph()
+    with open(p18_path, "w", encoding="utf-8") as f:
+        json.dump(p18_data, f, indent=2)
 
-    print(f"Generated Phase 17 Planted Scenario: {len(data['nodes'])} entities, {len(data['edges'])} relationships.")
-    print(f"Saved to: {out_path.resolve()}")
+    if args.output:
+        custom_path = Path(args.output)
+        custom_path.parent.mkdir(parents=True, exist_ok=True)
+        chosen_data = p18_data if args.phase == 18 else p17_data
+        with open(custom_path, "w", encoding="utf-8") as f:
+            json.dump(chosen_data, f, indent=2)
+        print(f"Saved Phase {args.phase} scenario to {custom_path.resolve()}")
+
+    print(f"Generated Phase 17 Planted Scenario: {len(p17_data['nodes'])} entities, {len(p17_data['edges'])} relationships -> {p17_path}")
+    print(f"Generated Phase 18 GNN Scenario: {len(p18_data['nodes'])} entities, {len(p18_data['edges'])} relationships -> {p18_path}")
 
 
 if __name__ == "__main__":
