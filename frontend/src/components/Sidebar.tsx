@@ -104,6 +104,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badge: 'SLA'
     },
     {
+      id: 'evidence-forensics',
+      label: 'Evidence Forensics',
+      icon: ShieldCheck,
+      badge: 'SHA-256'
+    },
+    {
       id: 'settings',
       label: 'Platform Settings',
       icon: Settings,

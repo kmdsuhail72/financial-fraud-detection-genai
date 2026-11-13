@@ -13,6 +13,7 @@ import { GNNFraudDetectionPage } from './pages/GNNFraudDetectionPage';
 import { TemporalFraudMonitorPage } from './pages/TemporalFraudMonitorPage';
 import { FraudDecisionEnginePage } from './pages/FraudDecisionEnginePage';
 import { OperationsQueuePage } from './pages/OperationsQueuePage';
+import { EvidenceWorkspacePage } from './pages/EvidenceWorkspacePage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -194,6 +195,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'operations-queue' && (
             <OperationsQueuePage />
+          )}
+
+          {currentTab === 'evidence-forensics' && (
+            <EvidenceWorkspacePage />
           )}
 
           {currentTab === 'settings' && (
