@@ -19,7 +19,8 @@ import {
   Scale,
   ListOrdered,
   Award,
-  Banknote
+  Banknote,
+  UserCheck
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -122,6 +123,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'AML Monitoring',
       icon: Banknote,
       badge: 'SAR'
+    },
+    {
+      id: 'kyc-onboarding',
+      label: 'KYC & Onboarding',
+      icon: UserCheck,
+      badge: 'CDD'
     },
     {
       id: 'settings',

@@ -587,3 +587,4 @@ export const AMLInvestigationPage: React.FC = () => {
   );
 };
 export default AMLInvestigationPage;
+

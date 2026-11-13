@@ -129,3 +129,4 @@ The Phase 24 infrastructure is provisioned through Terraform in `infrastructure/
    - `finguard-aml-cases`: Primary key `case_id`, with GSI on `status`.
    - `finguard-aml-sar-reports`: Primary key `sar_id`.
 3. **IAM Least-Privilege Policies:** Grants AML services strictly necessary read/write actions on customer risk and transaction records.
+

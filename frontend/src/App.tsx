@@ -16,6 +16,7 @@ import { OperationsQueuePage } from './pages/OperationsQueuePage';
 import { EvidenceWorkspacePage } from './pages/EvidenceWorkspacePage';
 import { ComplianceGovernancePage } from './pages/ComplianceGovernancePage';
 import { AMLInvestigationPage } from './pages/AMLInvestigationPage';
+import { KYCOnboardingPage } from './pages/KYCOnboardingPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -209,6 +210,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'aml-monitoring' && (
             <AMLInvestigationPage />
+          )}
+
+          {currentTab === 'kyc-onboarding' && (
+            <KYCOnboardingPage />
           )}
 
           {currentTab === 'settings' && (
