@@ -106,3 +106,4 @@ def get_customer_audit_trail(customer_id: str):
     if not customer:
         raise HTTPException(status_code=404, detail=f"Customer '{customer_id}' not found")
     return service.get_audit_trail(customer_id)
+

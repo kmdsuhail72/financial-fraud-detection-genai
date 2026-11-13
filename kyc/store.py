@@ -216,3 +216,4 @@ _kyc_store = KYCStore()
 
 def get_kyc_store() -> KYCStore:
     return _kyc_store
+

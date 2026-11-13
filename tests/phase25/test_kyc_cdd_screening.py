@@ -292,3 +292,4 @@ def test_end_to_end_onboarding_and_edd_workflow(client):
     final_profile = review_resp.json()
     assert final_profile["onboarding_status"] == "REJECTED"
     assert final_profile["reviewed_by"] == "senior-officer-miller"
+

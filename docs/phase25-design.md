@@ -144,3 +144,4 @@ The Phase 25 cloud infrastructure is defined in `infrastructure/terraform/phase2
 - **`aws_dynamodb_table.kyc_customers`**: DynamoDB customer master table with GSI on `onboarding_status`.
 - **`aws_dynamodb_table.screening_matches`**: DynamoDB table storing screening hits with GSI on `category`.
 - **`aws_dynamodb_table.kyc_audit_trail`**: Partition key `customer_id`, sort key `event_id` tracking all compliance actions.
+

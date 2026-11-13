@@ -17,3 +17,4 @@ output "kyc_audit_trail_table" {
   description = "DynamoDB table for customer audit logs"
   value       = aws_dynamodb_table.kyc_audit_trail.id
 }
+

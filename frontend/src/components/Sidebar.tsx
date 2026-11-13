@@ -20,7 +20,8 @@ import {
   ListOrdered,
   Award,
   Banknote,
-  UserCheck
+  UserCheck,
+  FileCheck2
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -129,6 +130,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'KYC & Onboarding',
       icon: UserCheck,
       badge: 'CDD'
+    },
+    {
+      id: 'document-verification',
+      label: 'Document Intelligence',
+      icon: FileCheck2,
+      badge: 'OCR'
     },
     {
       id: 'settings',

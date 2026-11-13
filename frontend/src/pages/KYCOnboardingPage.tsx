@@ -1045,3 +1045,4 @@ export const KYCOnboardingPage: React.FC = () => {
 };
 
 export default KYCOnboardingPage;
+

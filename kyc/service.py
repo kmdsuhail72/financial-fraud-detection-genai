@@ -236,3 +236,4 @@ _kyc_service = KYCService()
 
 def get_kyc_service() -> KYCService:
     return _kyc_service
+

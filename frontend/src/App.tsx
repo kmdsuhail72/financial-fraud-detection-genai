@@ -17,6 +17,7 @@ import { EvidenceWorkspacePage } from './pages/EvidenceWorkspacePage';
 import { ComplianceGovernancePage } from './pages/ComplianceGovernancePage';
 import { AMLInvestigationPage } from './pages/AMLInvestigationPage';
 import { KYCOnboardingPage } from './pages/KYCOnboardingPage';
+import { DocumentVerificationPage } from './pages/DocumentVerificationPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -214,6 +215,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'kyc-onboarding' && (
             <KYCOnboardingPage />
+          )}
+
+          {currentTab === 'document-verification' && (
+            <DocumentVerificationPage />
           )}
 
           {currentTab === 'settings' && (

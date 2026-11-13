@@ -51,6 +51,7 @@ from api.evidence_router import evidence_router
 from api.compliance_governance_router import compliance_governance_router
 from api.aml_router import aml_router
 from api.kyc_router import kyc_router
+from api.document_verification_router import document_verification_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -186,6 +187,7 @@ app.include_router(evidence_router)
 app.include_router(compliance_governance_router)
 app.include_router(aml_router)
 app.include_router(kyc_router)
+app.include_router(document_verification_router)
 
 
 # ==========================================

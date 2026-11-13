@@ -231,3 +231,4 @@ class ScreeningEngine:
         # Sort matches by highest similarity score
         matches.sort(key=lambda m: m.similarity_score, reverse=True)
         return matches
+
