@@ -16,7 +16,8 @@ import {
   Network,
   Brain,
   Clock,
-  Scale
+  Scale,
+  ListOrdered
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -95,6 +96,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Decision Engine',
       icon: Scale,
       badge: 'P0-P3'
+    },
+    {
+      id: 'operations-queue',
+      label: 'Operations Queue',
+      icon: ListOrdered,
+      badge: 'SLA'
     },
     {
       id: 'settings',
