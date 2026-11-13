@@ -94,3 +94,4 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="artifacts/phase13/enriched-iocs.json", help="Output path")
     args = parser.parse_args()
     run_enrichment(args.input, args.output)
+

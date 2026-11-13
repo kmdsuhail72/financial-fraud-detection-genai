@@ -10,7 +10,8 @@ import {
   ShieldCheck,
   Activity,
   Cpu,
-  Crosshair
+  Crosshair,
+  Fingerprint
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -53,6 +54,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Threat Intelligence',
       icon: Crosshair,
       badge: 'MITRE'
+    },
+    {
+      id: 'ueba',
+      label: 'UEBA Analytics',
+      icon: Fingerprint,
+      badge: 'ML'
     },
     {
       id: 'settings',

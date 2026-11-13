@@ -138,3 +138,4 @@ class ThreatHunter:
                 results.append(res)
         logger.info("Threat hunt execution completed: %d finding(s) discovered across %d events", len(results), len(events))
         return results
+

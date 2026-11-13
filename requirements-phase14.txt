@@ -1,0 +1,10 @@
+# Phase 14: Enterprise Security Analytics, UEBA & Fraud-Threat Correlation
+scikit-learn>=1.4.0
+joblib>=1.3.0
+numpy>=1.26.0
+fastapi>=0.109.0
+pydantic>=2.5.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+httpx>=0.26.0
+python-jose[cryptography]>=3.3.0

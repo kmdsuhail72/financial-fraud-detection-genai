@@ -1,0 +1,1152 @@
+[
+  {
+    "correlation_id": "corr-db8f2f9374",
+    "entity_id": "CUS-100077",
+    "event_id": "EVT-20261102-02913",
+    "ueba_anomaly_score": 0.723,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 85.02,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.073149Z"
+  },
+  {
+    "correlation_id": "corr-845124d0d1",
+    "entity_id": "CUS-100055",
+    "event_id": "EVT-20261103-03763",
+    "ueba_anomaly_score": 0.7223,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 85.01,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.074896Z"
+  },
+  {
+    "correlation_id": "corr-2175d24693",
+    "entity_id": "CUS-100006",
+    "event_id": "EVT-20261102-02304",
+    "ueba_anomaly_score": 0.7215,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 85.0,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.074951Z"
+  },
+  {
+    "correlation_id": "corr-3af183d0d7",
+    "entity_id": "CUS-100001",
+    "event_id": "EVT-20261101-01936",
+    "ueba_anomaly_score": 0.7208,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.99,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.074978Z"
+  },
+  {
+    "correlation_id": "corr-837747e123",
+    "entity_id": "CUS-100032",
+    "event_id": "EVT-20261102-02033",
+    "ueba_anomaly_score": 0.7191,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.97,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075001Z"
+  },
+  {
+    "correlation_id": "corr-5ead22bf7c",
+    "entity_id": "CUS-100013",
+    "event_id": "EVT-20261100-00317",
+    "ueba_anomaly_score": 0.7184,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.96,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075022Z"
+  },
+  {
+    "correlation_id": "corr-357f60786f",
+    "entity_id": "CUS-100047",
+    "event_id": "EVT-20261102-02363",
+    "ueba_anomaly_score": 0.7173,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.94,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075044Z"
+  },
+  {
+    "correlation_id": "corr-36313a5ef2",
+    "entity_id": "CUS-100067",
+    "event_id": "EVT-20261100-00592",
+    "ueba_anomaly_score": 0.7169,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.94,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075064Z"
+  },
+  {
+    "correlation_id": "corr-a53c2dec1c",
+    "entity_id": "CUS-100042",
+    "event_id": "EVT-20261102-02517",
+    "ueba_anomaly_score": 0.7159,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.92,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075082Z"
+  },
+  {
+    "correlation_id": "corr-9f93852426",
+    "entity_id": "CUS-100073",
+    "event_id": "EVT-20261101-01376",
+    "ueba_anomaly_score": 0.7155,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.92,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075101Z"
+  },
+  {
+    "correlation_id": "corr-c8d45d4a0e",
+    "entity_id": "CUS-100039",
+    "event_id": "EVT-20261103-03845",
+    "ueba_anomaly_score": 0.7152,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.91,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.72)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075119Z"
+  },
+  {
+    "correlation_id": "corr-1693d534aa",
+    "entity_id": "CUS-100060",
+    "event_id": "EVT-20261103-03002",
+    "ueba_anomaly_score": 0.7145,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.9,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075139Z"
+  },
+  {
+    "correlation_id": "corr-724abd0724",
+    "entity_id": "CUS-100084",
+    "event_id": "EVT-20261102-02400",
+    "ueba_anomaly_score": 0.7138,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.89,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075157Z"
+  },
+  {
+    "correlation_id": "corr-bb338a3d42",
+    "entity_id": "CUS-100025",
+    "event_id": "EVT-20261100-00619",
+    "ueba_anomaly_score": 0.7134,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.89,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075175Z"
+  },
+  {
+    "correlation_id": "corr-ddd6444651",
+    "entity_id": "CUS-100050",
+    "event_id": "EVT-20261103-03337",
+    "ueba_anomaly_score": 0.7134,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.89,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075194Z"
+  },
+  {
+    "correlation_id": "corr-db5bcac7dd",
+    "entity_id": "CUS-100031",
+    "event_id": "EVT-20261104-04447",
+    "ueba_anomaly_score": 0.713,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.88,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075213Z"
+  },
+  {
+    "correlation_id": "corr-0bedca42d8",
+    "entity_id": "CUS-100062",
+    "event_id": "EVT-20261103-03140",
+    "ueba_anomaly_score": 0.7127,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.88,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075233Z"
+  },
+  {
+    "correlation_id": "corr-14ec35785d",
+    "entity_id": "CUS-100024",
+    "event_id": "EVT-20261100-00766",
+    "ueba_anomaly_score": 0.7123,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.87,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075252Z"
+  },
+  {
+    "correlation_id": "corr-b29fe0458b",
+    "entity_id": "CUS-100086",
+    "event_id": "EVT-20261101-01136",
+    "ueba_anomaly_score": 0.7123,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.87,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075270Z"
+  },
+  {
+    "correlation_id": "corr-c36d168a17",
+    "entity_id": "CUS-100028",
+    "event_id": "EVT-20261102-02658",
+    "ueba_anomaly_score": 0.712,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.87,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075290Z"
+  },
+  {
+    "correlation_id": "corr-5e57c2f5ce",
+    "entity_id": "CUS-100014",
+    "event_id": "EVT-20261101-01037",
+    "ueba_anomaly_score": 0.7109,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.85,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075308Z"
+  },
+  {
+    "correlation_id": "corr-d6ce7f03cf",
+    "entity_id": "CUS-100021",
+    "event_id": "EVT-20261102-02889",
+    "ueba_anomaly_score": 0.7106,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.85,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075326Z"
+  },
+  {
+    "correlation_id": "corr-57607bd620",
+    "entity_id": "CUS-100095",
+    "event_id": "EVT-20261103-03714",
+    "ueba_anomaly_score": 0.7102,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.84,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075344Z"
+  },
+  {
+    "correlation_id": "corr-cde7ac874f",
+    "entity_id": "CUS-100011",
+    "event_id": "EVT-20261102-02254",
+    "ueba_anomaly_score": 0.7098,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.84,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075362Z"
+  },
+  {
+    "correlation_id": "corr-91e1c09432",
+    "entity_id": "CUS-100032",
+    "event_id": "EVT-20261103-03962",
+    "ueba_anomaly_score": 0.7095,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.83,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075380Z"
+  },
+  {
+    "correlation_id": "corr-e9f61222da",
+    "entity_id": "CUS-100084",
+    "event_id": "EVT-20261101-01547",
+    "ueba_anomaly_score": 0.7091,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.83,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075399Z"
+  },
+  {
+    "correlation_id": "corr-917e0c6404",
+    "entity_id": "CUS-100024",
+    "event_id": "EVT-20261101-01001",
+    "ueba_anomaly_score": 0.7088,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.82,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075417Z"
+  },
+  {
+    "correlation_id": "corr-44b4d76aca",
+    "entity_id": "CUS-100098",
+    "event_id": "EVT-20261103-03743",
+    "ueba_anomaly_score": 0.7084,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.82,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075436Z"
+  },
+  {
+    "correlation_id": "corr-71b959d034",
+    "entity_id": "CUS-100010",
+    "event_id": "EVT-20261103-03847",
+    "ueba_anomaly_score": 0.7081,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.81,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075453Z"
+  },
+  {
+    "correlation_id": "corr-162c87a5ee",
+    "entity_id": "CUS-100095",
+    "event_id": "EVT-20261101-01642",
+    "ueba_anomaly_score": 0.7077,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.81,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075472Z"
+  },
+  {
+    "correlation_id": "corr-b5f12b954a",
+    "entity_id": "CUS-100054",
+    "event_id": "EVT-20261101-01997",
+    "ueba_anomaly_score": 0.7077,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.81,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075490Z"
+  },
+  {
+    "correlation_id": "corr-59964a8fc1",
+    "entity_id": "CUS-100082",
+    "event_id": "EVT-20261102-02860",
+    "ueba_anomaly_score": 0.7077,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.81,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075509Z"
+  },
+  {
+    "correlation_id": "corr-f158c9a14f",
+    "entity_id": "CUS-100078",
+    "event_id": "EVT-20261102-02717",
+    "ueba_anomaly_score": 0.7074,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.8,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075527Z"
+  },
+  {
+    "correlation_id": "corr-fd2727d165",
+    "entity_id": "CUS-100092",
+    "event_id": "EVT-20261103-03941",
+    "ueba_anomaly_score": 0.7074,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.8,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075546Z"
+  },
+  {
+    "correlation_id": "corr-3dd4a81a6b",
+    "entity_id": "CUS-100010",
+    "event_id": "EVT-20261104-04136",
+    "ueba_anomaly_score": 0.7066,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.79,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075563Z"
+  },
+  {
+    "correlation_id": "corr-b9d29ec184",
+    "entity_id": "CUS-100004",
+    "event_id": "EVT-20261103-03947",
+    "ueba_anomaly_score": 0.7063,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.79,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075582Z"
+  },
+  {
+    "correlation_id": "corr-2c01a0a6c7",
+    "entity_id": "CUS-100043",
+    "event_id": "EVT-20261103-03404",
+    "ueba_anomaly_score": 0.7059,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.78,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075600Z"
+  },
+  {
+    "correlation_id": "corr-199cc45688",
+    "entity_id": "CUS-100045",
+    "event_id": "EVT-20261103-03959",
+    "ueba_anomaly_score": 0.7059,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.78,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075618Z"
+  },
+  {
+    "correlation_id": "corr-43f886e203",
+    "entity_id": "CUS-100090",
+    "event_id": "EVT-20261100-00891",
+    "ueba_anomaly_score": 0.7056,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.78,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075637Z"
+  },
+  {
+    "correlation_id": "corr-b8df620a9a",
+    "entity_id": "CUS-100039",
+    "event_id": "EVT-20261104-04743",
+    "ueba_anomaly_score": 0.7056,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.78,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075655Z"
+  },
+  {
+    "correlation_id": "corr-6c58bb2038",
+    "entity_id": "CUS-100012",
+    "event_id": "EVT-20261102-02482",
+    "ueba_anomaly_score": 0.7052,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.77,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075673Z"
+  },
+  {
+    "correlation_id": "corr-8a18a06579",
+    "entity_id": "CUS-100049",
+    "event_id": "EVT-20261102-02910",
+    "ueba_anomaly_score": 0.7052,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.77,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075691Z"
+  },
+  {
+    "correlation_id": "corr-3343156fd9",
+    "entity_id": "CUS-100067",
+    "event_id": "EVT-20261104-04583",
+    "ueba_anomaly_score": 0.7052,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.77,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.71)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075709Z"
+  },
+  {
+    "correlation_id": "corr-46ca291c1b",
+    "entity_id": "CUS-100020",
+    "event_id": "EVT-20261100-00297",
+    "ueba_anomaly_score": 0.7045,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.76,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075727Z"
+  },
+  {
+    "correlation_id": "corr-b2712d2f5d",
+    "entity_id": "CUS-100079",
+    "event_id": "EVT-20261101-01980",
+    "ueba_anomaly_score": 0.7045,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.76,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075745Z"
+  },
+  {
+    "correlation_id": "corr-2f5683661a",
+    "entity_id": "CUS-100078",
+    "event_id": "EVT-20261104-04090",
+    "ueba_anomaly_score": 0.7045,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.76,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075763Z"
+  },
+  {
+    "correlation_id": "corr-504ae4c429",
+    "entity_id": "CUS-100061",
+    "event_id": "EVT-20261102-02871",
+    "ueba_anomaly_score": 0.7041,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.76,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075782Z"
+  },
+  {
+    "correlation_id": "corr-d4f2a7fc3b",
+    "entity_id": "CUS-100050",
+    "event_id": "EVT-20261104-04348",
+    "ueba_anomaly_score": 0.7031,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.74,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075801Z"
+  },
+  {
+    "correlation_id": "corr-9e23dc925b",
+    "entity_id": "CUS-100025",
+    "event_id": "EVT-20261102-02113",
+    "ueba_anomaly_score": 0.7027,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.74,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075819Z"
+  },
+  {
+    "correlation_id": "corr-0adf5e3c86",
+    "entity_id": "CUS-100053",
+    "event_id": "EVT-20261104-04199",
+    "ueba_anomaly_score": 0.7027,
+    "fraud_probability": 0.88,
+    "ioc_reputation_score": 0.0,
+    "security_finding_severity": 0.0,
+    "blended_risk_score": 84.74,
+    "risk_level": "CRITICAL",
+    "correlated_signals": [
+      "High behavioral anomaly deviation (0.70)",
+      "Elevated ML fraud probability (0.88)",
+      "Threat intelligence IOC match (Reputation: 78.0/100)",
+      "Concurrent cloud security finding (Severity: 8.5/10)"
+    ],
+    "investigation_recommendations": [
+      "Immediate Account Hold: Suspend automated fund dispersal pending voice verification.",
+      "Session Invalidation: Revoke active session tokens and force MFA re-authentication.",
+      "Cross-Domain Escalation: Correlate concurrent IAM and IP activity with Threat Intel."
+    ],
+    "timestamp": "2026-11-13T05:20:02.075838Z"
+  }
+]

@@ -164,3 +164,4 @@ class ThreatIntelStore:
 
 # Global singleton instance
 threat_intel_store = ThreatIntelStore()
+

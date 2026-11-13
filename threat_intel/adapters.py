@@ -178,3 +178,4 @@ class CompositeThreatIntelAdapter:
             if record:
                 return record
         return None
+

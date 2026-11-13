@@ -12,3 +12,4 @@ output "threat_intel_bucket_arn" {
   value       = aws_s3_bucket.threat_intel_bucket.arn
   description = "ARN of the S3 archive bucket for threat indicators."
 }
+

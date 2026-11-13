@@ -125,3 +125,4 @@ class MITREMapper:
     def list_all_techniques(cls) -> List[MITRETechnique]:
         """Returns the complete registered catalog of MITRE techniques."""
         return list(MITRE_CATALOG.values())
+

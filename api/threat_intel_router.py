@@ -158,3 +158,4 @@ def list_mitre_techniques(
 ):
     """Returns the MITRE ATT&CK taxonomy and technique reference catalog."""
     return MITREMapper.list_all_techniques()
+

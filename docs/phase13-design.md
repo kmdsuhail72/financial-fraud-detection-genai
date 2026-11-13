@@ -162,3 +162,4 @@ All routes are mounted under `/threat-intel` in `api/app.py` and enforce Cognito
    - **Result:** `tsc --noEmit` (0 errors) and `vite build` completed cleanly (`dist/` generated).
 5. **Full System Regression Suite:**
    - **Result:** 11 passed in Phase 15, 25 passed in Phase 10/12 (0 regressions).
+

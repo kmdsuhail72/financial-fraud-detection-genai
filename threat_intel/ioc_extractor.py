@@ -129,3 +129,4 @@ class IOCExtractor:
                 results[IOCType.DOMAIN].append(val)
 
         return results
+

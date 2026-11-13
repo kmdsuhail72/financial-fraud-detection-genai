@@ -2,3 +2,4 @@
 {"event_id": "evt-iam-002", "source": "GuardDuty", "event_type": "CredentialCompromise", "source_ip": "192.0.2.77", "resource_id": "arn:aws:iam::123456789012:role/FinGuardPaymentRole", "details": {"type": "UnauthorizedAccess:IAMUser/AnomalousBehavior", "api_call": "AssumeRole"}}
 {"event_id": "evt-norm-003", "source": "VPCFlow", "event_type": "RoutineTraffic", "source_ip": "10.0.1.25", "resource_id": "eni-0123456789", "details": {"action": "ACCEPT", "dest_port": 80}}
 {"event_id": "evt-norm-004", "source": "Cognito", "event_type": "UserLoginSuccess", "source_ip": "203.0.113.50", "resource_id": "cus-100045", "details": {"mfa_used": true, "user_agent": "Mozilla/5.0"}}
+

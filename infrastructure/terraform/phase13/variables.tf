@@ -15,3 +15,4 @@ variable "retention_days" {
   default     = 365
   description = "Threat intelligence telemetry archive retention period in days."
 }
+

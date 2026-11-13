@@ -1,0 +1,25 @@
+{
+  "trained_at": "2026-11-13T05:20:02.068748+00:00",
+  "total_events": 5000,
+  "total_entities": 100,
+  "injected_anomalies": 384,
+  "contamination": 0.08,
+  "n_estimators": 120,
+  "roc_auc": 1.0,
+  "precision": 0.0768,
+  "recall": 1.0,
+  "f1_score": 0.1426,
+  "features": [
+    "amount",
+    "amount_deviation_ratio",
+    "amount_z_score",
+    "is_off_hours",
+    "is_new_device",
+    "is_new_ip",
+    "is_new_city",
+    "velocity_1h",
+    "velocity_24h",
+    "velocity_z_score",
+    "impossible_travel_flag"
+  ]
+}

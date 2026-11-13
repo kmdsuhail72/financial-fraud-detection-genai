@@ -92,3 +92,4 @@ resource "aws_s3_bucket_lifecycle_configuration" "threat_intel_lifecycle" {
     }
   }
 }
+

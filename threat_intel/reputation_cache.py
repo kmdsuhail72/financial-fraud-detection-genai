@@ -252,3 +252,4 @@ class SQLiteReputationCache:
                 conn.execute("DELETE FROM analyst_feedback")
                 conn.execute("DELETE FROM iocs")
                 conn.commit()
+

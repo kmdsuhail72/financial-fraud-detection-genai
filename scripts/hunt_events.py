@@ -104,3 +104,4 @@ if __name__ == "__main__":
     parser.add_argument("--output", default="artifacts/phase13/hunt-results.json", help="Output path")
     args = parser.parse_args()
     run_hunting(args.events, args.rules, args.output)
+

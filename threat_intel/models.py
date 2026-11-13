@@ -139,3 +139,4 @@ class IOCEnrichmentResponse(BaseModel):
     unrecognized: List[str] = Field(default_factory=list)
     total_processed: int
     cache_hits: int = 0
+

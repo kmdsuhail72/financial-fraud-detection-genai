@@ -95,3 +95,4 @@ class IOCRiskEngine:
             severity = IOCSeverity.INFO
 
         return score, confidence, severity, status, explanations
+

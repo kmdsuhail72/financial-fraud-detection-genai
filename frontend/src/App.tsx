@@ -6,6 +6,7 @@ import { QueuePage } from './pages/QueuePage';
 import { CaseDetailPage } from './pages/CaseDetailPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { ThreatIntelPage } from './pages/ThreatIntelPage';
+import { UebaDashboardPage } from './pages/UebaDashboardPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -159,6 +160,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'threat-intel' && (
             <ThreatIntelPage />
+          )}
+
+          {currentTab === 'ueba' && (
+            <UebaDashboardPage />
           )}
 
           {currentTab === 'settings' && (
