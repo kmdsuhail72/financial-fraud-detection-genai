@@ -1,0 +1,34 @@
+[
+  {
+    "rule_id": "HUNT-RULE-001",
+    "name": "C2 Traffic to Known Proxy and Anonymizer Nodes",
+    "description": "Matches outbound network sessions targeting known malicious IP addresses.",
+    "severity": "HIGH",
+    "mitre_technique_id": "T1071",
+    "conditions": {
+      "logic": "OR",
+      "conditions": [
+        {"field": "source_ip", "operator": "matches_ioc"},
+        {"field": "ip_address", "operator": "matches_ioc"},
+        {"field": "details.source_ip", "operator": "matches_ioc"}
+      ]
+    },
+    "enabled": true
+  },
+  {
+    "rule_id": "HUNT-RULE-002",
+    "name": "Anomalous Credential Access and Brute Force",
+    "description": "Detects high velocity brute forcing and anomalous credential usage.",
+    "severity": "CRITICAL",
+    "mitre_technique_id": "T1110",
+    "conditions": {
+      "logic": "OR",
+      "conditions": [
+        {"field": "event_type", "operator": "contains", "value": "Credential"},
+        {"field": "event_type", "operator": "contains", "value": "BruteForce"},
+        {"field": "details.type", "operator": "contains", "value": "AnomalousBehavior"}
+      ]
+    },
+    "enabled": true
+  }
+]

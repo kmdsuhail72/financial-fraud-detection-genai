@@ -41,6 +41,7 @@ from security.roles import Permission, Role
 from api.compliance_router import compliance_router
 from api.soc_router import soc_router
 from api.graph_router import graph_router
+from api.threat_intel_router import threat_intel_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -166,6 +167,7 @@ app.add_middleware(
 app.include_router(compliance_router)
 app.include_router(soc_router)
 app.include_router(graph_router)
+app.include_router(threat_intel_router)
 
 
 # ==========================================

@@ -22,3 +22,4 @@ output "neptune_security_group_id" {
   value       = aws_security_group.neptune_sg.id
   description = "Security group ID for Neptune cluster."
 }
+

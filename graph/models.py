@@ -111,3 +111,4 @@ class EntityGraphScore(BaseModel):
     shared_entities_count: int = 0
     centrality: CentralityMetrics
     risk_factors: List[str] = Field(default_factory=list)
+

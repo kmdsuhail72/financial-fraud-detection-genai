@@ -186,3 +186,4 @@ All read endpoints require Cognito JWT authentication with `Permission.VIEW_CASE
 - **CLI Analytics Demonstration:** `scripts/demo_fraud_ring.py --output artifacts/phase15`.
 - **Infrastructure Code:** `infrastructure/terraform/phase15/` (Neptune DB cluster, parameter groups, VPC subnets, IAM loader role).
 - **Regression Suite:** `tests/phase10/test_auth_and_rbac.py` + `tests/phase12/test_incident_response.py` (25/25 passing).
+

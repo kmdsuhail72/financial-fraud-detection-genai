@@ -1,0 +1,228 @@
+{
+  "summary": {
+    "total_processed": 4,
+    "total_enriched": 4,
+    "cache_hits": 4,
+    "unrecognized_count": 0
+  },
+  "enriched_iocs": [
+    {
+      "ioc_id": "ioc-ipv4-c34be0e9c2f0",
+      "type": "ipv4",
+      "value": "198.51.100.42",
+      "threat_types": [
+        "c2",
+        "proxy"
+      ],
+      "reputation_score": 98.0,
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "status": "ACTIVE",
+      "mitre_attack": [
+        {
+          "technique_id": "T1071",
+          "name": "Application Layer Protocol",
+          "tactic": "Command and Control",
+          "description": "Adversaries communicate with malware or compromised devices using HTTP/HTTPS or DNS protocols.",
+          "url": "https://attack.mitre.org/techniques/T1071/"
+        },
+        {
+          "technique_id": "T1090",
+          "name": "Proxy",
+          "tactic": "Command and Control",
+          "description": "Adversaries route illicit traffic through open proxies, Tor exit nodes, or VPNs to mask origin.",
+          "url": "https://attack.mitre.org/techniques/T1090/"
+        }
+      ],
+      "first_seen": "2026-11-06T05:02:22.982973Z",
+      "last_seen": "2026-11-13T05:02:22.982973Z",
+      "expires_at": "2026-12-13T05:02:22.982973Z",
+      "source_feeds": [
+        "FinGuard-Global-Feed",
+        "AbuseIPDB-Sim",
+        "AlienVault-OTX-Sim"
+      ],
+      "analyst_verdicts": [],
+      "tags": [
+        "apt29",
+        "tor-exit",
+        "bulletproof-host"
+      ],
+      "metadata": {
+        "asn": "AS40065",
+        "country": "SE",
+        "org": "Mullvad Exit Node"
+      }
+    },
+    {
+      "ioc_id": "ioc-domain-1e475d86adc7",
+      "type": "domain",
+      "value": "evil-bank-login.com",
+      "threat_types": [
+        "phishing",
+        "credential_theft"
+      ],
+      "reputation_score": 100.0,
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "status": "ACTIVE",
+      "mitre_attack": [
+        {
+          "technique_id": "T1078",
+          "name": "Valid Accounts",
+          "tactic": "Initial Access",
+          "description": "Adversaries obtain and abuse credentials of existing accounts to bypass defenses and access banking portals.",
+          "url": "https://attack.mitre.org/techniques/T1078/"
+        },
+        {
+          "technique_id": "T1110",
+          "name": "Brute Force",
+          "tactic": "Credential Access",
+          "description": "Adversaries systematically guess passwords or credential stuff against banking login endpoints.",
+          "url": "https://attack.mitre.org/techniques/T1110/"
+        },
+        {
+          "technique_id": "T1539",
+          "name": "Steal Web Session Cookie",
+          "tactic": "Credential Access",
+          "description": "Adversaries capture session cookies or tokens to bypass multi-factor authentication (MFA).",
+          "url": "https://attack.mitre.org/techniques/T1539/"
+        },
+        {
+          "technique_id": "T1566",
+          "name": "Phishing",
+          "tactic": "Initial Access",
+          "description": "Adversaries send deceptive messages or credential-harvesting landing pages to trick customers into revealing credentials.",
+          "url": "https://attack.mitre.org/techniques/T1566/"
+        }
+      ],
+      "first_seen": "2026-11-06T05:02:23.027232Z",
+      "last_seen": "2026-11-13T05:02:23.027232Z",
+      "expires_at": "2026-12-13T05:02:23.027232Z",
+      "source_feeds": [
+        "PhishTank-Sim",
+        "OpenPhish-Sim"
+      ],
+      "analyst_verdicts": [],
+      "tags": [
+        "credential-harvester",
+        "synthetic-kyc"
+      ],
+      "metadata": {
+        "registrar": "NameCheap-Proxy",
+        "created_date": "2026-11-01"
+      }
+    },
+    {
+      "ioc_id": "ioc-url-b702b2b1a531",
+      "type": "url",
+      "value": "https://secure-update-verify.net/auth",
+      "threat_types": [
+        "phishing",
+        "account_takeover"
+      ],
+      "reputation_score": 90.0,
+      "confidence": 0.92,
+      "severity": "CRITICAL",
+      "status": "ACTIVE",
+      "mitre_attack": [
+        {
+          "technique_id": "T1078",
+          "name": "Valid Accounts",
+          "tactic": "Initial Access",
+          "description": "Adversaries obtain and abuse credentials of existing accounts to bypass defenses and access banking portals.",
+          "url": "https://attack.mitre.org/techniques/T1078/"
+        },
+        {
+          "technique_id": "T1539",
+          "name": "Steal Web Session Cookie",
+          "tactic": "Credential Access",
+          "description": "Adversaries capture session cookies or tokens to bypass multi-factor authentication (MFA).",
+          "url": "https://attack.mitre.org/techniques/T1539/"
+        },
+        {
+          "technique_id": "T1566",
+          "name": "Phishing",
+          "tactic": "Initial Access",
+          "description": "Adversaries send deceptive messages or credential-harvesting landing pages to trick customers into revealing credentials.",
+          "url": "https://attack.mitre.org/techniques/T1566/"
+        }
+      ],
+      "first_seen": "2026-11-06T05:02:23.048673Z",
+      "last_seen": "2026-11-13T05:02:23.048673Z",
+      "expires_at": "2026-12-13T05:02:23.048673Z",
+      "source_feeds": [
+        "FinGuard-URLhaus-Sim"
+      ],
+      "analyst_verdicts": [],
+      "tags": [
+        "mfa-bypass-kit",
+        "adversary-in-the-middle"
+      ],
+      "metadata": {
+        "status_code": 200,
+        "content_type": "text/html"
+      }
+    },
+    {
+      "ioc_id": "ioc-md5-1f2b9e9ee507",
+      "type": "md5",
+      "value": "44d88612fea8a8f36de82e1278abb02f",
+      "threat_types": [
+        "ransomware",
+        "c2"
+      ],
+      "reputation_score": 100.0,
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "status": "ACTIVE",
+      "mitre_attack": [
+        {
+          "technique_id": "T1059",
+          "name": "Command and Scripting Interpreter",
+          "tactic": "Execution",
+          "description": "Adversaries execute commands via shells, Python, or PowerShell on compromised endpoints.",
+          "url": "https://attack.mitre.org/techniques/T1059/"
+        },
+        {
+          "technique_id": "T1071",
+          "name": "Application Layer Protocol",
+          "tactic": "Command and Control",
+          "description": "Adversaries communicate with malware or compromised devices using HTTP/HTTPS or DNS protocols.",
+          "url": "https://attack.mitre.org/techniques/T1071/"
+        },
+        {
+          "technique_id": "T1090",
+          "name": "Proxy",
+          "tactic": "Command and Control",
+          "description": "Adversaries route illicit traffic through open proxies, Tor exit nodes, or VPNs to mask origin.",
+          "url": "https://attack.mitre.org/techniques/T1090/"
+        },
+        {
+          "technique_id": "T1486",
+          "name": "Data Encrypted for Impact",
+          "tactic": "Impact",
+          "description": "Ransomware encrypts critical databases or file systems to disrupt operations and extort funds.",
+          "url": "https://attack.mitre.org/techniques/T1486/"
+        }
+      ],
+      "first_seen": "2026-11-06T05:02:23.069528Z",
+      "last_seen": "2026-11-13T05:02:23.069528Z",
+      "expires_at": "2026-12-13T05:02:23.069528Z",
+      "source_feeds": [
+        "VirusTotal-Sim",
+        "MalwareBazaar-Sim"
+      ],
+      "analyst_verdicts": [],
+      "tags": [
+        "trojan.banker.dridex",
+        "stealer"
+      ],
+      "metadata": {
+        "file_type": "PE32 Executable",
+        "file_size": 245760
+      }
+    }
+  ],
+  "unrecognized": []
+}

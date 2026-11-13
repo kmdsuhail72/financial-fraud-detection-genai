@@ -83,3 +83,4 @@ class NeptuneQueryCatalog:
                 "RETURN relationships(path) AS links, nodes(path) AS nodes LIMIT 100"
             ),
         }
+

@@ -39,3 +39,4 @@ variable "enable_iam_database_authentication" {
   default     = true
   description = "Enforce SigV4 IAM authentication for Neptune connections."
 }
+

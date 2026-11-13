@@ -5,6 +5,7 @@ import { DashboardPage } from './pages/DashboardPage';
 import { QueuePage } from './pages/QueuePage';
 import { CaseDetailPage } from './pages/CaseDetailPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { ThreatIntelPage } from './pages/ThreatIntelPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -154,6 +155,10 @@ export const App: React.FC = () => {
               onUpdateStatus={handleUpdateStatus}
               onAddNote={handleAddNote}
             />
+          )}
+
+          {currentTab === 'threat-intel' && (
+            <ThreatIntelPage />
           )}
 
           {currentTab === 'settings' && (

@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "total_events_scanned": 4,
+    "total_rules_evaluated": 2,
+    "total_hunt_findings": 2
+  },
+  "findings": [
+    {
+      "hunt_id": "hunt-aae93ab9",
+      "rule_id": "HUNT-RULE-001",
+      "rule_name": "C2 Traffic to Known Proxy and Anonymizer Nodes",
+      "mitre_technique_id": "T1071",
+      "matched_events": [
+        {
+          "event_id": "evt-c2-001",
+          "source": "CloudTrail",
+          "event_type": "NetworkConnection",
+          "source_ip": "198.51.100.42",
+          "resource_id": "arn:aws:ec2:ap-south-1:123456789012:instance/i-0abcdef123",
+          "details": {
+            "action": "OUTBOUND_TCP",
+            "dest_port": 443,
+            "source_ip": "198.51.100.42"
+          }
+        }
+      ],
+      "matched_iocs": [
+        "198.51.100.42"
+      ],
+      "timestamp": "2026-11-13T05:02:36.692965Z",
+      "summary": "Hunting rule 'C2 Traffic to Known Proxy and Anonymizer Nodes' triggered on 1 event(s) associated with MITRE technique T1071."
+    },
+    {
+      "hunt_id": "hunt-3869cd1e",
+      "rule_id": "HUNT-RULE-002",
+      "rule_name": "Anomalous Credential Access and Brute Force",
+      "mitre_technique_id": "T1110",
+      "matched_events": [
+        {
+          "event_id": "evt-iam-002",
+          "source": "GuardDuty",
+          "event_type": "CredentialCompromise",
+          "source_ip": "192.0.2.77",
+          "resource_id": "arn:aws:iam::123456789012:role/FinGuardPaymentRole",
+          "details": {
+            "type": "UnauthorizedAccess:IAMUser/AnomalousBehavior",
+            "api_call": "AssumeRole"
+          }
+        }
+      ],
+      "matched_iocs": [
+        "192.0.2.77"
+      ],
+      "timestamp": "2026-11-13T05:02:36.693186Z",
+      "summary": "Hunting rule 'Anomalous Credential Access and Brute Force' triggered on 1 event(s) associated with MITRE technique T1110."
+    }
+  ]
+}

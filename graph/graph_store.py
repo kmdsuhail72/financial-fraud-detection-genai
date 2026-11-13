@@ -212,3 +212,4 @@ class GraphStore:
 
 # Global singleton instance
 graph_store = GraphStore(seed=True)
+

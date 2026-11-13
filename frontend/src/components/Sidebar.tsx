@@ -9,7 +9,8 @@ import {
   ChevronRight,
   ShieldCheck,
   Activity,
-  Cpu
+  Cpu,
+  Crosshair
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -46,6 +47,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       icon: FileSearch,
       badge: activeCaseId ? activeCaseId.replace('CASE-', '#') : null,
       disabled: !activeCaseId
+    },
+    {
+      id: 'threat-intel',
+      label: 'Threat Intelligence',
+      icon: Crosshair,
+      badge: 'MITRE'
     },
     {
       id: 'settings',

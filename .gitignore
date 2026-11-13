@@ -116,6 +116,10 @@ data/phase5-parquet/*
 *.parquet
 *.csv
 *.jsonl
+!examples/security_events.jsonl
+*.db
+*.sqlite
+*.sqlite3
 *.tar.gz
 *.pkl
 *.joblib

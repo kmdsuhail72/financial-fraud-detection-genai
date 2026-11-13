@@ -83,3 +83,4 @@ python scripts/demo_incident.py --output artifacts/phase12
 Outputs:
 - `artifacts/phase12/incident_lifecycle_report.json`: Complete incident dossier with correlated events, timeline, approvals, and execution receipt.
 - `artifacts/phase12/incident_summary.md`: Markdown report for executive SOC review.
+
