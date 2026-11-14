@@ -62,3 +62,4 @@ The capacity calculator converts business demand (peak transactions per second) 
 ### 3.3 Kubernetes Resource & Autoscaling Sizing
 - Pod definitions configure distinct CPU/Memory requests ($500m / 1024Mi$) and limits ($2000m / 2048Mi$).
 - HPA scale-up stabilization window is set to 0 seconds for rapid scale-out, with a 300-second scale-down stabilization window to prevent flapping.
+

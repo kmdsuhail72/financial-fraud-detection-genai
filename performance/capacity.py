@@ -48,3 +48,4 @@ def calculate_capacity(
         safety_buffer_rps=safety_buffer,
         formula_explanation=explanation,
     )
+

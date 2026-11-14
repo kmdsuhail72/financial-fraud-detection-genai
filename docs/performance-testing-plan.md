@@ -66,3 +66,4 @@ A pull request or deployment is automatically blocked in the CI/CD pipeline if:
 1. **p95 Latency Regression:** Fraud scoring p95 latency increases by $> 15\%$ compared to baseline.
 2. **Error Rate Spike:** HTTP 5xx errors exceed $0.1\%$ under load.
 3. **Throughput Degradation:** Maximum sustainable throughput drops by $> 10\%$.
+

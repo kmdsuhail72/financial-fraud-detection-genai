@@ -69,3 +69,4 @@ def on_locust_init(environment, **kwargs):
     print(" FinGuard AI — Locust Performance Engine Initialized")
     print(f" Target Host: {environment.host}")
     print("=" * 70)
+

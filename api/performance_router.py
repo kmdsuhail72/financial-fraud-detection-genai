@@ -90,3 +90,4 @@ def get_load_test_plans() -> Dict[str, Any]:
             "max_replicas": 24,
         },
     }
+

@@ -132,3 +132,4 @@ def test_locustfile_structure_and_tasks():
     assert 'self.client.post("/score"' in content
     assert 'self.client.get("/health"' in content
     assert "between(0.05, 0.25)" in content
+

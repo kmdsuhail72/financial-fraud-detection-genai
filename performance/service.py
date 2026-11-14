@@ -114,3 +114,4 @@ class PerformanceEngineeringService:
 
 # Global singleton performance service
 performance_service = PerformanceEngineeringService()
+

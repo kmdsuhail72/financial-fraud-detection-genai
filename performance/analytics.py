@@ -67,3 +67,4 @@ def compute_benchmark_analytics(
         p95_latency_ms=round(p95, 2),
         p99_latency_ms=round(p99, 2),
     )
+

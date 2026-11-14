@@ -85,3 +85,4 @@ class PerformanceHealthResponse(BaseModel):
     timestamp: str
 
     model_config = ConfigDict(extra="allow")
+
