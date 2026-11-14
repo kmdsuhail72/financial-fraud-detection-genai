@@ -20,6 +20,7 @@ import { KYCOnboardingPage } from './pages/KYCOnboardingPage';
 import { DocumentVerificationPage } from './pages/DocumentVerificationPage';
 import { IdentityGraphPage } from './pages/IdentityGraphPage';
 import { UnifiedCustomerRiskPage } from './pages/UnifiedCustomerRiskPage';
+import { PaymentFraudPage } from './pages/PaymentFraudPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -229,6 +230,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'customer-risk' && (
             <UnifiedCustomerRiskPage />
+          )}
+
+          {currentTab === 'payment-fraud' && (
+            <PaymentFraudPage />
           )}
 
           {currentTab === 'settings' && (

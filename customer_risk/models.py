@@ -88,3 +88,4 @@ class CustomerAssessmentRequest(BaseModel):
 class RiskAssessmentHistory(BaseModel):
     customer_id: str
     assessments: List[CustomerRiskAssessment]
+

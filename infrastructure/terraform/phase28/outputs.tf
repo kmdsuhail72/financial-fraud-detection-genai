@@ -12,3 +12,4 @@ output "customer_risk_history_table" {
   description = "DynamoDB table for customer continuous risk history"
   value       = aws_dynamodb_table.customer_risk_history.id
 }
+

@@ -1,0 +1,24 @@
+{
+  "transaction_id": "TXN-2026-UPI-285000",
+  "customer_id": "CUST-BLR-40291",
+  "amount": 285000.0,
+  "currency": "INR",
+  "payment_rail": "UPI",
+  "sender_account": "ACC-SB-991203",
+  "beneficiary_account": "ACC-HDFC-882194",
+  "beneficiary_name": "Apex Digital Services",
+  "is_new_beneficiary": true,
+  "customer_home_city": "Bengaluru",
+  "transaction_city": "Mumbai",
+  "is_international": false,
+  "device_context": {
+    "device_id": "DEV-ANDROID-SM-G998B",
+    "ip_address": "49.36.120.45",
+    "user_agent": "Mozilla/5.0 (Linux; Android 14; SM-G998B) UPI/4.2",
+    "location": "Mumbai, MH, IN"
+  },
+  "metadata": {
+    "gateway_id": "PG-RAZORPAY-IND",
+    "risk_rule_set": "PHASE_29_V1"
+  }
+}

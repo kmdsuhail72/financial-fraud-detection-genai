@@ -209,3 +209,4 @@ def test_signal_explainability_and_sources(client):
     assert "layering detected" in aml_sig["indicators"][0]
     assert aml_sig["weighted_contribution"] > 0
     assert any("AML" in d for d in data["primary_risk_drivers"])
+

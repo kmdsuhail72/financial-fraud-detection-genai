@@ -131,3 +131,4 @@ _customer_risk_store = CustomerRiskStore()
 
 def get_customer_risk_store() -> CustomerRiskStore:
     return _customer_risk_store
+

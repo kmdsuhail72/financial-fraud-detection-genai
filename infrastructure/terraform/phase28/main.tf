@@ -118,3 +118,4 @@ resource "aws_dynamodb_table" "customer_risk_history" {
     Environment = var.environment
   }
 }
+

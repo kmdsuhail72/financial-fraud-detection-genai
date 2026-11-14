@@ -151,3 +151,4 @@ class CustomerRiskEngine:
         )
 
         return assessment
+

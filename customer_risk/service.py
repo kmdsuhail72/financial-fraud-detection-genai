@@ -47,3 +47,4 @@ _customer_risk_service = CustomerRiskService()
 
 def get_customer_risk_service() -> CustomerRiskService:
     return _customer_risk_service
+

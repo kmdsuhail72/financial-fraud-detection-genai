@@ -63,3 +63,4 @@ def get_customer_risk_history(customer_id: str):
     """Retrieves continuous risk reassessment history and trendline for a customer."""
     service = get_customer_risk_service()
     return service.get_customer_history(customer_id)
+

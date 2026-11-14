@@ -21,7 +21,8 @@ import {
   Award,
   Banknote,
   UserCheck,
-  FileCheck2
+  FileCheck2,
+  CreditCard
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -148,6 +149,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Customer Risk Intelligence',
       icon: Activity,
       badge: 'Unified'
+    },
+    {
+      id: 'payment-fraud',
+      label: 'Payment Fraud Intelligence',
+      icon: CreditCard,
+      badge: 'Real-Time'
     },
     {
       id: 'settings',

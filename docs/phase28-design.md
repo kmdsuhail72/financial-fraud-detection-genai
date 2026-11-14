@@ -150,3 +150,4 @@ Defined in `infrastructure/terraform/phase28/`:
 - **`aws_s3_bucket.risk_dossier_vault`**: Encrypted S3 bucket with versioning and KMS encryption for customer risk dossiers.
 - **`aws_dynamodb_table.customer_risk_assessments`**: Stores risk assessments with Global Secondary Index on `customer_id`.
 - **`aws_dynamodb_table.customer_risk_history`**: Partition key `customer_id`, sort key `assessment_id` tracking continuous reassessment history over time.
+
