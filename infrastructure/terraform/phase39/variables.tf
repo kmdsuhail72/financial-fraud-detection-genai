@@ -50,3 +50,4 @@ variable "auth_token" {
   default     = "FinGuardProdSecureToken2026!"
   sensitive   = true
 }
+

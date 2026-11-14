@@ -104,3 +104,4 @@ If Redis is temporarily disconnected or in local offline mode, the system automa
 
 - **Smoke Script**: Standalone verification via `python scripts/smoke_cache.py`.
 - **Test Suite**: 8/8 comprehensive pytest test cases covering memory cache, cache-aside read-through, profile invalidation, Redis serialization, Lua rate limiting, tenant idempotency, metrics endpoints, and Terraform infrastructure validation.
+

@@ -105,3 +105,4 @@ resource "aws_elasticache_replication_group" "redis" {
     Name = "${var.environment}-finguard-redis-replication-group"
   }
 }
+

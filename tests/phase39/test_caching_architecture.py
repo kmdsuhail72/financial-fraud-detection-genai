@@ -240,3 +240,4 @@ def test_terraform_and_docker_compose_validation():
     assert "redis" in parsed_compose["services"]
     assert "image" in parsed_compose["services"]["redis"]
     assert "6379:6379" in parsed_compose["services"]["redis"]["ports"]
+

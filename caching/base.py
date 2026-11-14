@@ -45,3 +45,4 @@ class BaseCache(ABC):
     def get_metrics(self) -> CacheMetrics:
         """Return real-time access statistics (hits, misses, ratio)."""
         pass
+
