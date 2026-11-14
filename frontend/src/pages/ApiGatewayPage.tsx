@@ -719,3 +719,4 @@ export const ApiGatewayPage: React.FC = () => {
     </div>
   );
 };
+

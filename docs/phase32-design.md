@@ -53,3 +53,4 @@ Client / Microservice
 ## 4. Production Security Disclaimer
 > [!NOTE]
 > FinGuard AI uses synthetic identities, mock tokens, and an in-memory sliding-window log for local validation and testing. Production deployments must configure AWS API Gateway HTTP APIs with Cognito User Pool authorizers, KMS-managed keys, and Redis/ElastiCache sliding-window rate limiters.
+

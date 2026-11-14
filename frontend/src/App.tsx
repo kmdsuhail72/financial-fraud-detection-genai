@@ -24,6 +24,7 @@ import { PaymentFraudPage } from './pages/PaymentFraudPage';
 import { RegulatoryReportingPage } from './pages/RegulatoryReportingPage';
 import { DataIntegrationsPage } from './pages/DataIntegrationsPage';
 import { ApiGatewayPage } from './pages/ApiGatewayPage';
+import { EventDrivenMicroservicesPage } from './pages/EventDrivenMicroservicesPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -249,6 +250,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'api-gateway' && (
             <ApiGatewayPage />
+          )}
+
+          {currentTab === 'event-microservices' && (
+            <EventDrivenMicroservicesPage />
           )}
 
           {currentTab === 'settings' && (

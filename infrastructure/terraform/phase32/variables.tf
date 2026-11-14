@@ -27,3 +27,4 @@ variable "throttling_rate_limit" {
   type        = number
   default     = 50
 }
+

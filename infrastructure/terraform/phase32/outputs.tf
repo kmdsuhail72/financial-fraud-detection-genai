@@ -12,3 +12,4 @@ output "cloudwatch_log_group_arn" {
   description = "ARN of CloudWatch access log group"
   value       = aws_cloudwatch_log_group.gateway_access_logs.arn
 }
+

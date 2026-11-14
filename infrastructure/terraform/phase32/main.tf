@@ -70,3 +70,4 @@ resource "aws_apigatewayv2_stage" "default_stage" {
     Environment = var.environment
   }
 }
+

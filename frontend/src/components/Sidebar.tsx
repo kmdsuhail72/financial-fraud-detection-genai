@@ -23,7 +23,8 @@ import {
   UserCheck,
   FileCheck2,
   CreditCard,
-  Key
+  Key,
+  Server
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -174,6 +175,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'API Gateway & Security',
       icon: Key,
       badge: 'v1 JWT'
+    },
+    {
+      id: 'event-microservices',
+      label: 'Event Microservices',
+      icon: Server,
+      badge: 'Saga'
     },
     {
       id: 'settings',
