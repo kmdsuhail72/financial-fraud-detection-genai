@@ -138,3 +138,4 @@ resource "aws_dynamodb_table" "integration_dlq" {
     Environment = var.environment
   }
 }
+

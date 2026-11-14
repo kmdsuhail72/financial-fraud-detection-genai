@@ -57,6 +57,7 @@ from api.customer_risk_router import customer_risk_router
 from api.payment_fraud_router import payment_router
 from api.regulatory_reporting_router import regulatory_router
 from api.integrations_router import integrations_router
+from api.gateway_router import gateway_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -198,6 +199,7 @@ app.include_router(customer_risk_router)
 app.include_router(payment_router)
 app.include_router(regulatory_router)
 app.include_router(integrations_router)
+app.include_router(gateway_router)
 
 
 # ==========================================

@@ -12,3 +12,4 @@ output "integration_dlq_table_name" {
   description = "DynamoDB table for integration dead-letter queue records"
   value       = aws_dynamodb_table.integration_dlq.name
 }
+

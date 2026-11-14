@@ -206,3 +206,4 @@ class IntegrationStore:
 
 # Global singleton store
 integration_store = IntegrationStore()
+

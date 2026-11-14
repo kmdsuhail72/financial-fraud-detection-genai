@@ -22,7 +22,8 @@ import {
   Banknote,
   UserCheck,
   FileCheck2,
-  CreditCard
+  CreditCard,
+  Key
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -167,6 +168,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Banking Integrations',
       icon: Layers,
       badge: 'APIs'
+    },
+    {
+      id: 'api-gateway',
+      label: 'API Gateway & Security',
+      icon: Key,
+      badge: 'v1 JWT'
     },
     {
       id: 'settings',

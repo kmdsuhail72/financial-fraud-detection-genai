@@ -210,3 +210,4 @@ class IntegrationService:
 
 # Global singleton instance
 integration_service = IntegrationService()
+

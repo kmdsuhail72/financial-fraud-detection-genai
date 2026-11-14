@@ -186,3 +186,4 @@ def test_integration_audit_and_metrics(client):
     assert "dead_letter_count" in metrics
     assert "success_rate_percent" in metrics
     assert metrics["success_rate_percent"] > 0
+

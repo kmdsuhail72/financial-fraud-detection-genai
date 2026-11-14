@@ -137,3 +137,4 @@ class IntegrationMetrics(BaseModel):
     success_rate_percent: float
 
     model_config = ConfigDict(extra="allow")
+

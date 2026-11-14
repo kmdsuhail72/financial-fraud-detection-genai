@@ -163,3 +163,4 @@ def list_integration_audit(limit: int = Query(100, ge=1, le=500)) -> List[Integr
 def get_integration_metrics() -> IntegrationMetrics:
     """Aggregates ingestion volumes, duplicate rates, DLQ counts, and success ratios."""
     return integration_service.get_metrics()
+

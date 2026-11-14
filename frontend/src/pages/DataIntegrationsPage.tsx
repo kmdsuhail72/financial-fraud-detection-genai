@@ -417,11 +417,10 @@ export const DataIntegrationsPage: React.FC = () => {
       <div className="flex border-b border-slate-800 gap-6 text-sm font-semibold">
         <button
           onClick={() => setActiveTab('STREAM')}
-          className={`pb-3 transition flex items-center gap-2 ${
-            activeTab === 'STREAM'
+          className={`pb-3 transition flex items-center gap-2 ${activeTab === 'STREAM'
               ? 'text-emerald-400 border-b-2 border-emerald-400'
               : 'text-slate-400 hover:text-slate-200'
-          }`}
+            }`}
         >
           <Terminal className="w-4 h-4" />
           Canonical Event Stream ({events.length})
@@ -429,11 +428,10 @@ export const DataIntegrationsPage: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('DLQ')}
-          className={`pb-3 transition flex items-center gap-2 ${
-            activeTab === 'DLQ'
+          className={`pb-3 transition flex items-center gap-2 ${activeTab === 'DLQ'
               ? 'text-red-400 border-b-2 border-red-400'
               : 'text-slate-400 hover:text-slate-200'
-          }`}
+            }`}
         >
           <AlertOctagon className="w-4 h-4" />
           Dead-Letter Queue ({deadLetters.length})
@@ -441,11 +439,10 @@ export const DataIntegrationsPage: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('AUDIT')}
-          className={`pb-3 transition flex items-center gap-2 ${
-            activeTab === 'AUDIT'
+          className={`pb-3 transition flex items-center gap-2 ${activeTab === 'AUDIT'
               ? 'text-blue-400 border-b-2 border-blue-400'
               : 'text-slate-400 hover:text-slate-200'
-          }`}
+            }`}
         >
           <History className="w-4 h-4" />
           Integration Audit Trail ({auditEntries.length})
@@ -505,9 +502,8 @@ export const DataIntegrationsPage: React.FC = () => {
                       <div
                         key={ev.event_id}
                         onClick={() => setSelectedEvent(ev)}
-                        className={`p-4 transition cursor-pointer flex items-center justify-between gap-4 hover:bg-slate-800/40 ${
-                          isSelected ? 'bg-emerald-950/30 border-l-4 border-emerald-500' : ''
-                        }`}
+                        className={`p-4 transition cursor-pointer flex items-center justify-between gap-4 hover:bg-slate-800/40 ${isSelected ? 'bg-emerald-950/30 border-l-4 border-emerald-500' : ''
+                          }`}
                       >
                         <div className="space-y-1">
                           <div className="flex items-center gap-2">
@@ -732,11 +728,10 @@ export const DataIntegrationsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSimType('CBS')}
-                className={`py-2 px-3 rounded-lg font-semibold flex items-center justify-center gap-2 border transition ${
-                  simType === 'CBS'
+                className={`py-2 px-3 rounded-lg font-semibold flex items-center justify-center gap-2 border transition ${simType === 'CBS'
                     ? 'bg-indigo-600 text-white border-indigo-500'
                     : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white'
-                }`}
+                  }`}
               >
                 <Building2 className="w-3.5 h-3.5" /> Core Banking (CBS)
               </button>
@@ -744,11 +739,10 @@ export const DataIntegrationsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSimType('GATEWAY')}
-                className={`py-2 px-3 rounded-lg font-semibold flex items-center justify-center gap-2 border transition ${
-                  simType === 'GATEWAY'
+                className={`py-2 px-3 rounded-lg font-semibold flex items-center justify-center gap-2 border transition ${simType === 'GATEWAY'
                     ? 'bg-emerald-600 text-white border-emerald-500'
                     : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white'
-                }`}
+                  }`}
               >
                 <CreditCard className="w-3.5 h-3.5" /> Payment Gateway
               </button>
@@ -902,3 +896,4 @@ export const DataIntegrationsPage: React.FC = () => {
 };
 
 export default DataIntegrationsPage;
+

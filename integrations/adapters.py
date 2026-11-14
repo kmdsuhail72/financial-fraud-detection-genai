@@ -122,3 +122,4 @@ def map_payment_gateway_to_canonical(req: PaymentGatewayEventRequest) -> Canonic
         raw_payload=req.model_dump(),
         normalized_payload=normalized,
     )
+
