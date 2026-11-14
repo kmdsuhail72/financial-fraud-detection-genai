@@ -163,6 +163,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badge: 'FIU-IND'
     },
     {
+      id: 'data-integrations',
+      label: 'Banking Integrations',
+      icon: Layers,
+      badge: 'APIs'
+    },
+    {
       id: 'settings',
       label: 'Platform Settings',
       icon: Settings,

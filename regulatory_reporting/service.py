@@ -203,3 +203,4 @@ class RegulatoryReportingService:
 
 # Default singleton instance
 regulatory_service = RegulatoryReportingService()
+

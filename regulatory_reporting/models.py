@@ -145,3 +145,4 @@ class ReportingMetrics(BaseModel):
     total_suspicious_amount_reported: float
 
     model_config = ConfigDict(extra="allow")
+

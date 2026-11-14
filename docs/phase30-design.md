@@ -74,3 +74,4 @@ Phase 30 establishes automated regulatory compliance and suspicious activity/tra
 > - Regulatory report filings are recorded as internal operational metadata. Direct integration with regulator portals (such as FIU-IND or FinCEN) requires official secure credentials and network connectivity not present in this local sandbox environment.
 > - SAR/STR templates are illustrative operational blueprints and do not constitute official statutory legal advice or guaranteed compliance.
 > - Storage operates in-memory by default; AWS S3 and DynamoDB Terraform templates provide the enterprise cloud deployment foundation.
+

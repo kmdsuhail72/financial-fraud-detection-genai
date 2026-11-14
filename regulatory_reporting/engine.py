@@ -110,3 +110,4 @@ def validate_regulatory_report(report: RegulatoryReport) -> ReportValidationResu
     is_valid = not any(e.severity == "ERROR" for e in errors)
 
     return ReportValidationResult(is_valid=is_valid, errors=errors, checked_at=now)
+

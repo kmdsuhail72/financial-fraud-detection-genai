@@ -267,3 +267,4 @@ def test_metrics_and_deadline_monitoring(client):
     alias_resp = client.get("/metrics")
     assert alias_resp.status_code == 200
     assert alias_resp.json()["total_reports"] == metrics["total_reports"]
+

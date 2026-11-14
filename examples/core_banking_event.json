@@ -1,0 +1,16 @@
+{
+  "cbs_txn_id": "CBS-2026-TXN-881920",
+  "account_number": "ACC-HDFC-991203",
+  "customer_cif": "CIF-IND-40291",
+  "posting_date": "2026-11-14T08:30:00Z",
+  "amount": 350000.0,
+  "currency": "INR",
+  "txn_type": "DEBIT",
+  "channel": "NETBANKING",
+  "beneficiary_account": "ACC-ICICI-441029",
+  "narration": "NEFT transfer towards commercial consulting services",
+  "metadata": {
+    "branch_code": "BR-BLR-KORAMANGALA",
+    "clearing_cycle": "N08"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "gateway_payment_id": "pay_rzp_live_2026_9812401",
+  "order_id": "order_ord_2026_551029",
+  "gateway_provider": "RAZORPAY",
+  "event_name": "payment.captured",
+  "amount": 285000.0,
+  "currency": "INR",
+  "customer_email": "jordan.cross@enterprise.internal",
+  "customer_phone": "+919876543210",
+  "payment_method": "upi",
+  "status": "captured",
+  "metadata": {
+    "vpa": "jordan@okhdfcbank",
+    "fee": 0.0,
+    "tax": 0.0
+  }
+}

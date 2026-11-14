@@ -136,3 +136,4 @@ resource "aws_dynamodb_table" "regulatory_audit_events" {
     Environment = var.environment
   }
 }
+

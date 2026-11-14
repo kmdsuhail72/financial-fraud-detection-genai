@@ -12,3 +12,4 @@ output "regulatory_audit_events_table_name" {
   description = "DynamoDB table name for immutable regulatory audit trail"
   value       = aws_dynamodb_table.regulatory_audit_events.name
 }
+

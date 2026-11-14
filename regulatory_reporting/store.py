@@ -230,3 +230,4 @@ class RegulatoryReportStore:
 
 # Global singleton store
 report_store = RegulatoryReportStore()
+
