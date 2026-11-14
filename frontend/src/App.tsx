@@ -30,6 +30,7 @@ import { DevSecOpsPipelinePage } from './pages/DevSecOpsPipelinePage';
 import { ObservabilitySrePage } from './pages/ObservabilitySrePage';
 import { DisasterRecoveryPage } from './pages/DisasterRecoveryPage';
 import { PerformanceEngineeringPage } from './pages/PerformanceEngineeringPage';
+import { CachingArchitecturePage } from './pages/CachingArchitecturePage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -279,6 +280,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'performance-engineering' && (
             <PerformanceEngineeringPage />
+          )}
+
+          {currentTab === 'caching-architecture' && (
+            <CachingArchitecturePage />
           )}
 
           {currentTab === 'settings' && (

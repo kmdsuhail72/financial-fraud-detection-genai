@@ -29,7 +29,8 @@ import {
   GitBranch,
   LineChart,
   Globe,
-  Gauge
+  Gauge,
+  Database
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -216,6 +217,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Performance & Capacity',
       icon: Gauge,
       badge: 'HPA/Perf'
+    },
+    {
+      id: 'caching-architecture',
+      label: 'Caching & Rate Limiting',
+      icon: Database,
+      badge: 'Redis'
     },
     {
       id: 'settings',
