@@ -28,6 +28,7 @@ import { EventDrivenMicroservicesPage } from './pages/EventDrivenMicroservicesPa
 import { KubernetesEksPage } from './pages/KubernetesEksPage';
 import { DevSecOpsPipelinePage } from './pages/DevSecOpsPipelinePage';
 import { ObservabilitySrePage } from './pages/ObservabilitySrePage';
+import { DisasterRecoveryPage } from './pages/DisasterRecoveryPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -269,6 +270,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'observability-sre' && (
             <ObservabilitySrePage />
+          )}
+
+          {currentTab === 'disaster-recovery' && (
+            <DisasterRecoveryPage />
           )}
 
           {currentTab === 'settings' && (

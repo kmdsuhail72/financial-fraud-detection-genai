@@ -69,3 +69,4 @@ def configure_structured_logging(
 
 # Default logger instance
 structured_logger = configure_structured_logging()
+

@@ -18,3 +18,4 @@ datasources:
       tracesToLogs:
         datasourceUid: 'Prometheus'
         tags: ['job', 'instance', 'pod', 'namespace']
+

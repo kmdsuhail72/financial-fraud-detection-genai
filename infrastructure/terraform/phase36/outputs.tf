@@ -28,3 +28,4 @@ output "sre_dashboard_name" {
   description = "Name of the CloudWatch SRE Dashboard"
   value       = aws_cloudwatch_dashboard.finguard_sre_dashboard.dashboard_name
 }
+

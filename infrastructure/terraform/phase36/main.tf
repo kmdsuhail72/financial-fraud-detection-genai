@@ -117,3 +117,4 @@ resource "aws_cloudwatch_dashboard" "finguard_sre_dashboard" {
     ]
   })
 }
+

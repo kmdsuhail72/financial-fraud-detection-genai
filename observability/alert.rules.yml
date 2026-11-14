@@ -45,3 +45,4 @@ groups:
           summary: "Error budget 1-hour fast burn rate (>14.4x)"
           description: "Error budget is burning at rate {{ $value }}, projected to exhaust in under 48 hours."
           runbook_url: "https://docs.finguard.ai/sre-runbook#error-budget-fast-burn"
+

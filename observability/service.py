@@ -157,3 +157,4 @@ class ObservabilityService:
 
 # Global singleton service
 observability_service = ObservabilityService()
+

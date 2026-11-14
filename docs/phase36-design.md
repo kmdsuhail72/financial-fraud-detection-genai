@@ -77,3 +77,4 @@ flowchart TD
 ### 3.4 SRE Incident Runbooks & Automated Rollbacks
 - Linked alerting rules provide one-click access to triage runbooks.
 - Pre-scripted rollback commands using `kubectl rollout undo` and `argo rollouts abort` ensure deterministic MTTR reduction under 15 minutes.
+

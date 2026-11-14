@@ -129,3 +129,4 @@ class SLOMonitor:
 
 # Global singleton SLO monitor
 slo_monitor = SLOMonitor()
+

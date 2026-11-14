@@ -27,7 +27,8 @@ import {
   Server,
   Boxes,
   GitBranch,
-  LineChart
+  LineChart,
+  Globe
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -202,6 +203,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Observability & SRE',
       icon: LineChart,
       badge: 'OTel/SRE'
+    },
+    {
+      id: 'disaster-recovery',
+      label: 'Disaster Recovery (DR)',
+      icon: Globe,
+      badge: 'Multi-Reg'
     },
     {
       id: 'settings',

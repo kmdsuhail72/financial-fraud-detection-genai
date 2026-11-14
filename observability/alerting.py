@@ -205,3 +205,4 @@ class AlertManager:
 
 # Global singleton alert manager
 alert_manager = AlertManager()
+

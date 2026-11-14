@@ -80,3 +80,4 @@ This runbook establishes Standard Operating Procedures (SOPs) for the FinGuard A
 1. **Freeze Non-Critical Deployments**: Halve continuous deployments until burn rate drops below 1.0x.
 2. **Reroute Non-Critical Traffic**: Shed low-priority batch asynchronous queries.
 3. **Engage Post-Incident Review**: Record incident timeline, root cause, and corrective action items in the post-mortem repository.
+

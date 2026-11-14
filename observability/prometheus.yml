@@ -40,3 +40,4 @@ scrape_configs:
       - targets: ['localhost:8889']
         labels:
           service: 'otel-collector'
+

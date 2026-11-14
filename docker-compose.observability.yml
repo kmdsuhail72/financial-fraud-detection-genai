@@ -52,3 +52,4 @@ services:
 networks:
   finguard-obs-net:
     driver: bridge
+

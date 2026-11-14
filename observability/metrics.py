@@ -138,3 +138,4 @@ class PrometheusRegistry:
 
 # Global singleton registry
 prometheus_registry = PrometheusRegistry()
+
