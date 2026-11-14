@@ -21,6 +21,7 @@ import { DocumentVerificationPage } from './pages/DocumentVerificationPage';
 import { IdentityGraphPage } from './pages/IdentityGraphPage';
 import { UnifiedCustomerRiskPage } from './pages/UnifiedCustomerRiskPage';
 import { PaymentFraudPage } from './pages/PaymentFraudPage';
+import { RegulatoryReportingPage } from './pages/RegulatoryReportingPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -234,6 +235,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'payment-fraud' && (
             <PaymentFraudPage />
+          )}
+
+          {currentTab === 'regulatory-reporting' && (
+            <RegulatoryReportingPage />
           )}
 
           {currentTab === 'settings' && (

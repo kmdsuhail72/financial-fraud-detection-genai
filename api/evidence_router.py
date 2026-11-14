@@ -239,16 +239,24 @@ def list_case_reports(
     return service.list_reports(case_id=case_id)
 
 
-@evidence_router.get("/reports/{report_id}", response_model=AnalystInvestigationReport)
+@evidence_router.get("/reports/{report_id}", response_model=Any)
 def get_report_detail(
     report_id: str,
     request: Request,
     service: EvidenceService = Depends(get_evidence_service),
 ):
-    """Retrieve full signed investigation report."""
+    """Retrieve full signed investigation report or regulatory report."""
+    if report_id == "metrics":
+        from regulatory_reporting.service import regulatory_service
+        return regulatory_service.get_metrics()
+
     actor = get_actor_from_request(request)
     report = service.get_report(report_id, actor=actor.get("email") or "analyst")
     if not report:
+        from regulatory_reporting.service import regulatory_service
+        reg_report = regulatory_service.get_report(report_id)
+        if reg_report:
+            return reg_report
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Report '{report_id}' not found.",

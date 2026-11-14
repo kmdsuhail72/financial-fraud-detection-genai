@@ -12,3 +12,4 @@ output "payment_velocity_table_name" {
   description = "DynamoDB table name for rolling payment velocity tracking"
   value       = aws_dynamodb_table.payment_velocity_window.name
 }
+

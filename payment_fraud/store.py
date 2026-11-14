@@ -197,3 +197,4 @@ class PaymentFraudStore:
 
 # Global singleton instance
 payment_store = PaymentFraudStore()
+

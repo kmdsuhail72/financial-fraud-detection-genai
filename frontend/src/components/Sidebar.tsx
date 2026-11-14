@@ -157,6 +157,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badge: 'Real-Time'
     },
     {
+      id: 'regulatory-reporting',
+      label: 'Regulatory SAR/STR',
+      icon: FileCheck2,
+      badge: 'FIU-IND'
+    },
+    {
       id: 'settings',
       label: 'Platform Settings',
       icon: Settings,

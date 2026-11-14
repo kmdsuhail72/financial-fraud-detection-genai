@@ -102,3 +102,4 @@ class PaymentMetrics(BaseModel):
     international_count: int
 
     model_config = ConfigDict(extra="allow")
+

@@ -93,3 +93,4 @@ $$\text{Score} = \min\left(100, \sum_{s \in \text{Triggered Signals}} \text{Poin
 
 > [!IMPORTANT]
 > **Human-in-the-Loop Standard:** All payment risk scores, signal points, and action recommendations are advisory operational tools. FinGuard AI does not perform automated transaction rejection, funds reversal, or account freezing. All mitigation decisions require affirmative human review.
+

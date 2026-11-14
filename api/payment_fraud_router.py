@@ -97,3 +97,4 @@ def list_payment_assessments(limit: int = Query(50, ge=1, le=200)) -> List[Payme
 def get_payment_metrics() -> PaymentMetrics:
     """Calculates operational metrics across payments, actions, and detected anomalies."""
     return payment_service.get_metrics()
+

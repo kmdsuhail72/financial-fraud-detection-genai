@@ -220,3 +220,4 @@ def test_payment_metrics_endpoint(client):
     assert metrics["total_assessed"] == (
         metrics["monitor_count"] + metrics["review_count"] + metrics["priority_review_count"]
     )
+

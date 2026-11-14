@@ -33,3 +33,4 @@ class PaymentFraudService:
 
 # Default singleton instance
 payment_service = PaymentFraudService()
+

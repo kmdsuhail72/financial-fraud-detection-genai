@@ -1,0 +1,23 @@
+{
+  "report_type": "SAR",
+  "jurisdiction": "FIU_IND",
+  "case_id": "CASE-AML-2026-8812",
+  "customer_id": "CUST-BLR-40291",
+  "customer_name": "Jordan Cross",
+  "customer_pan_or_id": "BNMPL9021K",
+  "suspicion_narrative": "Multiple rapid payment bursts totaling INR 14,50,000 across newly added beneficiaries in disparate geographic locations within short time intervals without stated legitimate commercial basis.",
+  "primary_offense_category": "Structuring and Layering",
+  "transaction_ids": [
+    "TXN-2026-UPI-285000",
+    "TXN-2026-UPI-285001",
+    "TXN-2026-IMPS-880192"
+  ],
+  "evidence_ids": [
+    "EV-SHA256-PAYMENT-AUDIT-01",
+    "EV-SHA256-GEOLOCATION-LOG-02"
+  ],
+  "total_suspicious_amount": 1450000.0,
+  "currency": "INR",
+  "created_by": "compliance_analyst@finguard.internal",
+  "filing_deadline_days": 30
+}

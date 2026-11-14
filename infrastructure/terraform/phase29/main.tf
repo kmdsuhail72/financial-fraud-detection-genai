@@ -121,3 +121,4 @@ resource "aws_dynamodb_table" "payment_velocity_window" {
     Environment = var.environment
   }
 }
+
