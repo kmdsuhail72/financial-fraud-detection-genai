@@ -257,3 +257,4 @@ def test_distributed_tracing_and_metrics(client):
     assert metrics["sagas_completed"] >= 1
     assert metrics["service_health"]["transaction_service"] == "healthy"
     assert metrics["service_health"]["fraud_scoring_service"] == "healthy"
+

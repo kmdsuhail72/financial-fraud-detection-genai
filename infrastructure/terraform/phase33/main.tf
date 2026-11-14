@@ -89,3 +89,4 @@ resource "aws_cloudwatch_event_target" "sqs_target" {
     arn = aws_sqs_queue.transaction_dlq.arn
   }
 }
+

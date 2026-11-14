@@ -72,3 +72,4 @@ Events failing consumption undergo up to 3 bounded retries. If failures persist,
 ## 4. Production Caveat & Notice
 > [!NOTE]
 > FinGuard AI uses an in-memory Event Bus, Outbox, and Saga coordinator for local validation and demonstration. Production deployments utilize AWS EventBridge, Amazon SQS with redrive DLQs, Amazon SNS for alerts, DynamoDB/RDS for persistent transactional outbox records, and AWS Step Functions for distributed Saga orchestration.
+

@@ -1,0 +1,14 @@
+apiVersion: v2
+name: finguard
+description: Enterprise Helm Chart for FinGuard AI Microservices (Transaction & Fraud-Scoring)
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - fraud-detection
+  - fintech
+  - microservices
+  - kubernetes
+maintainers:
+  - name: FinGuard Architecture Team
+    email: ops@finguard.internal

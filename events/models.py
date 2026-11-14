@@ -143,3 +143,4 @@ class InitiateTransactionRequest(BaseModel):
     force_failure_at_step: Optional[str] = None  # Used for testing saga compensation
 
     model_config = ConfigDict(extra="allow")
+

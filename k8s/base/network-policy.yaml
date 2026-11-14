@@ -1,0 +1,54 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: fraud-service-network-policy
+  namespace: finguard
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: fraud-service
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/name: transaction-service
+      ports:
+        - protocol: TCP
+          port: 8102
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+      ports:
+        - protocol: TCP
+          port: 53
+        - protocol: UDP
+          port: 53
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: transaction-service-network-policy
+  namespace: finguard
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: transaction-service
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - ports:
+        - protocol: TCP
+          port: 8101
+  egress:
+    - to:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/name: fraud-service
+      ports:
+        - protocol: TCP
+          port: 8102

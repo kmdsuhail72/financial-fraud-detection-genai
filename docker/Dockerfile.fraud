@@ -1,0 +1,47 @@
+# Multi-stage Dockerfile for FinGuard AI Fraud-Scoring Microservice
+# Stage 1: Build Stage
+FROM python:3.11-slim AS builder
+
+WORKDIR /build
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements-phase33.txt requirements-phase34.txt ./
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip wheel --no-cache-dir --no-deps --wheel-dir /build/wheels -r requirements-phase34.txt
+
+# Stage 2: Hardened Runtime
+FROM python:3.11-slim AS runtime
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8102
+
+# Create non-root unprivileged service account
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -s /sbin/nologin -M appuser
+
+# Install wheels from builder
+COPY --from=builder /build/wheels /wheels
+RUN pip install --no-cache-dir /wheels/* && rm -rf /wheels
+
+# Copy application source
+COPY --chown=appuser:appgroup services/ /app/services/
+COPY --chown=appuser:appgroup events/ /app/events/
+
+USER 10001:10001
+
+EXPOSE 8102
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8102/health')" || exit 1
+
+CMD ["uvicorn", "services.fraud_service:app", "--host", "0.0.0.0", "--port", "8102"]

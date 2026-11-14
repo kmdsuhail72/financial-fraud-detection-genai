@@ -24,7 +24,8 @@ import {
   FileCheck2,
   CreditCard,
   Key,
-  Server
+  Server,
+  Boxes
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -181,6 +182,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Event Microservices',
       icon: Server,
       badge: 'Saga'
+    },
+    {
+      id: 'k8s-eks',
+      label: 'Kubernetes & EKS',
+      icon: Boxes,
+      badge: 'v1.29'
     },
     {
       id: 'settings',

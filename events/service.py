@@ -157,3 +157,4 @@ class MicroservicesCoordinator:
 
 # Global singleton coordinator
 microservices_coordinator = MicroservicesCoordinator()
+

@@ -52,6 +52,67 @@ services:
     volumes:
       - ./backend:/app
 
+  transaction-service:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.transaction
+    container_name: finguard-transaction-service
+    ports:
+      - "8101:8101"
+    environment:
+      - ENVIRONMENT=local
+      - PORT=8101
+      - FRAUD_SERVICE_URL=http://fraud-service:8102
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8101/health')\" || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 128M
+    restart: unless-stopped
+
+  fraud-service:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.fraud
+    container_name: finguard-fraud-service
+    ports:
+      - "8102:8102"
+    environment:
+      - ENVIRONMENT=local
+      - PORT=8102
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8102/health')\" || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 128M
+    restart: unless-stopped
+
 volumes:
   pgdata:
   redisdata:

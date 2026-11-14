@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: finguard-config
+  namespace: finguard
+data:
+  ENVIRONMENT: "production"
+  AWS_REGION: "ap-south-1"
+  LOG_LEVEL: "INFO"
+  FRAUD_SERVICE_URL: "http://fraud-service.finguard.svc.cluster.local:8102"
+  TRANSACTION_SERVICE_PORT: "8101"
+  FRAUD_SERVICE_PORT: "8102"

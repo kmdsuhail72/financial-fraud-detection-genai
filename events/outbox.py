@@ -88,3 +88,4 @@ class TransactionalOutbox:
 
 # Global singleton outbox
 transactional_outbox = TransactionalOutbox()
+

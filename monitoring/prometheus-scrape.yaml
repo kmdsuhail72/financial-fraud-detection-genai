@@ -1,0 +1,35 @@
+# Prometheus Scrape Configuration for FinGuard AI Kubernetes Microservices
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "finguard-transaction-service"
+    metrics_path: "/metrics"
+    kubernetes_sd_configs:
+      - role: endpoints
+        namespaces:
+          names:
+            - finguard
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_service_name]
+        action: keep
+        regex: transaction-service
+      - source_labels: [__meta_kubernetes_endpoint_port_name]
+        action: keep
+        regex: http
+
+  - job_name: "finguard-fraud-service"
+    metrics_path: "/metrics"
+    kubernetes_sd_configs:
+      - role: endpoints
+        namespaces:
+          names:
+            - finguard
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_service_name]
+        action: keep
+        regex: fraud-service
+      - source_labels: [__meta_kubernetes_endpoint_port_name]
+        action: keep
+        regex: http

@@ -111,3 +111,4 @@ class EventBus:
 
 # Global singleton event bus
 event_bus = EventBus(max_retries=3)
+

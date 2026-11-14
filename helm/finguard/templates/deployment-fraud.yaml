@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "finguard.name" . }}-fraud
+  labels:
+    {{- include "finguard.labels" . | nindent 4 }}
+    app.kubernetes.io/component: fraud-service
+spec:
+  replicas: {{ .Values.fraudService.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "finguard.name" . }}-fraud
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "finguard.name" . }}-fraud
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+      containers:
+        - name: fraud-service
+          image: "{{ .Values.fraudService.image.repository }}:{{ .Values.fraudService.image.tag }}"
+          imagePullPolicy: {{ .Values.fraudService.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.fraudService.service.port }}
+          resources:
+            {{- toYaml .Values.fraudService.resources | nindent 12 }}
+          startupProbe:
+            httpGet:
+              path: /startup
+              port: {{ .Values.fraudService.service.port }}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /live
+              port: {{ .Values.fraudService.service.port }}
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: {{ .Values.fraudService.service.port }}
+            periodSeconds: 5

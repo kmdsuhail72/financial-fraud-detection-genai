@@ -22,3 +22,4 @@ output "fraud_alerts_topic_arn" {
   description = "ARN of the SNS Fraud Alerts Topic"
   value       = aws_sns_topic.fraud_alerts_topic.arn
 }
+

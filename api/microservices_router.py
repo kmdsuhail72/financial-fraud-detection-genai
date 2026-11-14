@@ -190,3 +190,4 @@ def list_events(
 def get_metrics() -> MicroserviceMetrics:
     """Aggregates throughput, saga completions/compensations, outbox backlog, and DLQ depth."""
     return microservices_coordinator.get_metrics()
+
