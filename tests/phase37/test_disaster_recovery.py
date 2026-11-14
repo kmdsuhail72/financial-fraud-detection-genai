@@ -184,3 +184,4 @@ def test_backup_manifest_sha256_verification(client: TestClient):
     assert data_corrupt["valid"] is False
     assert len(data_corrupt["mismatches"]) > 0
     assert any("checksum" in m.lower() for m in data_corrupt["mismatches"])
+

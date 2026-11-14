@@ -73,3 +73,4 @@ Once AWS confirms normal regional operations in Mumbai (`ap-south-1`):
 3. **Verify Mumbai EKS Pods**: Re-scale deployments in Mumbai and confirm health checks pass.
 4. **Shift DNS**: Switch Route 53 primary routing back to Mumbai.
 5. **Post-Mortem**: Document incident chronology, total recovery time (RTO), and observed data loss (RPO).
+

@@ -28,7 +28,8 @@ import {
   Boxes,
   GitBranch,
   LineChart,
-  Globe
+  Globe,
+  Gauge
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -209,6 +210,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Disaster Recovery (DR)',
       icon: Globe,
       badge: 'Multi-Reg'
+    },
+    {
+      id: 'performance-engineering',
+      label: 'Performance & Capacity',
+      icon: Gauge,
+      badge: 'HPA/Perf'
     },
     {
       id: 'settings',

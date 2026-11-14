@@ -63,6 +63,7 @@ from api.microservices_router import microservices_router
 from api.cicd_router import cicd_router
 from api.observability_router import observability_router
 from api.disaster_recovery_router import dr_router
+from api.performance_router import performance_router
 from observability.service import observability_service
 from observability.logging import current_request_id, current_span_id, current_trace_id
 
@@ -273,6 +274,7 @@ app.include_router(microservices_router)
 app.include_router(cicd_router)
 app.include_router(observability_router)
 app.include_router(dr_router)
+app.include_router(performance_router)
 
 
 # Root Observability & Prometheus Scrape Endpoints

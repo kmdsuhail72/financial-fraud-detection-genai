@@ -22,3 +22,4 @@ variable "bucket_prefix" {
   type        = string
   default     = "finguard-evidence-lake"
 }
+

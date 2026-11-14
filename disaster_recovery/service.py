@@ -223,3 +223,4 @@ class DisasterRecoveryService:
 
 # Global singleton disaster recovery service
 dr_service = DisasterRecoveryService()
+

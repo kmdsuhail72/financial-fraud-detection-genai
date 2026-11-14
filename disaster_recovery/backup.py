@@ -105,3 +105,4 @@ class BackupIntegrityManager:
 
 # Global singleton manager
 backup_manager = BackupIntegrityManager()
+
