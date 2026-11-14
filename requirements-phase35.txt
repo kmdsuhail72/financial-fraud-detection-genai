@@ -1,0 +1,12 @@
+# Phase 35: Enterprise CI/CD Automation, GitOps & DevSecOps Pipeline
+fastapi>=0.104.0
+pydantic>=2.0.0
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+httpx>=0.25.0
+uvicorn>=0.23.0
+pyyaml>=6.0.1
+boto3>=1.28.0
+bandit>=1.7.5
+flake8>=6.1.0

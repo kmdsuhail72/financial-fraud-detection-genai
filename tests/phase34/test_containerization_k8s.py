@@ -196,3 +196,4 @@ def test_terraform_eks_mumbai_configuration():
     assert "aws_eks_addon" in main_content
     assert "vpc_cni" in main_content
     assert "coredns" in main_content
+

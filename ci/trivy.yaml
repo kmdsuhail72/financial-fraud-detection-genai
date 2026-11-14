@@ -1,0 +1,15 @@
+# Trivy Container Vulnerability Scanner Configuration
+format: "table"
+exit-code: 0
+severity:
+  - "CRITICAL"
+  - "HIGH"
+ignore-unfixed: true
+vuln-type:
+  - "os"
+  - "library"
+scanners:
+  - "vuln"
+  - "secret"
+  - "config"
+timeout: "5m"

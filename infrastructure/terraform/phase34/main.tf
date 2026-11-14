@@ -178,3 +178,4 @@ resource "aws_eks_addon" "kube_proxy" {
   cluster_name = aws_eks_cluster.finguard_eks.name
   addon_name   = "kube-proxy"
 }
+

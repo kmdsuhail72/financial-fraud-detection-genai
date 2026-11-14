@@ -40,3 +40,4 @@ Phase 34 delivers production-ready containerization, Kubernetes orchestration, H
 ## 3. Production Notice & Disclaimers
 > [!NOTE]
 > Local Docker and Kubernetes YAML definitions are decoupled from cloud infrastructure. Live EKS provisioning requires AWS credentials and execution of `terraform apply` in `infrastructure/terraform/phase34/` with appropriate IAM roles.
+

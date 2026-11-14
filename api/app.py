@@ -59,6 +59,7 @@ from api.regulatory_reporting_router import regulatory_router
 from api.integrations_router import integrations_router
 from api.gateway_router import gateway_router
 from api.microservices_router import microservices_router
+from api.cicd_router import cicd_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -202,6 +203,7 @@ app.include_router(regulatory_router)
 app.include_router(integrations_router)
 app.include_router(gateway_router)
 app.include_router(microservices_router)
+app.include_router(cicd_router)
 
 
 # ==========================================

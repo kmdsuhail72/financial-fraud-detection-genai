@@ -1,0 +1,61 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: transaction-service-rollout
+  namespace: finguard
+spec:
+  replicas: 5
+  strategy:
+    canary:
+      canaryService: transaction-service-canary
+      stableService: transaction-service-stable
+      trafficRouting:
+        alb:
+          ingress: finguard-alb-ingress
+          servicePort: 8101
+      analysis:
+        templates:
+          - templateName: success-rate-analysis
+        args:
+          - name: service-name
+            value: transaction-service
+      steps:
+        - setWeight: 20
+        - pause: { duration: 5m }
+        - setWeight: 50
+        - pause: { duration: 10m }
+        - setWeight: 100
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: transaction-service
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: transaction-service
+    spec:
+      containers:
+        - name: transaction-service
+          image: finguard/transaction-service:1.1.0
+          ports:
+            - containerPort: 8101
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate-analysis
+  namespace: finguard
+spec:
+  args:
+    - name: service-name
+  metrics:
+    - name: success-rate
+      interval: 30s
+      successCondition: result[0] >= 0.99
+      failureLimit: 3
+      provider:
+        prometheus:
+          address: http://prometheus.monitoring:9090
+          query: |
+            sum(rate(http_requests_total{service="{{args.service-name}}",status!~"5.*"}[1m]))
+            /
+            sum(rate(http_requests_total{service="{{args.service-name}}"}[1m]))

@@ -10,3 +10,4 @@ data:
   FRAUD_SERVICE_URL: "http://fraud-service.finguard.svc.cluster.local:8102"
   TRANSACTION_SERVICE_PORT: "8101"
   FRAUD_SERVICE_PORT: "8102"
+

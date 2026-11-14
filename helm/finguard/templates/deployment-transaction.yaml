@@ -42,3 +42,4 @@ spec:
               path: /ready
               port: {{ .Values.transactionService.service.port }}
             periodSeconds: 5
+

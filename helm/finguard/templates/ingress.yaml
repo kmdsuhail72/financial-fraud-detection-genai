@@ -28,3 +28,4 @@ spec:
                 port:
                   number: {{ .Values.fraudService.service.port }}
 {{- end }}
+

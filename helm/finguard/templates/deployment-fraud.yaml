@@ -42,3 +42,4 @@ spec:
               path: /ready
               port: {{ .Values.fraudService.service.port }}
             periodSeconds: 5
+

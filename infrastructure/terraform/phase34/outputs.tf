@@ -17,3 +17,4 @@ output "managed_node_group_arn" {
   description = "ARN of the EKS Managed Node Group"
   value       = aws_eks_node_group.managed_nodes.arn
 }
+

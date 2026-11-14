@@ -20,3 +20,4 @@ helm.sh/chart: {{ include "finguard.chart" . }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/part-of: finguard
 {{- end }}
+

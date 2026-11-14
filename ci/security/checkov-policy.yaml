@@ -1,0 +1,12 @@
+# Checkov IaC Security Policy Configuration
+framework:
+  - "terraform"
+  - "kubernetes"
+  - "helm"
+output: "cli"
+soft-fail: false
+compact: true
+quiet: false
+skip-check:
+  - "CKV_AWS_144" # Cross-region replication check (development override)
+  - "CKV_K8S_21"  # Default namespace check (finguard namespace used)

@@ -43,3 +43,4 @@ spec:
           type: Utilization
           averageUtilization: {{ .Values.fraudService.autoscaling.targetCPUUtilizationPercentage }}
 {{- end }}
+

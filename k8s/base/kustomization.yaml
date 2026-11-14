@@ -14,3 +14,4 @@ resources:
   - pdb.yaml
   - network-policy.yaml
   - ingress.yaml
+

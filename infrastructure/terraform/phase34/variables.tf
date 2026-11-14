@@ -33,3 +33,4 @@ variable "node_instance_types" {
   type        = list(string)
   default     = ["m5.large", "t3.medium"]
 }
+

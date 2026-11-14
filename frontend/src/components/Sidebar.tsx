@@ -25,7 +25,8 @@ import {
   CreditCard,
   Key,
   Server,
-  Boxes
+  Boxes,
+  GitBranch
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -188,6 +189,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Kubernetes & EKS',
       icon: Boxes,
       badge: 'v1.29'
+    },
+    {
+      id: 'cicd-devsecops',
+      label: 'CI/CD & GitOps',
+      icon: GitBranch,
+      badge: 'DevSecOps'
     },
     {
       id: 'settings',

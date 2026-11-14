@@ -6,3 +6,4 @@ metadata:
     app.kubernetes.io/name: finguard
     app.kubernetes.io/part-of: finguard-platform
     environment: production
+
