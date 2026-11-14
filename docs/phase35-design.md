@@ -52,3 +52,4 @@ Developer Push / PR
 ## 4. Production Security Disclaimer
 > [!NOTE]
 > FinGuard AI provides full declarative pipeline definitions (GitHub Actions, Jenkinsfile, Checkov, Trivy, SonarQube, Argo CD Application CRDs, and Argo Rollouts). Live execution in CI environments requires integration with a running Jenkins master, SonarQube server, GitHub runner credentials, and an EKS cluster with Argo CD installed.
+

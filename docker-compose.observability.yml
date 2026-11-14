@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.95.0
+    container_name: finguard-otel-collector
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./observability/otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP HTTP receiver
+      - "8889:8889"   # Prometheus metrics exporter
+      - "13133:13133" # Health check extension
+    networks:
+      - finguard-obs-net
+
+  prometheus:
+    image: prom/prometheus:v2.50.0
+    container_name: finguard-prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/usr/share/prometheus/console_libraries
+      - --web.console.templates=/usr/share/prometheus/consoles
+    volumes:
+      - ./observability/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./observability/alert.rules.yml:/etc/prometheus/alert.rules.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - finguard-obs-net
+    depends_on:
+      - otel-collector
+
+  grafana:
+    image: grafana/grafana:10.3.3
+    container_name: finguard-grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./observability/grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./observability/grafana/dashboards:/etc/grafana/provisioning/dashboards
+    ports:
+      - "3000:3000"
+    networks:
+      - finguard-obs-net
+    depends_on:
+      - prometheus
+
+networks:
+  finguard-obs-net:
+    driver: bridge

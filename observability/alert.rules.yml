@@ -1,0 +1,47 @@
+# Prometheus Alerting Rules for FinGuard AI
+groups:
+  - name: finguard_sre_alerts
+    rules:
+      - alert: High5xxErrorRate
+        expr: sum(rate(http_requests_total{status=~"5.."}[5m])) / sum(rate(http_requests_total[5m])) > 0.01
+        for: 2m
+        labels:
+          severity: critical
+          team: sre
+        annotations:
+          summary: "FinGuard high HTTP 5xx error rate (>1%)"
+          description: "HTTP 5xx error rate across FinGuard microservices is {{ $value | humanizePercentage }}."
+          runbook_url: "https://docs.finguard.ai/sre-runbook#high-5xx-error-rate"
+
+      - alert: HighFraudScoringLatencyP95
+        expr: histogram_quantile(0.95, sum(rate(fraud_scoring_latency_seconds_bucket[5m])) by (le)) > 0.2
+        for: 5m
+        labels:
+          severity: warning
+          team: mlops
+        annotations:
+          summary: "Fraud scoring p95 latency breach (>200ms)"
+          description: "Real-time fraud scoring p95 latency is {{ $value }}s, exceeding the 200ms SLO target."
+          runbook_url: "https://docs.finguard.ai/sre-runbook#high-scoring-latency"
+
+      - alert: ServiceInstanceDown
+        expr: finguard_service_up == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: sre
+        annotations:
+          summary: "FinGuard service instance unreachable"
+          description: "Service instance {{ $labels.service }} is reporting DOWN."
+          runbook_url: "https://docs.finguard.ai/sre-runbook#service-instance-down"
+
+      - alert: ErrorBudgetFastBurn
+        expr: sum(rate(http_requests_total{status=~"5.."}[1h])) / sum(rate(http_requests_total[1h])) > 0.0144
+        for: 15m
+        labels:
+          severity: warning
+          team: sre
+        annotations:
+          summary: "Error budget 1-hour fast burn rate (>14.4x)"
+          description: "Error budget is burning at rate {{ $value }}, projected to exhaust in under 48 hours."
+          runbook_url: "https://docs.finguard.ai/sre-runbook#error-budget-fast-burn"

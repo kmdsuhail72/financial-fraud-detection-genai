@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import logging
 from typing import List, Optional
-from fastapi import APIRouter, HTTPException, Query, status
+from fastapi import APIRouter, HTTPException, Query, Request, Response, status
 
 from regulatory_reporting.models import (
     RegulatoryReport,
@@ -83,10 +83,13 @@ def get_reporting_metrics() -> ReportingMetrics:
 # Also alias /metrics on this router
 @regulatory_router.get(
     "/metrics",
-    response_model=ReportingMetrics,
     include_in_schema=False,
 )
-def get_metrics_alias() -> ReportingMetrics:
+def get_metrics_alias(request: Request):
+    accept = request.headers.get("accept", "")
+    if "text/plain" in accept or "openmetrics" in accept or request.query_params.get("format") == "prometheus":
+        from observability.service import observability_service
+        return Response(content=observability_service.get_prometheus_metrics(), media_type="text/plain; version=0.0.4; charset=utf-8")
     return regulatory_service.get_metrics()
 
 

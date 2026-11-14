@@ -127,3 +127,4 @@ def rollback_canary():
 def get_metrics() -> DevSecOpsMetrics:
     """Aggregates pipeline frequency, quality gate pass rates, and security compliance."""
     return devsecops_service.get_metrics()
+

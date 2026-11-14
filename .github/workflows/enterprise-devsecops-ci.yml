@@ -123,3 +123,4 @@ jobs:
       - name: Trigger Argo CD Sync via Webhook
         run: |
           echo "Simulated Argo CD webhook sync trigger payload for commit ${{ github.sha }}"
+

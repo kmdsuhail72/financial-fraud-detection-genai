@@ -13,3 +13,4 @@ scanners:
   - "secret"
   - "config"
 timeout: "5m"
+

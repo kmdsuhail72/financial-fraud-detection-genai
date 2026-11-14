@@ -26,7 +26,8 @@ import {
   Key,
   Server,
   Boxes,
-  GitBranch
+  GitBranch,
+  LineChart
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -195,6 +196,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'CI/CD & GitOps',
       icon: GitBranch,
       badge: 'DevSecOps'
+    },
+    {
+      id: 'observability-sre',
+      label: 'Observability & SRE',
+      icon: LineChart,
+      badge: 'OTel/SRE'
     },
     {
       id: 'settings',

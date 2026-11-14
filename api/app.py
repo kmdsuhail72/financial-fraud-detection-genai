@@ -10,13 +10,14 @@ from __future__ import annotations
 import logging
 import os
 import time
+import uuid as uuid_mod
 
 os.environ.setdefault("AWS_EC2_METADATA_DISABLED", "true")
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
-from fastapi import Depends, FastAPI, HTTPException, Query, Request, status
+from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -60,6 +61,9 @@ from api.integrations_router import integrations_router
 from api.gateway_router import gateway_router
 from api.microservices_router import microservices_router
 from api.cicd_router import cicd_router
+from api.observability_router import observability_router
+from observability.service import observability_service
+from observability.logging import current_request_id, current_span_id, current_trace_id
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("finguard-api")
@@ -182,6 +186,68 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.middleware("http")
+async def opentelemetry_tracing_middleware(request: Request, call_next):
+    """
+    OpenTelemetry distributed tracing middleware.
+    Injects request_id, propagates W3C traceparent context, records HTTP spans,
+    and updates Prometheus metrics.
+    """
+    start_time = time.time()
+    req_id = request.headers.get("x-request-id") or f"req-{uuid_mod.uuid4().hex[:12]}"
+    traceparent = request.headers.get("traceparent")
+    parsed_tp = observability_service.tracer.extract_traceparent(traceparent) if traceparent else None
+    trace_id = parsed_tp["trace_id"] if parsed_tp else uuid_mod.uuid4().hex
+    parent_span_id = parsed_tp["parent_id"] if parsed_tp else None
+
+    # Contextual variables for structured logging
+    current_request_id.set(req_id)
+    current_trace_id.set(trace_id)
+
+    span = observability_service.tracer.start_span(
+        name=f"{request.method} {request.url.path}",
+        trace_id=trace_id,
+        parent_span_id=parent_span_id,
+        service_name="finguard-gateway",
+        attributes={
+            "http.method": request.method,
+            "http.url": str(request.url),
+            "http.route": request.url.path,
+            "client.ip": request.client.host if request.client else "unknown",
+        },
+    )
+
+    try:
+        response = await call_next(request)
+        duration = time.time() - start_time
+        observability_service.tracer.end_span(span)
+        # Update Prometheus metrics
+        observability_service.metrics.inc_counter(
+            "http_requests_total",
+            1.0,
+            {"method": request.method, "path": request.url.path, "status": str(response.status_code)},
+        )
+        observability_service.metrics.observe_histogram(
+            "http_request_duration_seconds",
+            duration,
+            {"method": request.method, "path": request.url.path},
+        )
+        response.headers["x-request-id"] = req_id
+        response.headers["x-trace-id"] = trace_id
+        response.headers["traceparent"] = observability_service.tracer.inject_traceparent(span)
+        return response
+    except Exception as exc:
+        duration = time.time() - start_time
+        from observability.models import StatusCode
+        observability_service.tracer.end_span(span, StatusCode.ERROR, status_message=str(exc))
+        observability_service.metrics.inc_counter(
+            "http_requests_total",
+            1.0,
+            {"method": request.method, "path": request.url.path, "status": "500"},
+        )
+        raise
+
 app.include_router(compliance_router)
 app.include_router(soc_router)
 app.include_router(graph_router)
@@ -204,6 +270,21 @@ app.include_router(integrations_router)
 app.include_router(gateway_router)
 app.include_router(microservices_router)
 app.include_router(cicd_router)
+app.include_router(observability_router)
+
+
+# Root Observability & Prometheus Scrape Endpoints
+@app.get("/metrics")
+def root_metrics():
+    """Root Prometheus scrape endpoint."""
+    text_data = observability_service.get_prometheus_metrics()
+    return Response(content=text_data, media_type="text/plain; version=0.0.4; charset=utf-8")
+
+
+@app.get("/slo")
+def root_slo():
+    """Root SLO status and error budget summary."""
+    return observability_service.get_slo_summary()
 
 
 # ==========================================

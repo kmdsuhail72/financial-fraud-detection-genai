@@ -93,3 +93,4 @@ class DevSecOpsMetrics(BaseModel):
     canary_traffic_split: Dict[str, int] = Field(default_factory=dict)
 
     model_config = ConfigDict(extra="allow")
+

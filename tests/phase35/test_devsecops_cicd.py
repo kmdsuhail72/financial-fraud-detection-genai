@@ -151,3 +151,4 @@ def test_github_actions_and_jenkins_manifests_syntax():
         content = yaml.safe_load(app_file.read_text(encoding="utf-8"))
         assert content["kind"] == "Application"
         assert content["apiVersion"] == "argoproj.io/v1alpha1"
+

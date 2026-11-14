@@ -27,6 +27,7 @@ import { ApiGatewayPage } from './pages/ApiGatewayPage';
 import { EventDrivenMicroservicesPage } from './pages/EventDrivenMicroservicesPage';
 import { KubernetesEksPage } from './pages/KubernetesEksPage';
 import { DevSecOpsPipelinePage } from './pages/DevSecOpsPipelinePage';
+import { ObservabilitySrePage } from './pages/ObservabilitySrePage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -264,6 +265,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'cicd-devsecops' && (
             <DevSecOpsPipelinePage />
+          )}
+
+          {currentTab === 'observability-sre' && (
+            <ObservabilitySrePage />
           )}
 
           {currentTab === 'settings' && (

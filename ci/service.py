@@ -191,3 +191,4 @@ class DevSecOpsService:
 
 # Global singleton service
 devsecops_service = DevSecOpsService()
+
