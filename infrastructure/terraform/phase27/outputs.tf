@@ -17,3 +17,4 @@ output "identity_audit_trail_table" {
   description = "DynamoDB table for identity audit trail"
   value       = aws_dynamodb_table.identity_audit_trail.id
 }
+

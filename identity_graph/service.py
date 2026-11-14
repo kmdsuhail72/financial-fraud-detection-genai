@@ -143,3 +143,4 @@ _identity_graph_service = IdentityGraphService()
 
 def get_identity_graph_service() -> IdentityGraphService:
     return _identity_graph_service
+

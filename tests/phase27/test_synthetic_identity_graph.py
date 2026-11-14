@@ -175,3 +175,4 @@ def test_analyst_review_workflow_and_audit(client):
     assert review_event is not None
     assert review_event["actor"] == "fraud-investigator-dane"
     assert review_event["details"]["decision"] == "FLAG_SYNTHETIC_RING"
+

@@ -97,3 +97,4 @@ def get_identity_audit_trail(customer_id: str):
     if not c_node:
         raise HTTPException(status_code=404, detail=f"Customer identity '{customer_id}' not found in graph")
     return service.get_audit_trail(customer_id)
+

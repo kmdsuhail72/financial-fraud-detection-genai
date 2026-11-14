@@ -158,3 +158,4 @@ resource "aws_dynamodb_table" "identity_audit_trail" {
     Environment = var.environment
   }
 }
+

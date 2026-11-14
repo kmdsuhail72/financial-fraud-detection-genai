@@ -97,3 +97,4 @@ class SyntheticRiskEngine:
                 "cluster_size": cluster_size
             }
         )
+

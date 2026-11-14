@@ -137,3 +137,4 @@ class SubgraphResponse(BaseModel):
     edges: List[GraphEdge]
     total_nodes: int
     total_edges: int
+

@@ -144,6 +144,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badge: 'Ring'
     },
     {
+      id: 'customer-risk',
+      label: 'Customer Risk Intelligence',
+      icon: Activity,
+      badge: 'Unified'
+    },
+    {
       id: 'settings',
       label: 'Platform Settings',
       icon: Settings,

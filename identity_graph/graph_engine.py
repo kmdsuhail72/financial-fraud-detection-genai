@@ -203,3 +203,4 @@ class IdentityGraphEngine:
                 clusters.append(cluster)
 
         return sorted(clusters, key=lambda cl: cl.cluster_risk_score, reverse=True)
+

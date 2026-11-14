@@ -127,3 +127,4 @@ Defined in `infrastructure/terraform/phase27/`:
 - **`aws_dynamodb_table.identity_nodes`**: Graph node registry with Global Secondary Index on `node_type`.
 - **`aws_dynamodb_table.identity_collisions`**: Stores detected collisions with Global Secondary Index on `severity`.
 - **`aws_dynamodb_table.identity_audit_trail`**: Partition key `customer_id`, sort key `event_id` tracking all identity review operations.
+
