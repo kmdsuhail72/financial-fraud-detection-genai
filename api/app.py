@@ -65,6 +65,7 @@ from api.observability_router import observability_router
 from api.disaster_recovery_router import dr_router
 from api.performance_router import performance_router
 from api.caching_router import caching_router
+from api.messaging_router import messaging_router
 from observability.service import observability_service
 from observability.logging import current_request_id, current_span_id, current_trace_id
 
@@ -278,6 +279,8 @@ app.include_router(dr_router)
 app.include_router(performance_router)
 app.include_router(caching_router)
 app.include_router(caching_router, prefix="/api/v1")
+app.include_router(messaging_router)
+app.include_router(messaging_router, prefix="/api/v1")
 
 
 # Root Observability & Prometheus Scrape Endpoints

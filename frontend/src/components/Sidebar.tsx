@@ -30,7 +30,8 @@ import {
   LineChart,
   Globe,
   Gauge,
-  Database
+  Database,
+  Radio
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -223,6 +224,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Caching & Rate Limiting',
       icon: Database,
       badge: 'Redis'
+    },
+    {
+      id: 'event-streaming',
+      label: 'Queues & Event Streams',
+      icon: Radio,
+      badge: 'SQS/Kafka'
     },
     {
       id: 'settings',

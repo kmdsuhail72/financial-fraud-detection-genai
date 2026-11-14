@@ -31,6 +31,7 @@ import { ObservabilitySrePage } from './pages/ObservabilitySrePage';
 import { DisasterRecoveryPage } from './pages/DisasterRecoveryPage';
 import { PerformanceEngineeringPage } from './pages/PerformanceEngineeringPage';
 import { CachingArchitecturePage } from './pages/CachingArchitecturePage';
+import { EventStreamingPage } from './pages/EventStreamingPage';
 import { InvestigationCase, DashboardMetrics, CaseStatus } from './types/case';
 import { casesApi } from './services/api';
 
@@ -284,6 +285,10 @@ export const App: React.FC = () => {
 
           {currentTab === 'caching-architecture' && (
             <CachingArchitecturePage />
+          )}
+
+          {currentTab === 'event-streaming' && (
+            <EventStreamingPage />
           )}
 
           {currentTab === 'settings' && (
